@@ -78,9 +78,9 @@
                         </a>
                     </li>
 
-
+                    @can('subir arquivos')
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a class="nav-link">
                             <i class="nav-icon fas fa-archive"></i>
                             <p>
                                 Arquivos
@@ -89,16 +89,17 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="" class="nav-link">
+                                <a href="{{route('admin.formupload')}}" class="nav-link">
                                     <i class="far fa fa-images nav-icon"></i>
                                     <p>Avisos (Slides)</p>
                                 </a>
                             </li>
                         </ul>
                     </li>
+                    @endcan
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a  class="nav-link">
                             <i class="nav-icon fas fa-comment"></i>
                             <p>
                                 Comitê
@@ -106,23 +107,27 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
+                            @can('cadastrar comite')
                             <li class="nav-item">
                                 <a href="{{route('admin.comite.cadastro')}}" class="nav-link">
                                     <i class="far fa fa-comment-medical nav-icon"></i>
                                     <p>Cadastrar</p>
                                 </a>
                             </li>
+                         @endcan
+                         @can('listar comite')
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{route('admin.comite.listarpautas')}}" class="nav-link">
                                     <i class="far fa fa-comments nav-icon"></i>
                                     <p>Listar tudo</p>
                                 </a>
                             </li>
+                             @endcan
                         </ul>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a  class="nav-link">
                             <i class="nav-icon fas fa-user"></i>
                             <p>
                                 Usuários
@@ -130,18 +135,22 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
+                            @can('cadastrar usuario')
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{route('admin.users.create')}}" class="nav-link">
                                     <i class="far fa fa-plus nav-icon"></i>
                                     <p>Cadastrar</p>
                                 </a>
                             </li>
+                            @endcan
+                            @can('listar usuarios')
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{route('admin.users.index')}}" class="nav-link">
                                     <i class="far fa fa-list nav-icon"></i>
                                     <p>Listar tudo</p>
                                 </a>
                             </li>
+                                @endcan
                         </ul>
                     </li>
 
@@ -184,6 +193,7 @@
 <script src="{{asset('back/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('back/dist/js/demo.js')}}"></script>
+
 </body>
 </html>
 

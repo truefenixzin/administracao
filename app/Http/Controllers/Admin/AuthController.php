@@ -28,6 +28,26 @@ class AuthController extends Controller
         return view('admin.comite.cadastro');
     }
 
+    public function showComiteList()
+    {
+        return view('admin.comite.listarpauta');
+    }
+
+    public function showListUsers()
+    {
+        return view('admin.users.listarusers');
+    }
+
+    public function showCadastroUsers()
+    {
+        return view('admin.users.cadastro');
+    }
+
+    public function showUploadForm()
+    {
+        return view('admin.slides.slideUpload');
+    }
+
     public function login(Request $request)
     {
         if (in_array('',$request->only('email', 'password'))){
