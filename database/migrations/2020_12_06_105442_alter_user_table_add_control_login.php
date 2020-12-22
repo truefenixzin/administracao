@@ -14,6 +14,7 @@ class AlterUserTableAddControlLogin extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->string('cover');
             $table->dateTime('last_login_at')->nullable();
             $table->string('last_login_ip')->nullable();
         });
@@ -27,6 +28,7 @@ class AlterUserTableAddControlLogin extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('cover');
             $table->dropColumn('last_login_at');
             $table->dropColumn('last_login_ip');
         });

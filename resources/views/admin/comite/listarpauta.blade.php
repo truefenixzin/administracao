@@ -27,23 +27,25 @@
                         <thead>
                         <tr>
                             <th style="width: 10px">#</th>
-                            <th>Títlo</th>
-                            <th>Situação</th>
-                            <th>Sugestão</th>
+                            <th>Título</th>
+                            <th>Data cadastro</th>
+                            <th>Ultima atualização</th>
                             <th>Editar / Excluir</th>
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($posts as $post)
                             <tr>
-                                <td>1.</td>
-                                <td>Títulos teste</td>
-                                <td>Situação teste</td>
-                                <td>Sugestão teste</td>
+                                <td>{{$post->id}}</td>
+                                <td>{{$post->title}}</td>
+                                <td>{{date_format($post->created_at,'d/m/Y H:m:s')}}</td>
+                                <td>{{date_format($post->updated_at,'d/m/Y H:m:s')}}</td>
                                 <td>
                                     <button class="btn btn-large btn-warning">Editar</button>
                                     <button class="btn btn-large btn-danger">Excluir</button>
                                 </td>
                             </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

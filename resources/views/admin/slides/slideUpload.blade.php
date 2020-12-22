@@ -23,7 +23,7 @@
 
             <div class="card-body">
 
-                <form action="" method="post" autocomplete="off">
+                <form action="{{route('admin.slides.store')}}" method="post" autocomplete="off" enctype="multipart/form-data" >
                     @csrf
                     <div class="form-group">
                         <label for="title">Título:</label>
@@ -34,11 +34,11 @@
                         <div class="row">
                             <div class="col-6">
                                 <label for="nome">Data Início:</label>
-                                <input type="date" class="form-control" placeholder=".col-5">
+                                <input type="date" class="form-control" placeholder=".col-5" name="dtini">
                             </div>
                             <div class="col-6">
                                 <label for="nome">Data Fim:</label>
-                                <input type="date" class="form-control" placeholder=".col-5">
+                                <input type="date" class="form-control" placeholder=".col-5" name="dtfim">
                             </div>
                         </div>
                     </div>

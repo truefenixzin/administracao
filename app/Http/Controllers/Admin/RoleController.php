@@ -64,7 +64,7 @@ class RoleController extends Controller
             return redirect()->route('admin.roles.create');
         }
 
-        Echo "deu merda";
+        Echo "deu ruim, chama o TI";
     }
 
     /**

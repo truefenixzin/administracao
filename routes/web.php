@@ -6,6 +6,8 @@ use App\Http\Controllers\FronController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\SlidesController;
 
 
 //rotas publicas
@@ -21,7 +23,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
         Route::get('/inicio', [AuthController::class, 'home'])->name('home');
         Route::get('/slides', [AuthController::class, 'showUploadForm'])->name('formupload');
-        Route::get('/comite/cadastro', [AuthController::class, 'showComiteCadastro'])->name('comite.cadastro');
         Route::get('/comite/pautas', [AuthController::class, 'showComiteList'])->name('comite.listarpautas');
 
 
@@ -29,6 +30,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::resource('users', UserController::class);
         Route::resource('permissions', PermissionController::class);
         Route::resource('roles', RoleController::class);
+        Route::resource('posts', PostController::class);
+        Route::resource('slides', SlidesController::class);
 
 
 

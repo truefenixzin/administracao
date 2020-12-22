@@ -22,7 +22,7 @@
             </div>
 
             <div class="card-body">
-                <form action="{{route('admin.users.store')}}" method="post" autocomplete="off">
+                <form action="{{route('admin.users.store')}}" method="post" autocomplete="off" enctype="multipart/form-data"> >
                     @csrf
                     <div class="form-group">
                         <div class="row">
@@ -79,8 +79,8 @@
                                 <label for="avatar">Seu avatar:</label>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                                        <label class="custom-file-label" for="exampleInputFile">Escolha seu
+                                        <input type="file" class="custom-file-input" id="cover" name="cover">
+                                        <label class="custom-file-label" for="cover">Escolha seu
                                             arquivo</label>
                                     </div>
                                 </div>

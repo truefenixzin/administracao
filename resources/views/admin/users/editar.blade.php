@@ -79,8 +79,8 @@
                                 <label for="avatar">Seu avatar:</label>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                                        <label class="custom-file-label" for="exampleInputFile">Escolha seu
+                                        <input type="file" class="custom-file-input" id="cover" name="cover">
+                                        <label class="custom-file-label" for="cover">Escolha seu
                                             arquivo</label>
                                     </div>
                                 </div>

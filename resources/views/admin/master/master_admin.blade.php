@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{asset('back/plugins/fontawesome-free/css/all.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('back/dist/css/adminlte.min.css')}}">
+
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -89,7 +90,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{route('admin.formupload')}}" class="nav-link">
+                                <a href="{{route('admin.slides.create')}}" class="nav-link">
                                     <i class="far fa fa-images nav-icon"></i>
                                     <p>Avisos (Slides)</p>
                                 </a>
@@ -109,7 +110,7 @@
                         <ul class="nav nav-treeview">
                             @can('cadastrar comite')
                             <li class="nav-item">
-                                <a href="{{route('admin.comite.cadastro')}}" class="nav-link">
+                                <a href="{{route('admin.posts.create')}}" class="nav-link">
                                     <i class="far fa fa-comment-medical nav-icon"></i>
                                     <p>Cadastrar</p>
                                 </a>
@@ -117,7 +118,7 @@
                          @endcan
                          @can('listar comite')
                             <li class="nav-item">
-                                <a href="{{route('admin.comite.listarpautas')}}" class="nav-link">
+                                <a href="{{route('admin.posts.index')}}" class="nav-link">
                                     <i class="far fa fa-comments nav-icon"></i>
                                     <p>Listar tudo</p>
                                 </a>

@@ -49,7 +49,7 @@ class PermissionController extends Controller
             return redirect()->route('admin.permissions.create');
         }
 
-        Echo "deu merda";
+        Echo "deu ruim, chama o TI";
     }
 
     /**

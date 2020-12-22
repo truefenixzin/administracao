@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Seja Bem-Vindo(a)</h1>
+
             </div>
             <div class="col-sm-6">
 
@@ -18,11 +18,12 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">TÍTULo</h3>
+                <h3 class="card-title">Intranet</h3>
             </div>
 
             <div class="card-body">
-                TEXTO EXEMPLO
+                <h2><p>Aqui você ficá por dentro de tudo e pode realizar o cadastro de sua pauta no comitê.</p>
+                <p>Fique ligado nos avisos do RH e também nas notícias da supervisão</p></h2>
             </div>
 
             <!-- /.card-body -->
