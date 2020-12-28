@@ -21,7 +21,7 @@
     <div class="dash_login_left">
         <article class="dash_login_left_box">
             <header class="dash_login_box_headline">
-                <div class="dash_login_box_headline_logo icon-money icon-notext"></div>
+                <div class="dash_login_box_headline_logo  icon-notext icon-credit-card"></div>
                 <h1>Login</h1>
             </header>
 

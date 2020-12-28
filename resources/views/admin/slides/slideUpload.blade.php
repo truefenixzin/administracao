@@ -23,11 +23,22 @@
 
             <div class="card-body">
 
-                <form action="{{route('admin.slides.store')}}" method="post" autocomplete="off" enctype="multipart/form-data" >
+                <form action="{{route('admin.slides.store')}}" method="post" autocomplete="off"
+                      enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label for="title">Título:</label>
-                        <input type="text" class="form-control" id="title" name="title">
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="title">Título:</label>
+                                <input type="text" class="form-control" id="title" name="title">
+                            </div>
+                            <div class="col-6">
+                                <label>Arquivo:</label>
+                                <div class="form-input">
+                                    <input type="file" class="form-control" name="cover">
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-group">
@@ -42,21 +53,16 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="form-group">
-                        <label>Arquivo:</label>
-                        <div class="input-group">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="exampleInputFile">
-                                <label class="custom-file-label" for="exampleInputFile">Escolha seu arquivo</label>
-                            </div>
-                        </div>
+                        <label>Mensagem:</label>
+                        <input type="text" class="form-control" name="message">
                     </div>
+
+
                     <div class="text-center">
                         <button class="btn btn-lg btn-success bg-gradient-success ">Salvar</button>
                     </div>
                 </form>
-
             </div>
 
             <!-- /.card-body -->
