@@ -22,7 +22,8 @@
             </div>
 
             <div class="card-body">
-                <form action="{{route('admin.users.update',  ['user' => $user->id])}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('admin.users.update',  ['user' => $user->id])}}" method="post"
+                      enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <input type="hidden" name="id" value="{{ $user->id }}">
@@ -31,11 +32,13 @@
                         <div class="row">
                             <div class="col-6">
                                 <label for="nome">Nome:</label>
-                                <input type="text" class="form-control" id="nome" name="nome" value="{{ $user->name }}"/>
+                                <input type="text" class="form-control" id="nome" name="nome"
+                                       value="{{ $user->name }}"/>
                             </div>
                             <div class="col-6">
                                 <label for="sobrenome">Sobrenome:</label>
-                                <input type="text" class="form-control" id="sobrenome" name="sobrenome" value="{{$user->lastname}}">
+                                <input type="text" class="form-control" id="sobrenome" name="sobrenome"
+                                       value="{{$user->lastname}}">
                             </div>
                         </div>
                     </div>
@@ -44,14 +47,19 @@
                         <div class="row">
                             <div class="col-6">
                                 <label for="email">E-mail:</label>
-                                <input type="email" class="form-control" id="email" name="email" value="{{$user->email}}">
+                                <input type="email" class="form-control" id="email" name="email"
+                                       value="{{$user->email}}">
                             </div>
                             <div class="col-6">
-                                <label for="nivel">Nível de acesso:</label>
-                                <select class="form-control">
-                                    <option>Usuário</option>
-                                    <option>Administrador</option>
-                                </select>
+                                @if(isset($roles) && $roles->count() > 0)
+                                    <label for="roles">Nível de acesso:</label>
+                                    <select name="roles" id="roles" class="form-control">
+                                        @foreach($roles as $role)
+                                            <option id="role{{$role->id}}"
+                                                    value="{{$role->id}}">{{$role->name}}</option>
+                                        @endforeach
+                                    </select>
+                                @endif
                             </div>
                         </div>
                     </div>

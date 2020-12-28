@@ -91,9 +91,11 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+        $roles = Role::orderBy('name')->get();
         $user = User::where('id', $id)->first();
         return view('admin.users.editar', [
-            'user' => $user
+            'user' => $user,
+            'roles' => $roles
         ]);
     }
 
@@ -106,6 +108,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        dd($request->all());
         $user = User::where('id', $id)->first();
 
 
