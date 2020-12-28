@@ -114,14 +114,17 @@ class UserController extends Controller
             $user->cover = '';
         }
 
+
         $user->name = $request->nome;
         $user->lastname = $request->sobrenome;
-
+        $user->email = $request->email;
+        $user->password = bcrypt($request->senha);
 
         if (!empty($request->file('cover'))) {
             $user->cover = $request->file('cover')->store('user');
         }
-        $result=$user->save();
+
+        $result = $user->save();
 
         if (!empty($request->roles)) {
 //            dd($request->all());
@@ -139,7 +142,9 @@ class UserController extends Controller
         if ($result) {
             return redirect()->route('admin.users.edit');
         }
-        
+
+        Echo "algo deu errado";
+
 
     }
 
