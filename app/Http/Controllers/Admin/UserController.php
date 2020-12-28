@@ -121,8 +121,25 @@ class UserController extends Controller
         if (!empty($request->file('cover'))) {
             $user->cover = $request->file('cover')->store('user');
         }
-        $user->save();
-        var_dump($user);
+        $result=$user->save();
+
+        if (!empty($request->roles)) {
+//            dd($request->all());
+//            foreach ($request->roles as $role){
+            $userRoles[] = Role::whereId($request->roles)->first();
+
+//            }
+        }
+        if (isset($userRoles) && !empty($userRoles)) {
+            $user->assignRole($userRoles);
+        } else {
+            echo "algo deu errado e está vazio";
+        }
+
+        if ($result) {
+            return redirect()->route('admin.users.edit');
+        }
+        
 
     }
 
