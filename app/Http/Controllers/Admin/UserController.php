@@ -143,7 +143,7 @@ class UserController extends Controller
         }
 
         if ($result) {
-            return redirect()->route('admin.users.edit');
+            return redirect()->route('admin.users.create');
         }
 
         Echo "algo deu errado";
