@@ -121,7 +121,10 @@ class UserController extends Controller
         $user->name = $request->nome;
         $user->lastname = $request->sobrenome;
         $user->email = $request->email;
-        $user->password = bcrypt($request->senha);
+        if (!empty($request->senha)) {
+            $user->password = bcrypt($request->senha);
+        }
+
 
         if (!empty($request->file('cover'))) {
             $user->cover = $request->file('cover')->store('user');
