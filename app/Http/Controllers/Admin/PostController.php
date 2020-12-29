@@ -52,7 +52,8 @@ class PostController extends Controller
             return redirect(route('admin.posts.create'))
                 ->withErrors($validate)
                 ->withInput();
-        } else {
+        }
+        else {
             $user = Auth::user();
             $post = new Post();
             $post->title = $request->title;
@@ -62,11 +63,10 @@ class PostController extends Controller
             $result = $post->save();
             if ($result) {
                 return redirect()->route('admin.posts.create')->withInput()->withErrors(['success' => 'Cadastro realizado com sucesso']);
-            }
 
-            return redirect()->route('admin.posts.create')->withInput()->withErrors();
         }
-
+        return redirect()->route('admin.posts.create')->withInput()->withErrors();
+    }
     }
 
     /**

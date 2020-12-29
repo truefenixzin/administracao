@@ -26,34 +26,33 @@
 </head>
 <body>
 <div class="bd-example">
+
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            @foreach($slides as $index => $slide)
+                <li data-target="#carouselExampleCaptions" data-slide-to="{{$index}}"
+                    @if($index === 0)
+                    class="active">
+                    @endif
+                </li>
+            @endforeach
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="{{asset('site/img/bg-showcase-3.jpg')}}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Em construção!</h5>
-                    <p>Em breve uma nova ferramenta!</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="{{asset('site/img/bg-showcase-1.jpg')}}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Até na palma da mão!</h5>
-                    <p>Intranet será funcional até mesmo acessando de um smartphone.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="{{asset('site/img/bg-showcase-2.jpg')}}" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Inovação!</h5>
-                    <p>Inovando para melhorar o nosso dia a dia.</p>
-                </div>
-            </div>
+
+            @foreach($slides as $index => $slide)
+                @if($index === 0)
+                    <div class="carousel-item active">
+                        <img src="{{\Illuminate\Support\Facades\Storage::url($slide->cover)}}" class="d-block w-100"
+                             alt="...">
+                    </div>
+                @endif
+                @if($index > 0)
+                    <div class="carousel-item">
+                        <img src="{{\Illuminate\Support\Facades\Storage::url($slide->cover)}}" class="d-block w-100"
+                             alt="...">
+                    </div>
+                @endif
+            @endforeach
         </div>
         <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

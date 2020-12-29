@@ -22,17 +22,56 @@
             </div>
 
             <div class="card-body">
-                <form action="{{route('admin.users.store')}}" method="post" autocomplete="off" enctype="multipart/form-data"> >
+                @error('success')
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-check"></i> Sucesso!</h5>
+                    {{ $message }}
+                </div>
+                @enderror
+
+                @error('title')
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
+                    {{ $message }}
+                </div>
+                @enderror
+
+                @error('sugestion')
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
+                    {{ $message }}
+                </div>
+                @enderror
+
+                @error('situation')
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
+                    {{ $message }}
+                </div>
+                @enderror
+
+                @error('error')
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
+                    {{ $message }}
+                </div>
+                @enderror
+                <form action="{{route('admin.users.store')}}" method="post" autocomplete="off" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <div class="row">
                             <div class="col-6">
                                 <label for="nome">Nome:</label>
-                                <input type="text" class="form-control" id="nome" name="nome">
+                                <input type="text" class="form-control" id="nome" name="nome" value="{{old('nome')}}">
                             </div>
                             <div class="col-6">
                                 <label for="sobrenome">Sobrenome:</label>
-                                <input type="text" class="form-control" id="sobrenome" name="sobrenome">
+                                <input type="text" class="form-control" id="sobrenome" name="sobrenome" value="{{old('sobrenome')}}" >
                             </div>
                         </div>
                     </div>
@@ -41,7 +80,7 @@
                         <div class="row">
                             <div class="col-6">
                                 <label for="email">E-mail:</label>
-                                <input type="email" class="form-control" id="email" name="email">
+                                <input type="email" class="form-control" id="email" name="email" value="{{old('email')}}">
                             </div>
                             <div class="col-6">
                                 @if(isset($roles) && $roles->count() > 0)

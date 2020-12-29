@@ -43,13 +43,24 @@ class UserController extends Controller
     public function store(Request $request)
     {
 
-//        dd($request->all());
+//       dd($request->all());
         $user = new User();
         $user->name = $request->nome;
         $user->lastname = $request->sobrenome;
         $user->email = $request->email;
+        if (!$request->repetesenha === $request->senha )
+        {
+            return back()->withInput()->withErrors(['error'=>'senhas não conferem']);
+        }
+        $user->password = bcrypt($request->senha);
+        if (!empty($request->file('cover'))) {
+            $user->cover = $request->file('cover')->store('user');
+        }
+
         $user->password = bcrypt($request->senha);
         $result = $user->save();
+
+
 
         if (!empty($request->roles)) {
 //            dd($request->all());

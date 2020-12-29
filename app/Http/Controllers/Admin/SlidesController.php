@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Slide;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class SlidesController extends Controller
 {
@@ -30,18 +33,38 @@ class SlidesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        dd($request->all());
+
+        $user = Auth::user();
+        $slide = New Slide();
+        if (!empty($request->file('cover'))) {
+            Storage::delete($slide->cover);
+            $slide->cover = '';
+        }
+        $slide->title = $request->title;
+        $slide->dtini = $request->dtini;
+        $slide->dtfim = $request->dtfim;
+        // $slide->cover = $request->cover;
+        $slide->message = $request->message;
+        $slide->author = $user->id;
+
+        if (!empty($request->file('cover'))) {
+            $slide->cover = $request->file('cover')->store('public/slides');
+        }
+        $result = $slide->save();
+        dd($result);
+
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -52,7 +75,7 @@ class SlidesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -63,8 +86,8 @@ class SlidesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -75,7 +98,7 @@ class SlidesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
