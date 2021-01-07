@@ -30,20 +30,17 @@
                             <th>Título</th>
                             <th>Data cadastro</th>
                             <th>Ultima atualização</th>
-                            <th>Editar / Excluir</th>
+                            <th>Autor</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($posts as $post)
                             <tr>
                                 <td>{{$post->id}}</td>
-                                <td>{{$post->title}}</td>
+                                <td><a href="{{route('admin.posts.show', $post->id)}}">{{$post->title}}</a></td>
                                 <td>{{date_format($post->created_at,'d/m/Y H:m:s')}}</td>
                                 <td>{{date_format($post->updated_at,'d/m/Y H:m:s')}}</td>
-                                <td>
-                                    <button class="btn btn-large btn-warning">Editar</button>
-                                    <button class="btn btn-large btn-danger">Excluir</button>
-                                </td>
+                                <td>{{$post->author}}</td>
                             </tr>
                         @endforeach
                         </tbody>

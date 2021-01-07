@@ -18,46 +18,47 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Cadastro Pauta Comitê</h3>
+                <h3 class="card-title">Editar Pauta Comitê</h3>
             </div>
 
             <div class="card-body">
-                @error('success')
-                <div class="alert alert-success alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <h5><i class="icon fas fa-check"></i>  {{ $message }}</h5>
+
+                <div class="form-group">
+                    <label for="title">Título:</label>
+                    <input type="text" class="form-control" id="title" name="title" value="{{$post->title}}" readonly>
                 </div>
 
-                @enderror
-                @error('error')
-                <div class="alert alert-danger alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <h5><i class="icon fas fa-ban"></i>  {{ $message }}</h5>
+                <div class="form-group">
+                    <label for="subtitle">Situação:</label>
+                    <textarea style="resize: none" class="form-control" rows="5" id="situation"
+                              name="situation" readonly>{{$post->situation}}</textarea>
                 </div>
 
-                @enderror
-                <form action="{{route('admin.posts.store')}}" method="post" autocomplete="off">
-                    @csrf
-                    <div class="form-group">
-                        <label for="title">Título:</label>
-                        <input type="text" class="form-control" id="title" name="title">
-                    </div>
+                <div class="form-group">
+                    <label for="description">Sugestão:</label>
+                    <textarea style="resize: none" class="form-control" rows="5" id="sugestion"
+                              name="sugestion" readonly>{{$post->sugestion}}</textarea>
+                </div>
+                <div class="text-center">
+                    <div class="row">
 
-                    <div class="form-group">
-                        <label for="subtitle">Situação:</label>
-                        <textarea style="resize: none" class="form-control" rows="5" id="situation"
-                                  name="situation"></textarea>
+                        <div class="col-lg-4">
+                            <a href="{{route('admin.posts.index')}}">
+                                <button class="btn btn btn-primary ">Voltar</button>
+                            </a>
+                        </div>
+                        <div class="col-lg-4">
+                            <a href="{{route('admin.posts.index')}}">
+                                <button class="btn btn btn-warning ">Editar</button>
+                            </a>
+                        </div>
+                        <div class="col-lg-4">
+                            <a href="{{route('admin.posts.index')}}">
+                                <button class="btn btn btn-danger ">Excluir</button>
+                            </a>
+                        </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="description">Sugestão:</label>
-                        <textarea style="resize: none" class="form-control" rows="5" id="sugestion"
-                                  name="sugestion"></textarea>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-lg btn-success ">Cadastrar</button>
-                    </div>
-                </form>
+                </div>
             </div>
 
             <!-- /.card-body -->

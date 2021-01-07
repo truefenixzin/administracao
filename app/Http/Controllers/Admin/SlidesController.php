@@ -38,26 +38,47 @@ class SlidesController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = [
+            'title' => 'required|min:3|max:191',
+            'dtini' => 'required|min:3|max:191',
+            'dtfim' => 'required|min:3|max:191',
+            'message' => 'required|min:3|max:191',
+            'cover' => 'required|mimes:jpg,jpeg,png',
 
-        $user = Auth::user();
-        $slide = New Slide();
-        if (!empty($request->file('cover'))) {
-            Storage::delete($slide->cover);
-            $slide->cover = '';
+        ];
+
+        $validate = Validator::make($request->all(), $rules);
+
+        if ($validate->fails()) {
+            return redirect(route('admin.posts.create'))
+                ->withErrors($validate)
+                ->withInput();
+        } else {
+
+            $user = Auth::user();
+            $slide = New Slide();
+            if (!empty($request->file('cover'))) {
+                Storage::delete($slide->cover);
+                $slide->cover = '';
+            }
+            $slide->title = $request->title;
+            $slide->dtini = $request->dtini;
+            $slide->dtfim = $request->dtfim;
+            // $slide->cover = $request->cover;
+            $slide->message = $request->message;
+            $slide->author = $user->id;
+
+            if (!empty($request->file('cover'))) {
+                $slide->cover = $request->file('cover')->store('public/slides');
+            }
+            $result = $slide->save();
+
+            if ($result) {
+                return redirect()->route('admin.slides.create')->withInput()->withErrors(['success' => 'Cadastro realizado com sucesso']);
+
+            }
+            return redirect()->route('admin.slides.create')->withInput()->withErrors();
         }
-        $slide->title = $request->title;
-        $slide->dtini = $request->dtini;
-        $slide->dtfim = $request->dtfim;
-        // $slide->cover = $request->cover;
-        $slide->message = $request->message;
-        $slide->author = $user->id;
-
-        if (!empty($request->file('cover'))) {
-            $slide->cover = $request->file('cover')->store('public/slides');
-        }
-        $result = $slide->save();
-        dd($result);
-
 
     }
 

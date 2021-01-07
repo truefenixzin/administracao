@@ -39,21 +39,17 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        if (!auth()->user()->hasPermissionTo('cadastrar comite')) {
+            abort(403);
+        }
 
-        $rules = [
+        $validatedData = $request->validate([
             'title' => 'required|min:3|max:191',
             'situation' => 'required|min:3|max:191',
             'sugestion' => 'required|min:3|max:191',
-        ];
+        ]);
 
-        $validate = Validator::make($request->all(), $rules);
-
-        if ($validate->fails()) {
-            return redirect(route('admin.posts.create'))
-                ->withErrors($validate)
-                ->withInput();
-        }
-        else {
+        try {
             $user = Auth::user();
             $post = new Post();
             $post->title = $request->title;
@@ -61,12 +57,15 @@ class PostController extends Controller
             $post->sugestion = $request->sugestion;
             $post->author = $user->id;
             $result = $post->save();
-            if ($result) {
-                return redirect()->route('admin.posts.create')->withInput()->withErrors(['success' => 'Cadastro realizado com sucesso']);
 
+            return redirect()
+                ->route('admin.posts.create')
+                ->withErrors(['success' => 'Cadastro realizado com sucesso']);
+
+        } catch (\Exception $exception) {
+            return redirect()->route('admin.posts.create')->withInput()->withErrors();
         }
-        return redirect()->route('admin.posts.create')->withInput()->withErrors();
-    }
+
     }
 
     /**
@@ -77,6 +76,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
+        if (!auth()->user()->hasPermissionTo('listar comite')) {
+            abort(403);
+        }
         $post = Post::where('id', $id)->first();
         return view('admin.comite.vizualisar', [
             'post' => $post

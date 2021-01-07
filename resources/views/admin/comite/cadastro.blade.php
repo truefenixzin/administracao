@@ -73,13 +73,13 @@
                     <div class="form-group">
                         <label for="subtitle">Situação:</label>
                         <textarea style="resize: none" class="form-control" rows="5" id="situation"
-                                  name="situation" value="{{old('situation')}}"></textarea>
+                                  name="situation" value="">{{old('situation')}}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="description">Sugestão:</label>
                         <textarea style="resize: none" class="form-control" rows="5" id="sugestion"
-                                  name="sugestion" value="{{old('sugestion')}}" ></textarea>
+                                  name="sugestion" value="" >{{old('sugestion')}}</textarea>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-lg btn-success ">Cadastrar</button>
