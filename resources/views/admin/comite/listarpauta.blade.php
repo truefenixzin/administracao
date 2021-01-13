@@ -40,7 +40,7 @@
                                 <td><a href="{{route('admin.posts.show', $post->id)}}">{{$post->title}}</a></td>
                                 <td>{{date_format($post->created_at,'d/m/Y H:m:s')}}</td>
                                 <td>{{date_format($post->updated_at,'d/m/Y H:m:s')}}</td>
-                                <td>{{$post->author}}</td>
+                                <td>{{$post->autor->name}}</td>
                             </tr>
                         @endforeach
                         </tbody>

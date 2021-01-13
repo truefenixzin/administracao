@@ -22,6 +22,61 @@
             </div>
 
             <div class="card-body">
+                @error('success')
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-check"></i> Sucesso!</h5>
+                    {{ $message }}
+                </div>
+                @enderror
+
+                @error('title')
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
+                    {{ $message }}
+                </div>
+                @enderror
+
+                @error('dtini')
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
+                    {{ $message }}
+                </div>
+                @enderror
+
+                @error('dtfim')
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
+                    {{ $message }}
+                </div>
+                @enderror
+
+                @error('cover')
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
+                    {{ $message }}
+                </div>
+                @enderror
+
+                @error('message')
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
+                    {{ $message }}
+                </div>
+                @enderror
+
+                @error('error')
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
+                    {{ $message }}
+                </div>
+                @enderror
 
                 <form action="{{route('admin.slides.store')}}" method="post" autocomplete="off"
                       enctype="multipart/form-data">
@@ -30,7 +85,8 @@
                         <div class="row">
                             <div class="col-6">
                                 <label for="title">Título:</label>
-                                <input type="text" class="form-control" id="title" name="title">
+                                <input type="text" class="form-control" id="title" name="title"
+                                       value="{{old('title')}}">
                             </div>
                             <div class="col-6">
                                 <label>Arquivo:</label>
@@ -43,22 +99,22 @@
 
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-3">
                                 <label for="nome">Data Início:</label>
-                                <input type="date" class="form-control" placeholder=".col-5" name="dtini">
+                                <input type="date" class="form-control" name="dtini"
+                                       value="{{old('dtini')}}">
+                            </div>
+                            <div class="col-lg-3">
+                                <label for="nome">Data Fim:</label>
+                                <input type="date" class="form-control" name="dtfim"
+                                       value="{{old('dtfim')}}">
                             </div>
                             <div class="col-6">
-                                <label for="nome">Data Fim:</label>
-                                <input type="date" class="form-control" placeholder=".col-5" name="dtfim">
+                                <label>Mensagem:</label>
+                                <input type="text" class="form-control" name="message" value="{{old('message')}}">
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label>Mensagem:</label>
-                        <input type="text" class="form-control" name="message">
-                    </div>
-
-
                     <div class="text-center">
                         <button class="btn btn-lg btn-success bg-gradient-success ">Salvar</button>
                     </div>

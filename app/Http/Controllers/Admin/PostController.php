@@ -17,8 +17,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return view('admin.comite.listarpauta', compact('posts'));
+        $posts = Post::with('autor')->get();
+//        dd($posts);
+        return view('admin.comite.listarpauta', compact('posts' ));
     }
 
     /**
@@ -80,9 +81,8 @@ class PostController extends Controller
             abort(403);
         }
         $post = Post::where('id', $id)->first();
-        return view('admin.comite.vizualisar', [
-            'post' => $post
-        ]);
+        $postauthor = $post->autor()->get()->first();
+        return view('admin.comite.vizualisar',compact(['post', 'postauthor']));
     }
 
     /**
@@ -93,7 +93,12 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+//        if (!auth()->user()->hasPermissionTo('editar comite')) {
+//            abort(403);
+//        }
+        $post = Post::where('id', $id)->first();
+        return view('admin.comite.editar',compact('post'));
+
     }
 
     /**
@@ -105,7 +110,12 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::where('id', $id)->first();
+        $post->update($request->all());
+        return redirect()
+            ->route('admin.posts.edit', $post->id)
+            ->withErrors(['success' => 'Alteração realizada com sucesso']);
+
     }
 
     /**
