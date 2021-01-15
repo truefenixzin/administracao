@@ -28,20 +28,17 @@
                         <tr>
                             <th style="width: 10px">#</th>
                             <th>Nome</th>
-                            <th>E-mail</th>
-                            <th>Nível</th>
-                            <th>Editar / Excluir</th>
+                            <th>Login</th>
+                            <th>Ultimo Login</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($users as $user)
                             <tr>
                                 <td>{{ $user->id }}</td>
-                                <td>{{$user->name}}</td>
+                                <td><a href="{{route('admin.users.edit', $user->id)}}">{{$user->name}}</a></td>
                                 <td>{{$user->email}}</td>
-                                <td> </td>
-                                <td><a  href="{{ route('admin.users.edit', ['user' => $user->id]) }}"><button class="btn btn-large btn-warning">Editar</button></a>
-                                | <button class="btn btn-large btn-danger">Excluir</button></td>
+                                <td>{{!$user->last_login_at === '' or nullValue() ? date_format($user->last_login_at,'d/m/Y H:m:s') : '' }}</td>
                             </tr>
                         @endforeach
                         </tbody>

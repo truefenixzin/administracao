@@ -63,9 +63,11 @@
                             </a>
                         </div>
                         <div class="col-lg-4">
-                            <a href="{{route('admin.posts.index')}}">
-                                <button class="btn btn btn-danger ">Excluir</button>
-                            </a>
+                            <form action="{{route('admin.posts.destroy', $post->id)}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn btn-danger ">Excluir</button>
+                            </form>
                         </div>
                     </div>
                 </div>

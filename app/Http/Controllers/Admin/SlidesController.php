@@ -44,9 +44,9 @@ class SlidesController extends Controller
         }
 
         $validatedData = $request->validate([
-            'title' => 'required',
+            'title' => 'required|unique:posts',
             'dtini' => 'required',
-            'dtfim' => 'required',
+            'dtfim' => 'required|after_or_equal:dtini',
             'message' => 'required',
             'cover' => 'required|mimes:jpg,bmp,png',
 
