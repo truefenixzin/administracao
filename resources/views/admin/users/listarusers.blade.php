@@ -38,7 +38,7 @@
                                 <td>{{ $user->id }}</td>
                                 <td><a href="{{route('admin.users.edit', $user->id)}}">{{$user->name}}</a></td>
                                 <td>{{$user->email}}</td>
-                                <td>{{!$user->last_login_at === '' or nullValue() ? date_format($user->last_login_at,'d/m/Y H:m:s') : '' }}</td>
+{{--                                <td>{{!$user->last_login_at === '' or nullValue() ? date_format($user->last_login_at,'d/m/Y H:m:s') : '' }}</td>--}}
                             </tr>
                         @endforeach
                         </tbody>
