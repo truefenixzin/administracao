@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
+
 
 class AuthController extends Controller
 {
@@ -86,7 +88,7 @@ class AuthController extends Controller
     {
         $user = User::where('id', Auth::user()->id);
         $user->update([
-            'last_login_at' => date('Y-m-d H:i:s'),
+            'last_login_at' => Carbon::now()->toDateTimeString(),
             'last_login_ip' => $ip
         ]);
     }

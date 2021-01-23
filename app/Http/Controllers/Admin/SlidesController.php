@@ -17,7 +17,8 @@ class SlidesController extends Controller
      */
     public function index()
     {
-        //
+        $slides = Slide::all();
+        return view('admin.slides.ListarSlides', compact('slides'));
     }
 
     /**
@@ -101,7 +102,8 @@ class SlidesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $slide = Slide::where('id', $id)->first();
+        return view('admin.slides.EditarSlide',compact('slide'));
     }
 
     /**
@@ -113,7 +115,38 @@ class SlidesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if (!auth()->user()->hasPermissionTo('cadastrar comite')) {
+            abort(403);
+        }
+
+        $validatedData = $request->validate([
+            'title' => 'required|unique:posts',
+            'dtini' => 'required',
+            'dtfim' => 'required|after_or_equal:dtini',
+            'message' => 'required',
+
+        ]);
+
+        try {
+
+
+            $user = Auth::user();
+            $slide = Slide::where('id', $id)->first();
+            $slide->title = $request->title;
+            $slide->dtini = $request->dtini;
+            $slide->dtfim = $request->dtfim;
+            $slide->message = $request->message;
+            $slide->author = $user->id;
+            $result = $slide->save();
+
+            if ($result) {
+                return redirect()->route('admin.slides.edit', compact('slide'))->withErrors(['success' => 'Cadastro realizado com sucesso']);
+
+            }
+
+        } catch (\Exception $exception) {
+            return redirect()->route('admin.slides.edit', compact('slide'))->withInput()->withErrors(['error' => 'aconteceu um exceção']);
+        }
     }
 
     /**
@@ -124,6 +157,7 @@ class SlidesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Slide::find($id)->delete();
+        return redirect()->route('admin.slides.index');
     }
 }

@@ -18,7 +18,7 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Listagem de usuários Cadastradas</h3>
+                <h3 class="card-title">Listagem de Slides cadastrados</h3>
             </div>
 
             <div class="card-body">
@@ -26,19 +26,21 @@
                     <table class="table table-bordered text-center">
                         <thead>
                         <tr>
-                            <th style="width: 10px">#</th>
-                            <th>Nome</th>
-                            <th>Login</th>
-                            <th>Último login</th>
+                            <th>#</th>
+                            <th>Título</th>
+                            <th>Data início</th>
+                            <th>Data final</th>
+                            <th>Imagem</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($users as $user)
+                        @foreach($slides as $slide)
                             <tr>
-                                <td>{{ $user->id }}</td>
-                                <td><a href="{{route('admin.users.edit', $user->id)}}">{{$user->name}}</a></td>
-                                <td>{{$user->email}}</td>
-                                <td>{{\Carbon\Carbon::parse($user->last_login_at)->format('d/m/Y h:i:s')}}</td>
+                                <td class="align-middle"><b>{{$slide->id}}</b></td>
+                                <td class="align-middle"><b><a href="{{route('admin.slides.edit', $slide->id)}}">{{$slide->title}}</a></b></td>
+                                <td class="align-middle"><b>{{\Carbon\Carbon::parse($slide->dtini)->format('d/m/Y')}}</b></td>
+                                <td class="align-middle"><b>{{\Carbon\Carbon::parse($slide->dtfim)->format('d/m/Y')}}</b></td>
+                                <td class="align-middle"><img src="{{\Illuminate\Support\Facades\Storage::url($slide->cover)}}" class="img-fluid img-thumbnail"></td>
                             </tr>
                         @endforeach
                         </tbody>

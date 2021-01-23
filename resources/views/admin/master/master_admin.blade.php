@@ -95,6 +95,12 @@
                                     <p>Avisos (Slides)</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{route('admin.slides.index')}}" class="nav-link">
+                                    <i class="far fa fa-list-ul nav-icon"></i>
+                                    <p>Listar Avisos</p>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     @endcan
@@ -119,7 +125,7 @@
                          @can('listar comite')
                             <li class="nav-item">
                                 <a href="{{route('admin.posts.index')}}" class="nav-link">
-                                    <i class="far fa fa-comments nav-icon"></i>
+                                    <i class="far fa fa-list-ul nav-icon"></i>
                                     <p>Listar tudo</p>
                                 </a>
                             </li>
