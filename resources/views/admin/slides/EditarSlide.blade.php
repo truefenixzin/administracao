@@ -115,7 +115,7 @@
                                 <label>Imagem:</label>
                                 <div class="form-input">
 
-                                    <img src="{{\Illuminate\Support\Facades\Storage::url($slide->cover)}}" class="img-fluid img-thumbnail">
+                                    <img src="{{\Illuminate\Support\Facades\Storage::url(\App\Support\Cropper::thumb($slide->cover,300))}}" class="img-fluid img-thumbnail">
                                 </div>
                             </div>
                         </div>
