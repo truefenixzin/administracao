@@ -30,7 +30,7 @@
                 </div>
                 @enderror
 
-                @error('title')
+                @error('nome')
                 <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
@@ -38,7 +38,7 @@
                 </div>
                 @enderror
 
-                @error('sugestion')
+                @error('email')
                 <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
@@ -46,7 +46,7 @@
                 </div>
                 @enderror
 
-                @error('situation')
+                @error('sobrenome')
                 <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
@@ -54,14 +54,23 @@
                 </div>
                 @enderror
 
-                @error('error')
+                @error('senha')
                 <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
                     {{ $message }}
                 </div>
                 @enderror
-                <form action="{{route('admin.users.store')}}" method="post" autocomplete="off" enctype="multipart/form-data">
+
+                @error('repetesenha')
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
+                    {{ $message }}
+                </div>
+                @enderror
+                <form action="{{route('admin.users.store')}}" method="post" autocomplete="off"
+                      enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <div class="row">
@@ -71,7 +80,8 @@
                             </div>
                             <div class="col-6">
                                 <label for="sobrenome">Sobrenome:</label>
-                                <input type="text" class="form-control" id="sobrenome" name="sobrenome" value="{{old('sobrenome')}}" >
+                                <input type="text" class="form-control" id="sobrenome" name="sobrenome"
+                                       value="{{old('sobrenome')}}">
                             </div>
                         </div>
                     </div>
@@ -80,14 +90,16 @@
                         <div class="row">
                             <div class="col-6">
                                 <label for="email">E-mail:</label>
-                                <input type="email" class="form-control" id="email" name="email" value="{{old('email')}}">
+                                <input type="email" class="form-control" id="email" name="email"
+                                       value="{{old('email')}}">
                             </div>
                             <div class="col-6">
                                 @if(isset($roles) && $roles->count() > 0)
                                     <label for="roles">Nível de acesso:</label>
                                     <select name="roles" id="roles" class="form-control">
                                         @foreach($roles as $role)
-                                            <option id="role{{$role->id}}"  value="{{$role->id}}">{{$role->name}}</option>
+                                            <option id="role{{$role->id}}"
+                                                    value="{{$role->id}}">{{$role->name}}</option>
                                         @endforeach
                                     </select>
                                 @endif
@@ -99,33 +111,15 @@
                         <div class="row">
                             <div class="col-6">
                                 <label for="senha">Senha:</label>
-                                <input type="password" class="form-control" id="senha" name="senha">
+                                <input type="password" class="form-control" id="senha" name="senha" value="{{old('senha')}}">
                             </div>
                             <div class="col-6">
-                                <label for="repetesenha">Repita a senha:</label>
-                                <input type="password" class="form-control" id="repetesenha" name="repetesenha">
+                                <label for="repetesenha">Confirmar senha:</label>
+                                <input type="password" class="form-control" id="repetesenha" name="repetesenha" value="{{old('repetasenha')}}">
                             </div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-6">
-                                <label for="departamento">Departamento:</label>
-                                <input type="text" class="form-control" id="departamento" name="departamento">
-                            </div>
-                            <div class="col-6">
-                                <label for="avatar">Seu avatar:</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="cover" name="cover">
-                                        <label class="custom-file-label" for="cover">Escolha seu
-                                            arquivo</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="text-center">
                         <button type="submit" class="btn btn-lg btn-success bg-gradient-success ">Cadastrar</button>

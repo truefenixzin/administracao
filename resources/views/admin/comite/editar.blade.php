@@ -29,7 +29,6 @@
                         </a>
                     </div>
                 </div>
-
             </div>
 
             <div class="card-body">
@@ -98,13 +97,13 @@
                     </div>
                 </form>
             </div>
-        </div>
 
-        <!-- /.card-body -->
-        <div class="card-footer text-center">
-            Pherfil | Pherfiltec
-        </div>
-        <!-- /.card-footer-->
+
+            <!-- /.card-body -->
+            <div class="card-footer text-center">
+                Pherfil | Pherfiltec
+            </div>
+            <!-- /.card-footer-->
         </div>
         <!-- /.card -->
 

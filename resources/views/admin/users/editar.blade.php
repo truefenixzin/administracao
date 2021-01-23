@@ -17,23 +17,78 @@
 
         <!-- Default box -->
         <div class="card">
+
             <div class="card-header">
-                <h3 class="card-title">Cadastro de Usuários</h3>
+                <div class="row">
+                    <div class="col-lg-11">
+                        <h3 class="card-title">Edição de Usuários</h3>
+                    </div>
+
+                    <div class="col-lg-1">
+                        <a href="{{route('admin.users.index')}}">
+                            <button class="btn btn btn-primary">Voltar</button>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <div class="card-body">
-                <form action="{{route('admin.users.update',  ['user' => $user->id])}}" method="post"
-                      enctype="multipart/form-data">
-                    @csrf
-                    @method('PUT')
-                    <input type="hidden" name="id" value="{{ $user->id }}">
+                @error('success')
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-check"></i> Sucesso!</h5>
+                    {{ $message }}
+                </div>
+                @enderror
 
+                @error('nome')
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
+                    {{ $message }}
+                </div>
+                @enderror
+
+                @error('email')
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
+                    {{ $message }}
+                </div>
+                @enderror
+
+                @error('sobrenome')
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
+                    {{ $message }}
+                </div>
+                @enderror
+
+                @error('senha')
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
+                    {{ $message }}
+                </div>
+                @enderror
+
+                @error('repetesenha')
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
+                    {{ $message }}
+                </div>
+                @enderror
+                <form action="{{route('admin.users.update',$user->id)}}" method="post" autocomplete="off"
+                      enctype="multipart/form-data">
+                    @method('put')
+                    @csrf
                     <div class="form-group">
                         <div class="row">
                             <div class="col-6">
                                 <label for="nome">Nome:</label>
-                                <input type="text" class="form-control" id="nome" name="nome"
-                                       value="{{ $user->name }}"/>
+                                <input type="text" class="form-control" id="nome" name="nome" value="{{$user->name}}">
                             </div>
                             <div class="col-6">
                                 <label for="sobrenome">Sobrenome:</label>
@@ -48,9 +103,9 @@
                             <div class="col-6">
                                 <label for="email">E-mail:</label>
                                 <input type="email" class="form-control" id="email" name="email"
-                                       value="{{$user->email}}">
+                                       value={{$user->email}}>
                             </div>
-                            <div class="col-6">
+                            <div class=" col-6">
                                 @if(isset($roles) && $roles->count() > 0)
                                     <label for="roles">Nível de acesso:</label>
                                     <select name="roles" id="roles" class="form-control">
@@ -71,37 +126,18 @@
                                 <input type="password" class="form-control" id="senha" name="senha">
                             </div>
                             <div class="col-6">
-                                <label for="repetesenha">Repita a senha:</label>
+                                <label for="repetesenha">Confirmar senha:</label>
                                 <input type="password" class="form-control" id="repetesenha" name="repetesenha">
                             </div>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-6">
-                                <label for="departamento">Departamento:</label>
-                                <input type="text" class="form-control" id="departamento" name="departamento" value="">
-                            </div>
-                            <div class="col-6">
-                                <label for="avatar">Seu avatar:</label>
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="cover" name="cover">
-                                        <label class="custom-file-label" for="cover">Escolha seu
-                                            arquivo</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="text-center">
-                        <button type="submit" class="btn btn-lg btn-success bg-gradient-success ">Cadastrar</button>
+                        <button type="submit" class="btn btn-lg btn-success bg-gradient-success ">Editar</button>
                     </div>
-
                 </form>
             </div>
+
 
             <!-- /.card-body -->
             <div class="card-footer text-center">

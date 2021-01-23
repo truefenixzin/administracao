@@ -18,9 +18,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('admin.users.listarusers', [
-            'users' => $users
-        ]);
+        return view('admin.users.listarusers', compact('users'));
     }
 
     /**
@@ -42,44 +40,57 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-
-//       dd($request->all());
-        $user = new User();
-        $user->name = $request->nome;
-        $user->lastname = $request->sobrenome;
-        $user->email = $request->email;
-        if (!$request->repetesenha === $request->senha )
-        {
-            return back()->withInput()->withErrors(['error'=>'senhas não conferem']);
-        }
-        $user->password = bcrypt($request->senha);
-        if (!empty($request->file('cover'))) {
-            $user->cover = $request->file('cover')->store('user');
+        if (!auth()->user()->hasPermissionTo('cadastrar usuario')) {
+            abort(403);
         }
 
-        $user->password = bcrypt($request->senha);
-        $result = $user->save();
+        $validatedData = $request->validate([
+            'nome' => 'required|min:3|max:191',
+            'sobrenome' => 'required|min:3|max:191',
+            'email' => 'required|unique:users',
+            'senha' => 'required',
+            'repetesenha' => 'required|same:senha',
+
+        ]);
+
+        try {
+
+            $user = new User();
+            $user->name = $request->nome;
+            $user->lastname = $request->sobrenome;
+            $user->email = $request->email;
+            if (!$request->repetesenha === $request->senha) {
+                return back()->withInput()->withErrors(['error' => 'senhas não conferem']);
+            }
+            $user->password = bcrypt($request->senha);
+            if (!empty($request->file('cover'))) {
+                $user->cover = $request->file('cover')->store('user');
+            }
+
+            $user->password = bcrypt($request->senha);
+            $result = $user->save();
 
 
-
-        if (!empty($request->roles)) {
+            if (!empty($request->roles)) {
 //            dd($request->all());
 //            foreach ($request->roles as $role){
-            $userRoles[] = Role::whereId($request->roles)->first();
+                $userRoles[] = Role::whereId($request->roles)->first();
 
 //            }
-        }
-        if (isset($userRoles) && !empty($userRoles)) {
-            $user->assignRole($userRoles);
-        } else {
-            echo "algo deu errado e está vazio";
+            }
+            if (isset($userRoles) && !empty($userRoles)) {
+                $user->assignRole($userRoles);
+            } else {
+                echo "algo deu errado e está vazio";
+            }
+
+            if ($result) {
+                return redirect()->route('admin.users.create')->withErrors(['success' => 'Cadastro realizado com sucesso']);
+            }
+        } catch (\Exception $exception) {
+            return redirect()->route('admin.users.create')->withInput()->withErrors(['error' => 'aconteceu um exceção']);
         }
 
-        if ($result) {
-            return redirect()->route('admin.users.create');
-        }
-
-        Echo "algo deu errado";
 
     }
 
@@ -120,7 +131,52 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
 
-        $user = User::where('id', $id)->first();
+        if (!auth()->user()->hasPermissionTo('cadastrar usuario')) {
+            abort(403);
+        }
+
+        $validatedData = $request->validate([
+            'nome' => 'required|min:3|max:191',
+            'sobrenome' => 'required|min:3|max:191',
+            'email' => 'required',
+            'senha' => 'required|min:3|max:191',
+            'repetesenha' => 'required|same:senha',
+
+        ]);
+
+        try {
+            $user = User::where('id', $id)->first();
+            $user->name = $request->nome;
+            $user->lastname = $request->sobrenome;
+            $user->email = $request->email;
+            $user->password = bcrypt($request->senha);
+
+            if (!empty($request->file('cover'))) {
+                $user->cover = $request->file('cover')->store('user');
+            }
+            $result = $user->save();
+
+
+            if (!empty($request->roles)) {
+                $userRoles[] = Role::whereId($request->roles)->first();
+//            }
+            }
+
+            if (isset($userRoles) && !empty($userRoles)) {
+                $user->assignRole($userRoles);
+            }
+            else {
+                echo "algo deu errado e está vazio";
+            }
+
+            if ($result) {
+                return redirect()->route('admin.users.edit', $user->id)->withErrors(['success' => 'Cadastro realizado com sucesso']);
+            }
+        } catch (\Exception $exception) {
+            return redirect()->route('admin.users.edit', $user->id)->withInput()->withErrors(['error' => 'aconteceu um exceção']);
+        }
+
+
 
 
         if (!empty($request->file('cover'))) {
@@ -157,10 +213,8 @@ class UserController extends Controller
         }
 
         if ($result) {
-            return redirect()->route('admin.users.create');
+            return redirect()->route('admin.users.create')->withErrors(['success' => 'Cadastro realizado com sucesso']);;
         }
-
-        Echo "algo deu errado";
 
 
     }
