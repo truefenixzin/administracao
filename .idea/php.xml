@@ -112,6 +112,7 @@
       <path value="$PROJECT_DIR$/vendor/rosell-dk/webp-convert" />
       <path value="$PROJECT_DIR$/vendor/rosell-dk/image-mime-type-guesser" />
       <path value="$PROJECT_DIR$/vendor/coffeecode/cropper" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
     </include_path>
   </component>
   <component name="PhpUnit">
