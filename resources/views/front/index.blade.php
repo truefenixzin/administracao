@@ -3,7 +3,7 @@
     <div class="container marketing">
         <!--Inicio dos destaques -->
         <div class="row">
-            <h1 class="text-center">Destaques do mês</h1>
+            <h1 class="text-center"></h1>
             <div class="col-lg-4">
                 <p></p>
             </div><!-- /.col-lg-4 -->
