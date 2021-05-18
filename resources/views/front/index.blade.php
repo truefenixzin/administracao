@@ -1,76 +1,102 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Rodrigo dos Santos">
-    <meta name="author" content="Rodrigo dos Santos">
-    <link rel="icon" href="{{asset('site/img/pherfil_logo.png')}}">
-    <title>Pherfil - Intranet</title>
-    <!-- Bootstrap core CSS -->
-    <link href="{{asset('site/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <!-- Custom fonts for this template -->
-    <link href="{{asset('site/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
-    <link href="{{asset('site/vendor/simple-line-icons/css/simple-line-icons.css')}}" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
-          type="text/css">
-    <!-- Custom styles for this template -->
-    <link href="{{asset('site/css/landing-page.min.css')}}" rel="stylesheet">
-    <link href="{{asset('site/css/carousel.css')}}" rel="stylesheet">
-    <nav class="navbar navbar-light bg-light static-top">
-        <div class="container">
-            <a class="navbar-brand" href="">PHERFIL | PHERFILTEC</a>
-            <a class="btn btn-primary" href="{{route('admin.login')}}">Login</a>
-        </div>
-    </nav>
-</head>
-<body>
-<div class="bd-example">
+@extends('front.master.master')
+@section('content')
 
-    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
+    <!-- Inicio do carousel-->
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
             @foreach($slides as $index => $slide)
-                <li data-target="#carouselExampleCaptions" data-slide-to="{{$index}}"
-                    @if($index === 0)
-                    class="active">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="{{$index}}" aria-current="true"
+                        aria-label="Slide {{$index}}"
+                        @if($index === 0)
+                        class="active" aria-current="true">
                     @endif
-                </li>
+                </button>
             @endforeach
-        </ol>
+        </div>
         <div class="carousel-inner">
-
             @foreach($slides as $index => $slide)
                 @if($index === 0)
                     <div class="carousel-item active">
-                        <img src="{{\Illuminate\Support\Facades\Storage::url($slide->cover)}}" class="d-block w-100"
-                             alt="...">
+                        <img src="{{\Illuminate\Support\Facades\Storage::url($slide->cover)}}"
+                             class="d-block w-100">
                     </div>
                 @endif
                 @if($index > 0)
-                    <div class="carousel-item">
-                        <img src="{{\Illuminate\Support\Facades\Storage::url($slide->cover)}}" class="d-block w-100"
-                             alt="...">
+                    <div class="carousel-item img-fluid">
+                        <img src="{{\Illuminate\Support\Facades\Storage::url($slide->cover)}}"
+                             class="d-block w-100">
                     </div>
                 @endif
             @endforeach
+
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+            <span class="visually-hidden">Proximo</span>
+        </button>
     </div>
-</div>
-</body>
-<footer class="align-content-center text-center">
-    <p class="text-muted small mb-4 mb-lg-0">&copy; PHERFIL | PHERFILTEC - {{date('Y')}}.
-        <br/>All Rights Reserved.<br/>
-        CNPJ: 03.079.700/0001-01</p>
-</footer>
-<!-- Bootstrap core JavaScript -->
-<script src="{{asset('site/vendor/jquery/jquery.min.js')}}"></script>
-<script src="{{asset('site/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-</html>
+    <!-- Fim do carousel-->
+
+
+
+    <!--Inicio do código de corpo-->
+    <div class="container marketing">
+        <!--Inicio dos destaques -->
+        <div class="row">
+            <h1 class="text-center">Destaques do mês</h1>
+
+            @foreach($workers as $worker)
+                <div class="col-lg-4">
+                    <img class="rounded-circle" src="{{\Illuminate\Support\Facades\Storage::url($worker->cover)}}"
+                         alt="Generic placeholder image" width="140" height="140">
+                    <h2>{{$worker->name}}</h2>
+                    <p>{{$worker->comments}}</p>
+                </div><!-- /.col-lg-4 -->
+            @endforeach
+        </div>
+        <!--Fim dos destaques -->
+
+        <!-- COMEÇAM AS MENCIONADAS FEATUREZINHAS xD -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">Primeiro título de featurezinhas. <span class="text-muted">Supreendente, não?!</span>
+                </h2>
+                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
+                    euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
+                    tellus ac cursus commodo.</p>
+            </div>
+            <div class="col-md-5">
+                <img src="{{\Illuminate\Support\Facades\Storage::url($slide    ->cover)}}" class="featurette-image img-fluid mx-auto"
+                     data-src="holder.js/500x500/auto"
+                     alt="Generic placeholder image">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading">Aêêê, moleque! <span class="text-muted">Tá legal ou não tá?</span></h2>
+                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
+                    euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
+                    tellus ac cursus commodo.</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <img src="{{asset('assets/brand/img/values-2.png')}}" class="featurette-image img-fluid mx-auto"
+                     data-src="holder.js/500x500/auto"
+                     alt="Generic placeholder image">
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+
+    </div><!-- /.container -->
+@endsection

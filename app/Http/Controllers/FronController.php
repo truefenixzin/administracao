@@ -17,13 +17,28 @@ class FronController extends Controller
             ->whereDate('dtfim', '>=', now())
             ->get();
 
+
+
         if (!$slides) {
             return view('front.index', [
                 'slides' => 'Não tem slide a ser exibido.'
             ]);
         }
+
+        $workers = DB::table('workershighlights')
+            ->whereDate('dtini', '<=', now())
+            ->whereDate('dtfim', '>=', now())
+            ->get();
+
+        if (!$workers) {
+            return view('front.index', [
+                'workers' => 'Não tem slide a ser exibido.'
+            ]);
+        }
+
         return view('front.index', [
-            'slides' => $slides
+            'slides' => $slides,
+            'workers' => $workers
         ]);
 
 

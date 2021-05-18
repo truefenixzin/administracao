@@ -40,9 +40,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        if (!auth()->user()->hasPermissionTo('cadastrar usuario')) {
-            abort(403);
-        }
+        //if (!auth()->user()->hasPermissionTo('cadastrar usuario')) {
+          //  abort(403);
+        //}
 
         $validatedData = $request->validate([
             'nome' => 'required|min:3|max:191',
