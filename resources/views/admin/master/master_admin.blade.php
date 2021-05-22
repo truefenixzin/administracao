@@ -80,7 +80,7 @@
                     </li>
 
                     @can('subir arquivos')
-{{--                        menu slides--}}
+                        {{--                        menu slides--}}
                         <li class="nav-item">
                             <a class="nav-link">
                                 <i class="nav-icon fas fa-photo-video"></i>
@@ -103,7 +103,7 @@
                                 </li>
                             </ul>
                         </li>
-{{--                        menu destaques--}}
+                        {{--                        menu destaques--}}
                         <li class="nav-item">
                             <a class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
@@ -126,29 +126,52 @@
                                 </li>
                             </ul>
                         </li>
-{{--                        menu arquivos--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a class="nav-link">--}}
-{{--                                <i class="nav-icon fas fa-folder-open"></i>--}}
-{{--                                <p>Arquivos </p>--}}
-{{--                                <i class="fas fa-angle-left right"></i>--}}
+                        {{--                    Menu Features--}}
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="nav-icon fas fa-comment-alt"></i>
+                                <p>Postagens </p>
+                                <i class="fas fa-angle-left right"></i>
 
-{{--                            </a>--}}
-{{--                            <ul class="nav nav-treeview">--}}
-{{--                                <li class="nav-item">--}}
-{{--                                    <a href="{{route('admin.workers.create')}}" class="nav-link">--}}
-{{--                                        <i class="far fa fa-file-upload nav-icon"></i>--}}
-{{--                                        <p>Cadastrar arquivos</p>--}}
-{{--                                    </a>--}}
-{{--                                </li>--}}
-{{--                                <li class="nav-item">--}}
-{{--                                    <a href="{{route('admin.workers.index')}}" class="nav-link">--}}
-{{--                                        <i class="far fa fa-file-alt nav-icon"></i>--}}
-{{--                                        <p>Listar arquivos</p>--}}
-{{--                                    </a>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </li>--}}
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('admin.workers.create')}}" class="nav-link">
+                                        <i class="far fa fa-plus-square nav-icon"></i>
+                                        <p>Cadastrar</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('admin.workers.index')}}" class="nav-link">
+                                        <i class="far fa fa-list-ol nav-icon"></i>
+                                        <p>Listar</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        {{--                        menu arquivos--}}
+                        {{--                        <li class="nav-item">--}}
+                        {{--                            <a class="nav-link">--}}
+                        {{--                                <i class="nav-icon fas fa-folder-open"></i>--}}
+                        {{--                                <p>Arquivos </p>--}}
+                        {{--                                <i class="fas fa-angle-left right"></i>--}}
+
+                        {{--                            </a>--}}
+                        {{--                            <ul class="nav nav-treeview">--}}
+                        {{--                                <li class="nav-item">--}}
+                        {{--                                    <a href="{{route('admin.workers.create')}}" class="nav-link">--}}
+                        {{--                                        <i class="far fa fa-file-upload nav-icon"></i>--}}
+                        {{--                                        <p>Cadastrar arquivos</p>--}}
+                        {{--                                    </a>--}}
+                        {{--                                </li>--}}
+                        {{--                                <li class="nav-item">--}}
+                        {{--                                    <a href="{{route('admin.workers.index')}}" class="nav-link">--}}
+                        {{--                                        <i class="far fa fa-file-alt nav-icon"></i>--}}
+                        {{--                                        <p>Listar arquivos</p>--}}
+                        {{--                                    </a>--}}
+                        {{--                                </li>--}}
+                        {{--                            </ul>--}}
+                        {{--                        </li>--}}
 
 
                     @endcan
@@ -180,43 +203,43 @@
                             @endcan
                         </ul>
                     </li>
+                    @can('cadastrar usuario')
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Usuários
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
 
-                    <li class="nav-item">
-                        <a class="nav-link">
-                            <i class="nav-icon fas fa-user"></i>
-                            <p>
-                                Usuários
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            @can('cadastrar usuario')
                                 <li class="nav-item">
                                     <a href="{{route('admin.users.create')}}" class="nav-link">
                                         <i class="far fa fa-plus nav-icon"></i>
                                         <p>Cadastrar</p>
                                     </a>
                                 </li>
-                            @endcan
-                            @can('listar usuarios')
-                                <li class="nav-item">
-                                    <a href="{{route('admin.users.index')}}" class="nav-link">
-                                        <i class="far fa fa-list nav-icon"></i>
-                                        <p>Listar tudo</p>
-                                    </a>
-                                </li>
-                            @endcan
-                        </ul>
-                    </li>
+                                @endcan
+                                @can('listar usuarios')
+                                    <li class="nav-item">
+                                        <a href="{{route('admin.users.index')}}" class="nav-link">
+                                            <i class="far fa fa-list nav-icon"></i>
+                                            <p>Listar tudo</p>
+                                        </a>
+                                    </li>
+                                @endcan
+                            </ul>
+                        </li>
 
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class="nav-icon fa fa-cogs"></i>
-                            <p>
-                                Configurações
-                            </p>
-                        </a>
-                    </li>
+                        {{--                    <li class="nav-item">--}}
+                        {{--                        <a href="" class="nav-link">--}}
+                        {{--                            <i class="nav-icon fa fa-cogs"></i>--}}
+                        {{--                            <p>--}}
+                        {{--                                Configurações--}}
+                        {{--                            </p>--}}
+                        {{--                        </a>--}}
+                        {{--                    </li>--}}
 
                 </ul>
             </nav>

@@ -22,8 +22,11 @@
             </div>
 
             <div class="card-body">
-                <h2><p>Aqui você ficá por dentro de tudo e pode realizar o cadastro de sua pauta no comitê.</p>
-                <p>Fique ligado nos avisos do RH e também nas notícias da supervisão</p></h2>
+                <h2>Esse é o nosso calendário, não se esqueçam dos nossos encontros, sua participação é de suma
+                    importância.</h2>
+                <div class="text-center">
+                    <img src="{{asset('site/img/calendario_comite.jpg')}}" class="img-fluid " alt="Responsive image"
+                </div>
             </div>
 
             <!-- /.card-body -->

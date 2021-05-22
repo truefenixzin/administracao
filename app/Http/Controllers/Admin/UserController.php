@@ -40,9 +40,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //if (!auth()->user()->hasPermissionTo('cadastrar usuario')) {
-          //  abort(403);
-        //}
+        if (!auth()->user()->hasPermissionTo('cadastrar usuario')) {
+            abort(403);
+        }
 
         $validatedData = $request->validate([
             'nome' => 'required|min:3|max:191',
@@ -94,13 +94,15 @@ class UserController extends Controller
 
     }
 
+
     /**
      * Display the specified resource.
      *
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public
+    function show($id)
     {
 
     }
@@ -111,7 +113,8 @@ class UserController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public
+    function edit($id)
     {
         $roles = Role::orderBy('name')->get();
         $user = User::where('id', $id)->first();
@@ -128,7 +131,8 @@ class UserController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public
+    function update(Request $request, $id)
     {
 
         if (!auth()->user()->hasPermissionTo('cadastrar usuario')) {
@@ -143,6 +147,7 @@ class UserController extends Controller
             'repetesenha' => 'required|same:senha',
 
         ]);
+
 
         try {
             $user = User::where('id', $id)->first();
@@ -164,8 +169,7 @@ class UserController extends Controller
 
             if (isset($userRoles) && !empty($userRoles)) {
                 $user->assignRole($userRoles);
-            }
-            else {
+            } else {
                 echo "algo deu errado e está vazio";
             }
 
@@ -177,46 +181,6 @@ class UserController extends Controller
         }
 
 
-
-
-        if (!empty($request->file('cover'))) {
-            Storage::delete($user->cover);
-            $user->cover = '';
-        }
-
-
-        $user->name = $request->nome;
-        $user->lastname = $request->sobrenome;
-        $user->email = $request->email;
-        if (!empty($request->senha)) {
-            $user->password = bcrypt($request->senha);
-        }
-
-
-        if (!empty($request->file('cover'))) {
-            $user->cover = $request->file('cover')->store('user');
-        }
-
-        $result = $user->save();
-
-        if (!empty($request->roles)) {
-//            dd($request->all());
-//            foreach ($request->roles as $role){
-            $userRoles[] = Role::whereId($request->roles)->first();
-
-//            }
-        }
-        if (isset($userRoles) && !empty($userRoles)) {
-            $user->assignRole($userRoles);
-        } else {
-            echo "algo deu errado e está vazio";
-        }
-
-        if ($result) {
-            return redirect()->route('admin.users.create')->withErrors(['success' => 'Cadastro realizado com sucesso']);;
-        }
-
-
     }
 
     /**
@@ -225,7 +189,8 @@ class UserController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public
+    function destroy($id)
     {
         //
     }
