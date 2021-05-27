@@ -112,7 +112,7 @@ class WorkersHighlightController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (!auth()->user()->hasPermissionTo('cadastrar comite')) {
+        if (!auth()->user()->hasPermissionTo('subir arquivos')) {
             abort(403);
         }
 

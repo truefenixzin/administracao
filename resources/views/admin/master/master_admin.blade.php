@@ -129,49 +129,49 @@
                         {{--                    Menu Features--}}
                         <li class="nav-item">
                             <a class="nav-link">
-                                <i class="nav-icon fas fa-comment-alt"></i>
-                                <p>Postagens </p>
+                                <i class="nav-icon fas fa-newspaper"></i>
+                                <p>Noticias </p>
                                 <i class="fas fa-angle-left right"></i>
 
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('admin.workers.create')}}" class="nav-link">
+                                    <a href="{{route('admin.news.create')}}" class="nav-link">
                                         <i class="far fa fa-plus-square nav-icon"></i>
                                         <p>Cadastrar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('admin.workers.index')}}" class="nav-link">
+                                    <a href="{{route('admin.news.index')}}" class="nav-link">
                                         <i class="far fa fa-list-ol nav-icon"></i>
                                         <p>Listar</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
-                        {{--                        menu arquivos--}}
-                        {{--                        <li class="nav-item">--}}
-                        {{--                            <a class="nav-link">--}}
-                        {{--                                <i class="nav-icon fas fa-folder-open"></i>--}}
-                        {{--                                <p>Arquivos </p>--}}
-                        {{--                                <i class="fas fa-angle-left right"></i>--}}
-
-                        {{--                            </a>--}}
-                        {{--                            <ul class="nav nav-treeview">--}}
-                        {{--                                <li class="nav-item">--}}
-                        {{--                                    <a href="{{route('admin.workers.create')}}" class="nav-link">--}}
-                        {{--                                        <i class="far fa fa-file-upload nav-icon"></i>--}}
-                        {{--                                        <p>Cadastrar arquivos</p>--}}
-                        {{--                                    </a>--}}
-                        {{--                                </li>--}}
-                        {{--                                <li class="nav-item">--}}
-                        {{--                                    <a href="{{route('admin.workers.index')}}" class="nav-link">--}}
-                        {{--                                        <i class="far fa fa-file-alt nav-icon"></i>--}}
-                        {{--                                        <p>Listar arquivos</p>--}}
-                        {{--                                    </a>--}}
-                        {{--                                </li>--}}
-                        {{--                            </ul>--}}
-                        {{--                        </li>--}}
+{{--                        menu arquivos--}}
+{{--                                <li class="nav-item">--}}
+{{--                                    <a class="nav-link">--}}
+{{--                                        <i class="nav-icon fas fa-folder-open"></i>--}}
+{{--                                        <p>Arquivos </p>--}}
+{{--                                        <i class="fas fa-angle-left right"></i>--}}
+{{--        --}}
+{{--                                    </a>--}}
+{{--                                    <ul class="nav nav-treeview">--}}
+{{--                                        <li class="nav-item">--}}
+{{--                                            <a href="{{route('admin.workers.create')}}" class="nav-link">--}}
+{{--                                                <i class="far fa fa-file-upload nav-icon"></i>--}}
+{{--                                                <p>Cadastrar arquivos</p>--}}
+{{--                                            </a>--}}
+{{--                                        </li>--}}
+{{--                                        <li class="nav-item">--}}
+{{--                                            <a href="{{route('admin.workers.index')}}" class="nav-link">--}}
+{{--                                                <i class="far fa fa-file-alt nav-icon"></i>--}}
+{{--                                                <p>Listar arquivos</p>--}}
+{{--                                            </a>--}}
+{{--                                        </li>--}}
+{{--                                    </ul>--}}
+{{--                                </li>--}}
 
 
                     @endcan

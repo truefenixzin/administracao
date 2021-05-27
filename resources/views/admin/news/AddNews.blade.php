@@ -18,7 +18,7 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Casdastrar destaques do mês</h3>
+                <h3 class="card-title">Casdastrar notícias</h3>
             </div>
 
             <div class="card-body mx-auto">
@@ -79,18 +79,18 @@
                 </div>
                 @enderror
 
-                <form action="{{route('admin.workers.store')}}" method="post" autocomplete="off"
+                <form action="{{route('admin.news.store')}}" method="post" autocomplete="off"
                       enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <div class="row">
                             <div class="col-12">
-                                <label for="name">Nome:</label>
-                                <input type="text" class="form-control" id="name" name="name"
-                                       value="{{old('name')}}">
+                                <label for="title">Título:</label>
+                                <input type="text" class="form-control" id="title" name="title"
+                                       value="{{old('title')}}">
                             </div>
                             <div class="col-12">
-                                <label>Foto:</label>
+                                <label>Imagem:</label>
                                 <div class="form-input">
                                     <input type="file" class="form-control" name="cover">
                                 </div>
@@ -113,7 +113,6 @@
                             <div class="col-12">
                                 <label>Mensagem:</label>
                                 <textarea class="form-control" name="comments">{{old('comments')}}</textarea>
-                                {{--                                <input type="text" class="form-control" name="comments" value="{{old('comments')}}">--}}
                             </div>
                         </div>
                     </div>

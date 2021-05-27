@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -33,17 +34,18 @@ class NewsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        if (!auth()->user()->hasPermissionTo('cadastrar comite')) {
+
+        if (!auth()->user()->hasPermissionTo('subir arquivos')) {
             abort(403);
         }
 
         $validatedData = $request->validate([
-            'name' => 'required|unique:workershighlights',
+            'title' => 'required',
             'dtini' => 'required',
             'dtfim' => 'required|after_or_equal:dtini',
             'comments' => 'required',
@@ -51,38 +53,40 @@ class NewsController extends Controller
         ]);
 
 
+
+
         try {
             $user = Auth::user();
-            $worker = new workershighlight();
+            $new = new News();
             if (!empty($request->file('cover'))) {
-                Storage::delete($worker->cover);
-                $worker->cover = '';
+                Storage::delete($new->cover);
+                $new->cover = '';
             }
-            $worker->name = $request->name;
-            $worker->dtini = $request->dtini;
-            $worker->dtfim = $request->dtfim;
-            $worker->cover = $request->cover;
-            $worker->comments = $request->comments;
+            $new->titulo = $request->title;
+            $new->dtini = $request->dtini;
+            $new->dtfim = $request->dtfim;
+            $new->cover = $request->cover;
+            $new->description = $request->comments;
 
             if (!empty($request->file('cover'))) {
-                $worker->cover = $request->file('cover')->store('public/workers');
+                $new->cover = $request->file('cover')->store('public/news');
             }
-            $result = $worker->save();
+            $result = $new->save();
 
             if ($result) {
-                return redirect()->route('admin.workers.create')->withErrors(['success' => 'Cadastro realizado com sucesso']);
+                return redirect()->route('admin.news.create')->withErrors(['success' => 'Cadastro realizado com sucesso']);
 
             }
 
         } catch (\Exception $exception) {
-            return redirect()->route('admin.workers.create')->withInput()->withErrors(['error' => 'aconteceu um exceção']);
+            return redirect()->route('admin.news.create')->withInput()->withErrors(['error' => 'aconteceu um exceção']);
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\News  $news
+     * @param \App\Models\News $news
      * @return \Illuminate\Http\Response
      */
     public function show(News $news)
@@ -93,34 +97,68 @@ class NewsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\News  $news
+     * @param \App\Models\News $news
      * @return \Illuminate\Http\Response
      */
-    public function edit(News $news)
+    public function edit($id)
     {
-        //
+        $new = News::where('id', $id)->first();
+        return view('admin.news.EditNews', compact('new'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\News  $news
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\News $news
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, News $news)
+    public function update(Request $request, $id)
     {
-        //
+        if (!auth()->user()->hasPermissionTo('subir arquivos')) {
+            abort(403);
+        }
+
+        $validatedData = $request->validate([
+            'title' => 'required|',
+            'dtini' => 'required',
+            'dtfim' => 'required|after_or_equal:dtini',
+            'description' => 'required',
+
+        ]);
+
+
+        try {
+
+
+            $user = Auth::user();
+            $new = News::where('id', $id)->first();
+            $new->titulo = $request->title;
+            $new->dtini = $request->dtini;
+            $new->dtfim = $request->dtfim;
+            $new->description = $request->description;
+            $result = $new->save();
+
+
+            if ($result) {
+                return view('admin.news.EditNews', compact('new'))->withErrors(['success' => 'Cadastro realizado com sucesso']);
+
+            }
+
+        } catch (\Exception $exception) {
+            return view('admin.news.EditNews', compact('new'))->withInput()->withErrors(['error' => 'aconteceu um exceção']);
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\News  $news
+     * @param \App\Models\News $news
      * @return \Illuminate\Http\Response
      */
-    public function destroy(News $news)
+    public function destroy($id)
     {
-        //
+        News::find($id)->delete();
+        return redirect()->route('admin.news.index');
     }
 }

@@ -18,7 +18,7 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Atualizar os destaques do mês.</h3>
+                <h3 class="card-title">Atualizar as noticias.</h3>
             </div>
 
             <div class="card-body">
@@ -30,7 +30,7 @@
                 </div>
                 @enderror
 
-                @error('name')
+                @error('title')
                 <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
@@ -62,7 +62,7 @@
                 </div>
                 @enderror
 
-                @error('message')
+                @error('description')
                 <div class="alert alert-danger alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <h5><i class="icon fas fa-ban"></i> Ops algo deu errado!</h5>
@@ -80,40 +80,40 @@
 
 
                 <div class="form-group">
-                    <form action="{{route('admin.workers.update', $worker->id)}}" method="post" autocomplete="off"
+                    <form action="{{route('admin.news.update', $new->id)}}" method="post" autocomplete="off"
                           enctype="multipart/form-data">
                         @method('put')
                         @csrf
                         <div class="row">
                             <div class="col-6">
-                                <label for="title">Nome:</label>
-                                <input type="text" class="form-control" id="name" name="name"
-                                       value="{{$worker->name}}">
+                                <label for="title">título:</label>
+                                <input type="text" class="form-control" id="title" name="title"
+                                       value="{{$new->titulo}}">
 
                                 <div class="row">
                                     <div class="col-6">
                                         <label for="dtini">Data Início:</label>
                                         <input type="date" class="form-control" name="dtini"
-                                               value="{{\Carbon\Carbon::parse($worker->dtini)->format('Y-m-d')}}">
+                                               value="{{\Carbon\Carbon::parse($new->dtini)->format('Y-m-d')}}">
                                     </div>
                                     <div class="col-6">
                                         <label for="dtfim">Data Fim:</label>
                                         <input type="date" class="form-control" name="dtfim"
-                                               value="{{\Carbon\Carbon::parse($worker->dtfim)->format('Y-m-d')}}">
+                                               value="{{\Carbon\Carbon::parse($new->dtfim)->format('Y-m-d')}}">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
                                         <label>Mensagem:</label>
-                                        <textarea class="form-control" name="comments"
-                                                  rows="6">{{$worker->comments}}</textarea>
+                                        <textarea class="form-control" name="description"
+                                                  rows="6">{{$new->description}}</textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <label>Imagem:</label>
                                 <div class="form-input">
-                                    <img src="{{\Illuminate\Support\Facades\Storage::url($worker->cover)}}"
+                                    <img src="{{\Illuminate\Support\Facades\Storage::url($new->cover)}}"
                                          class="img-fluid img-thumbnail">
                                 </div>
                             </div>
@@ -124,7 +124,7 @@
                             </div>
                     </form>
                     <div class="col-3 text-center">
-                        <form action="{{route('admin.workers.destroy', $worker->id)}}" method="post">
+                        <form action="{{route('admin.news.destroy', $new->id)}}" method="post">
                             @csrf
                             @method('DELETE')
 

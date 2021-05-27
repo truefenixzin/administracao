@@ -32,14 +32,27 @@ class FronController extends Controller
 
         if (!$workers) {
             return view('front.index', [
-                'workers' => 'Não tem slide a ser exibido.'
+                'workers' => 'Não tem destaques a ser exibido.'
+            ]);
+        }
+
+        $news = DB::table('news')
+            ->whereDate('dtini', '<=', now())
+            ->whereDate('dtfim', '>=', now())
+            ->get();
+
+        if (!$news) {
+            return view('front.index', [
+                'workers' => 'Não tem noticias a ser exibida.'
             ]);
         }
 
         return view('front.index', [
             'slides' => $slides,
-            'workers' => $workers
+            'workers' => $workers,
+            'news' => $news
         ]);
+
 
 
 
