@@ -76,7 +76,7 @@
                 @if($indexnews%2 === 0)
                     <div class="row featurette">
                         <div class="col-md-7">
-                            <h2 class="featurette-heading">{{$new->titulo}}</h2>
+                            <h2 class="featurette-heading">{{$new->title}}</h2>
                             <p class="lead">{{$new->description}}</p>
                         </div>
                         <div class="col-md-5">
@@ -91,7 +91,7 @@
                 @if($indexnews%2 != 0)
                     <div class="row featurette">
                         <div class="col-md-7 order-md-2">
-                            <h2 class="featurette-heading">{{$new->titulo}}</h2>
+                            <h2 class="featurette-heading">{{$new->title}}</h2>
                             <p class="lead">{{$new->description}}</p>
                         </div>
                         <div class="col-md-5 order-md-1">

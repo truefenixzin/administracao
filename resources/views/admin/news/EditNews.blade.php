@@ -88,7 +88,7 @@
                             <div class="col-6">
                                 <label for="title">título:</label>
                                 <input type="text" class="form-control" id="title" name="title"
-                                       value="{{$new->titulo}}">
+                                       value="{{$new->title}}">
 
                                 <div class="row">
                                     <div class="col-6">

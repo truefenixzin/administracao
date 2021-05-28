@@ -62,7 +62,7 @@ class NewsController extends Controller
                 Storage::delete($new->cover);
                 $new->cover = '';
             }
-            $new->titulo = $request->title;
+            $new->title = $request->title;
             $new->dtini = $request->dtini;
             $new->dtfim = $request->dtfim;
             $new->cover = $request->cover;
@@ -133,7 +133,7 @@ class NewsController extends Controller
 
             $user = Auth::user();
             $new = News::where('id', $id)->first();
-            $new->titulo = $request->title;
+            $new->title = $request->title;
             $new->dtini = $request->dtini;
             $new->dtfim = $request->dtfim;
             $new->description = $request->description;
