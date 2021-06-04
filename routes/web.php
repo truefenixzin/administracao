@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\NewsController;
 
 //rotas publicas
 Route::get('/', [FronController::class, 'showHome'])->name('front.home');
+Route::get('/caixa', [FronController::class, 'showPayBox'])->name('front.paybox');
 
 //rotas de login
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
@@ -28,6 +29,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/inicio', [AuthController::class, 'home'])->name('home');
         Route::get('/slides', [AuthController::class, 'showUploadForm'])->name('formupload');
         Route::get('/comite/pautas', [AuthController::class, 'showComiteList'])->name('comite.listarpautas');
+
 
         Route::resource('users', UserController::class);
         Route::resource('permissions', PermissionController::class);

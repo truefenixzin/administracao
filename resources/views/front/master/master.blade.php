@@ -49,11 +49,14 @@
                 </ul>
                 <ul class="navbar-nav me-4 mb-2 mb-md-0">
                     <li class="navbar-brand">
-                        <a class="text-white nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="text-white nav-link active" aria-current="page" href="{{route('front.home')}}">Home</a>
                     </li>
                     <li class="navbar-brand">
-                        <a class="text-white nav-link" href="#">Arquivos</a>
+                        <a class="text-white nav-link" href="{{route('front.paybox')}}">Caixa</a>
                     </li>
+{{--                    <li class="navbar-brand">--}}
+{{--                        <a class="text-white nav-link" href="#">Arquivos</a>--}}
+{{--                    </li>--}}
                     <li class="navbar-brand">
                         <a class="nav-link" href="{{route('admin.login')}}">
                             <button class="btn btn-primary">Entrar</button>
@@ -72,7 +75,7 @@
 
 
 <!-- FOOTER -->
-    <footer class="container">
+    <footer class="container footer navbar-fixed-bottom">
         <p class="float-end"><a href="#" class="btn btn-outline-secondary">Voltar ao início</a></p>
         <p>&copy; <strong> 2020 - {{date('Y')}} Pherfil | Pherfiltec - CNPJ: 03.079.700/0001-01</strong></p>
         <p>All Rights Reserved.</p>

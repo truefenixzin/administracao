@@ -52,9 +52,10 @@ class FronController extends Controller
             'workers' => $workers,
             'news' => $news
         ]);
+    }
 
-
-
-
+    public function showPayBox()
+    {
+        return view('front.pay_box');
     }
 }
