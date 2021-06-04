@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\SlidesController;
 use App\Http\Controllers\Admin\WorkersHighlightController;
 use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\PayBoxController;
 
 
 
@@ -38,6 +39,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::resource('slides', SlidesController::class);
         Route::resource('workers', WorkersHighlightController::class);
         Route::resource('news',NewsController::class );
+        Route::resource('paybox',PayBoxController::class );
 
 
     });

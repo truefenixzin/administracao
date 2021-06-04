@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use http\QueryString;
 use Illuminate\Http\Request;
 use App\Models\Slide;
 use Illuminate\Support\Facades\DB;
@@ -56,6 +57,10 @@ class FronController extends Controller
 
     public function showPayBox()
     {
-        return view('front.pay_box');
+
+        $payboxes = DB::select('SELECT * FROM payboxes ORDER BY created_at DESC LIMIT 8');
+
+        return view('front.pay_box', compact('payboxes'));
+
     }
 }

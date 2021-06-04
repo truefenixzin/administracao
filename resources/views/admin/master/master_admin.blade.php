@@ -83,6 +83,28 @@
                         {{--                        menu slides--}}
                         <li class="nav-item">
                             <a class="nav-link">
+                                <i class="nav-icon fas fa-file-invoice-dollar"></i>
+                                <p>Caixa </p>
+                                <i class="fas fa-angle-left right"></i>
+
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('admin.paybox.create')}}" class="nav-link">
+                                        <i class="far fa fa-edit nav-icon"></i>
+                                        <p>Atualizar</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('admin.paybox.index')}}" class="nav-link">
+                                        <i class="far fa fa-money-check nav-icon"></i>
+                                        <p>Gerenciar</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">
                                 <i class="nav-icon fas fa-photo-video"></i>
                                 <p>Slides </p>
                                 <i class="fas fa-angle-left right"></i>
@@ -149,29 +171,29 @@
                                 </li>
                             </ul>
                         </li>
-{{--                        menu arquivos--}}
-{{--                                <li class="nav-item">--}}
-{{--                                    <a class="nav-link">--}}
-{{--                                        <i class="nav-icon fas fa-folder-open"></i>--}}
-{{--                                        <p>Arquivos </p>--}}
-{{--                                        <i class="fas fa-angle-left right"></i>--}}
-{{--        --}}
-{{--                                    </a>--}}
-{{--                                    <ul class="nav nav-treeview">--}}
-{{--                                        <li class="nav-item">--}}
-{{--                                            <a href="{{route('admin.workers.create')}}" class="nav-link">--}}
-{{--                                                <i class="far fa fa-file-upload nav-icon"></i>--}}
-{{--                                                <p>Cadastrar arquivos</p>--}}
-{{--                                            </a>--}}
-{{--                                        </li>--}}
-{{--                                        <li class="nav-item">--}}
-{{--                                            <a href="{{route('admin.workers.index')}}" class="nav-link">--}}
-{{--                                                <i class="far fa fa-file-alt nav-icon"></i>--}}
-{{--                                                <p>Listar arquivos</p>--}}
-{{--                                            </a>--}}
-{{--                                        </li>--}}
-{{--                                    </ul>--}}
-{{--                                </li>--}}
+                        {{--                        menu arquivos--}}
+                        {{--                                <li class="nav-item">--}}
+                        {{--                                    <a class="nav-link">--}}
+                        {{--                                        <i class="nav-icon fas fa-folder-open"></i>--}}
+                        {{--                                        <p>Arquivos </p>--}}
+                        {{--                                        <i class="fas fa-angle-left right"></i>--}}
+                        {{--        --}}
+                        {{--                                    </a>--}}
+                        {{--                                    <ul class="nav nav-treeview">--}}
+                        {{--                                        <li class="nav-item">--}}
+                        {{--                                            <a href="{{route('admin.workers.create')}}" class="nav-link">--}}
+                        {{--                                                <i class="far fa fa-file-upload nav-icon"></i>--}}
+                        {{--                                                <p>Cadastrar arquivos</p>--}}
+                        {{--                                            </a>--}}
+                        {{--                                        </li>--}}
+                        {{--                                        <li class="nav-item">--}}
+                        {{--                                            <a href="{{route('admin.workers.index')}}" class="nav-link">--}}
+                        {{--                                                <i class="far fa fa-file-alt nav-icon"></i>--}}
+                        {{--                                                <p>Listar arquivos</p>--}}
+                        {{--                                            </a>--}}
+                        {{--                                        </li>--}}
+                        {{--                                    </ul>--}}
+                        {{--                                </li>--}}
 
 
                     @endcan

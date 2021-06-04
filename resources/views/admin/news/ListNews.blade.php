@@ -18,7 +18,7 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Destaques do Mês!</h3>
+                <h3 class="card-title">News cadastradas</h3>
             </div>
 
             <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
