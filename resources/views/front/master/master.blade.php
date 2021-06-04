@@ -75,7 +75,7 @@
 
 
 <!-- FOOTER -->
-    <footer class="container footer navbar-fixed-bottom">
+    <footer class="container">
         <p class="float-end"><a href="#" class="btn btn-outline-secondary">Voltar ao início</a></p>
         <p>&copy; <strong> 2020 - {{date('Y')}} Pherfil | Pherfiltec - CNPJ: 03.079.700/0001-01</strong></p>
         <p>All Rights Reserved.</p>
