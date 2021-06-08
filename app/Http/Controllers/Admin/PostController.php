@@ -45,9 +45,9 @@ class PostController extends Controller
         }
 
         $validatedData = $request->validate([
-            'title' => 'required|min:3|max:191',
-            'situation' => 'required|min:3|max:191',
-            'sugestion' => 'required|min:3|max:191',
+            'title' => 'required|min:3|max:65000',
+            'situation' => 'required|min:3|max:65000',
+            'sugestion' => 'required|min:3|max:65000',
         ]);
 
         try {
