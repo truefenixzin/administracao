@@ -75,8 +75,8 @@
                 @if($indexnews%2 === 0)
                     <div class="row featurette">
                         <div class="col-md-7">
-                            <h2 class="featurette-heading">{{$new->title}}</h2>
-                            {{print $new->description}}
+                            <h2 class="featurette-heading">{{$new->title}}</h2><br/>
+                            <p class="lead">{{print $new->description}}</p>
                         </div>
                         <div class="col-md-5">
                             <img src="{{\Illuminate\Support\Facades\Storage::url($new->cover)}}"
@@ -100,7 +100,6 @@
                                  alt="Generic placeholder image">
                         </div>
                     </div>
-
                     <hr class="featurette-divider">
                 @endif
             @endforeach
