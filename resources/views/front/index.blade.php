@@ -74,7 +74,7 @@
             @foreach($news as $indexnews => $new)
                 @if($indexnews%2 === 0)
                     <div class="row featurette">
-                        <div class="col-md-7">
+                        <div class="col-md-5">
                             <h2 class="featurette-heading">{{$new->title}}</h2>
                             <p class="lead">{{print $new->description}}</p>
                         </div>
@@ -89,7 +89,7 @@
                 @endif
                 @if($indexnews%2 != 0)
                     <div class="row featurette">
-                        <div class="col-md-7 order-md-2">
+                        <div class="col-md-5 order-md-1">
                             <h2 class="featurette-heading">{{$new->title}}</h2>
                             <p class="lead">{{print $new->description}}</p>
                         </div>
