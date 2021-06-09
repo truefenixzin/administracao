@@ -74,9 +74,9 @@
             @foreach($news as $indexnews => $new)
                 @if($indexnews%2 === 0)
                     <div class="row featurette">
-                        <div class="col-md-5">
+                        <div class="col-md-7">
                             <h2 class="featurette-heading">{{$new->title}}</h2>
-                            <p class="lead">{{print $new->description}}</p>
+                            {{print $new->description}}
                         </div>
                         <div class="col-md-5">
                             <img src="{{\Illuminate\Support\Facades\Storage::url($new->cover)}}"
@@ -89,7 +89,7 @@
                 @endif
                 @if($indexnews%2 != 0)
                     <div class="row featurette">
-                        <div class="col-md-5 order-md-1">
+                        <div class="col-md-7 order-md-2">
                             <h2 class="featurette-heading">{{$new->title}}</h2>
                             <p class="lead">{{print $new->description}}</p>
                         </div>
