@@ -112,7 +112,7 @@
                             </div>
                             <div class="col-12">
                                 <label>Mensagem:</label>
-                                <textarea class="form-control" name="comments">{{old('comments')}}</textarea>
+                                <textarea class="summernote form-control" name="comments">{{old('comments')}}</textarea>
                             </div>
                         </div>
                     </div>

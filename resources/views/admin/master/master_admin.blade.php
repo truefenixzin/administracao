@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{asset('back/plugins/fontawesome-free/css/all.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('back/dist/css/adminlte.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/dist/css/summernote-bs4.min.css')}}">
 
 </head>
 <body class="hold-transition sidebar-mini">
@@ -302,7 +303,12 @@
 <script src="{{asset('back/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('back/dist/js/demo.js')}}"></script>
-
+<script src="{{asset('assets/dist/js/summernote-bs4.min.js')}}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.summernote').summernote();
+    });
+</script>
 </body>
 </html>
 
