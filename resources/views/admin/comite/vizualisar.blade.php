@@ -57,18 +57,22 @@
                                 <button class="btn btn btn-primary ">Voltar</button>
                             </a>
                         </div>
-                        <div class="col-lg-4">
-                            <a href="{{route('admin.posts.edit', $post->id)}}">
-                                <button class="btn btn btn-warning ">Editar</button>
-                            </a>
-                        </div>
-                        <div class="col-lg-4">
-                            <form action="{{route('admin.posts.destroy', $post->id)}}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn btn-danger ">Excluir</button>
-                            </form>
-                        </div>
+                        @can('edit')
+                            <div class="col-lg-4">
+                                <a href="{{route('admin.posts.edit', $post->id)}}">
+                                    <button class="btn btn btn-warning ">Editar</button>
+                                </a>
+                            </div>
+                        @endcan
+                        @can('delete')
+                            <div class="col-lg-4">
+                                <form action="{{route('admin.posts.destroy', $post->id)}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn btn-danger ">Excluir</button>
+                                </form>
+                            </div>
+                        @endcan
                     </div>
                 </div>
             </div>
