@@ -53,7 +53,8 @@
         <div class="container marketing">
             <!--Inicio dos destaques -->
             <div class="row">
-                <h1 class="text-center">Destaques do mês</h1>
+                <hr>
+                <h1 class="text-center">Destaques do mês</h1><hr>
 
                 @foreach($workers as $worker)
                     <div class="col-lg-4">
