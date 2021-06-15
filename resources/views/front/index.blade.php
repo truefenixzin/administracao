@@ -91,7 +91,7 @@
                 @endif
                 @if($indexnews%2 != 0)
                     <div class="row featurette">
-                        <div class="col-md-7 order-md-2">
+                        <div class="col-md-8 order-md-2">
                             <h2 class="featurette-heading">{{$new->title}}</h2>
                             <p class="lead">{!! $new->description !!}</p>
                             <a href="{{route('front.shownew', $new->id)}}">Leia mais...</a>
