@@ -76,7 +76,7 @@
             @foreach($news as $indexnews => $new)
 {{--                @if($indexnews%2 === 0)--}}
                     <div class="row featurette">
-                        <div class="col-md-12 text-center">
+                        <div class="col-md-12">
                             <img src="{{\Illuminate\Support\Facades\Storage::url($new->cover)}}"
                                  class="featurette-image img-fluid mx-auto"
                                  data-src="holder.js/500x500/auto"
