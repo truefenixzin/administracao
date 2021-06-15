@@ -77,7 +77,7 @@
                     <div class="row featurette">
                         <div class="col-md-7">
                             <h2 class="featurette-heading">{{$new->title}}</h2><br/>
-                            <p class="lead">{{print $new->description}}</p>
+                            <p class="lead">{!! $new->description !!}</p>
 {{--                            <a href="{{route('front.shownew', $new->id)}}">Leia mais...</a>--}}
                         </div>
                         <div class="col-md-5">
