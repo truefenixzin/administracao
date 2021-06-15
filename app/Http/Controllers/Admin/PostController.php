@@ -93,7 +93,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        if (!auth()->user()->hasPermissionTo('editar comite')) {
+        if (!auth()->user()->hasPermissionTo('edit')) {
             abort(403);
         }
         $post = Post::where('id', $id)->first();
@@ -126,6 +126,9 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
+        if (!auth()->user()->hasPermissionTo('delete')) {
+            abort(403);
+        }
         Post::find($id)->delete();
         return redirect()->route('admin.posts.index');
     }

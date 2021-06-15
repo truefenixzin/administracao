@@ -24,6 +24,11 @@ class add_rules_permissions extends Seeder
         Permission::create(['name' => 'listar usuarios']);
         Permission::create(['name' => 'listar comite']);
         Permission::create(['name' => 'cadastrar comite']);
+        Permission::create(['name' => 'read']);
+        Permission::create(['name' => 'write']);
+        Permission::create(['name' => 'edit']);
+        Permission::create(['name' => 'delete']);
+
 
         // create roles and assign existing permissions
 
@@ -33,6 +38,10 @@ class add_rules_permissions extends Seeder
         $role1->givePermissionTo('listar usuarios');
         $role1->givePermissionTo('listar comite');
         $role1->givePermissionTo('cadastrar comite');
+        $role1->givePermissionTo('read');
+        $role1->givePermissionTo('write');
+        $role1->givePermissionTo('edit');
+        $role1->givePermissionTo('delete');
 
 
         $role2 = Role::create(['name' => 'Usuario']);

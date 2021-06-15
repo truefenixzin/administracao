@@ -89,11 +89,17 @@
                                 <input type="text" class="form-control" id="name" name="name"
                                        value="{{old('name')}}">
                             </div>
-                            <div class="col-12">
+                            <div class="col-6">
+
                                 <label>Foto:</label>
                                 <div class="form-input">
                                     <input type="file" class="form-control" name="cover">
+
                                 </div>
+                            </div>
+                            <div class="col-6">
+                                <label>Meta Atingida:</label>
+                                <input type="number" class="form-control" name="meta" value="{{old('meta')}}">
                             </div>
                         </div>
                     </div>
@@ -110,11 +116,14 @@
                                 <input type="date" class="form-control" name="dtfim"
                                        value="{{old('dtfim')}}">
                             </div>
+
                             <div class="col-12">
                                 <label>Mensagem:</label>
-                                <textarea class="form-control" name="comments">{{old('comments')}}</textarea>
-                                {{--                                <input type="text" class="form-control" name="comments" value="{{old('comments')}}">--}}
+                                <textarea class="form-control summernote" name="comments" rows="6"
+                                          style="resize: none">{{old('comments')}}</textarea>
+
                             </div>
+
                         </div>
                     </div>
 

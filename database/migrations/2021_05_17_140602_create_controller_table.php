@@ -15,11 +15,12 @@ class CreateControllerTable extends Migration
     {
         Schema::create('workershighlights', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->string('name');
             $table->dateTime('dtini');
             $table->dateTime('dtfim');
             $table->string('cover');
             $table->text('comments');
+            $table->integer('meta');
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class CreateControllerTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('workers_highlight');
+        Schema::dropIfExists('workershighlights');
     }
 }

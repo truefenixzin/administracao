@@ -39,12 +39,14 @@ class WorkersHighlightController extends Controller
      */
     public function store(Request $request)
     {
+
         if (!auth()->user()->hasPermissionTo('cadastrar comite')) {
             abort(403);
         }
 
         $validatedData = $request->validate([
-            'name' => 'required|unique:workershighlights',
+            'name' => 'required',
+            'meta' => 'required',
             'dtini' => 'required',
             'dtfim' => 'required|after_or_equal:dtini',
             'comments' => 'required',
@@ -64,6 +66,7 @@ class WorkersHighlightController extends Controller
             $worker->dtfim = $request->dtfim;
             $worker->cover = $request->cover;
             $worker->comments = $request->comments;
+            $worker->meta = $request->meta;
 
             if (!empty($request->file('cover'))) {
                 $worker->cover = $request->file('cover')->store('public/workers');
@@ -118,6 +121,7 @@ class WorkersHighlightController extends Controller
 
         $validatedData = $request->validate([
             'name' => 'required|',
+            'meta' => 'required',
             'dtini' => 'required',
             'dtfim' => 'required|after_or_equal:dtini',
             'comments' => 'required',
@@ -133,6 +137,7 @@ class WorkersHighlightController extends Controller
             $worker->dtini = $request->dtini;
             $worker->dtfim = $request->dtfim;
             $worker->comments = $request->comments;
+            $worker->meta = $request->meta;
             $result = $worker->save();
 
 

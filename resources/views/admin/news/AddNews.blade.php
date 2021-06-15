@@ -110,9 +110,12 @@
                                 <input type="date" class="form-control" name="dtfim"
                                        value="{{old('dtfim')}}">
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-12">
-                                <label>Mensagem:</label>
-                                <textarea class="summernote form-control" name="comments">{{old('comments')}}</textarea>
+                                <label>Notícia:</label>
+                                <textarea class="form-control summernote"
+                                          name="comments" rows="6" style="resize: none">{{old('comments')}}</textarea>
                             </div>
                         </div>
                     </div>

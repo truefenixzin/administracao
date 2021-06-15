@@ -13,10 +13,10 @@ use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\PayBoxController;
 
 
-
 //rotas publicas
 Route::get('/', [FronController::class, 'showHome'])->name('front.home');
 Route::get('/caixa', [FronController::class, 'showPayBox'])->name('front.paybox');
+Route::get('/new/{id}', [FronController::class, 'shownew'])->name('front.shownew');
 
 //rotas de login
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
@@ -38,8 +38,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::resource('posts', PostController::class);
         Route::resource('slides', SlidesController::class);
         Route::resource('workers', WorkersHighlightController::class);
-        Route::resource('news',NewsController::class );
-        Route::resource('paybox',PayBoxController::class );
+        Route::resource('news', NewsController::class);
+        Route::resource('paybox', PayBoxController::class);
 
 
     });

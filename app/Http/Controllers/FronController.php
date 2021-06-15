@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use http\QueryString;
 use Illuminate\Http\Request;
 use App\Models\Slide;
+use App\Models\News;
 use Illuminate\Support\Facades\DB;
 
 
@@ -19,7 +20,6 @@ class FronController extends Controller
             ->get();
 
 
-
         if (!$slides) {
             return view('front.index', [
                 'slides' => 'Não tem slide a ser exibido.'
@@ -29,6 +29,7 @@ class FronController extends Controller
         $workers = DB::table('workershighlights')
             ->whereDate('dtini', '<=', now())
             ->whereDate('dtfim', '>=', now())
+            ->orderByDesc('meta')
             ->get();
 
         if (!$workers) {
@@ -63,4 +64,13 @@ class FronController extends Controller
         return view('front.pay_box', compact('payboxes'));
 
     }
+
+    public function shownew($id)
+    {
+
+        $new =  News::where('id', $id)->first();
+        return view('front.news_details',compact('new'));
+    }
+
+
 }

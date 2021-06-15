@@ -104,9 +104,16 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
+                                        <label>Meta Atingida:</label>
+                                        <input type="number" class="form-control" name="meta" value="{{$worker->meta}}">
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
                                         <label>Mensagem:</label>
-                                        <textarea class="form-control" name="comments"
-                                                  rows="6">{{$worker->comments}}</textarea>
+                                        <textarea class="form-control summernote" name="comments"
+                                                  rows="6"  style="resize: none">{{$worker->comments}}</textarea>
                                     </div>
                                 </div>
                             </div>

@@ -89,9 +89,10 @@ class NewsController extends Controller
      * @param \App\Models\News $news
      * @return \Illuminate\Http\Response
      */
-    public function show(News $news)
+    public function show($id)
     {
-        //
+        $new =  News::where('id', $id)->first();
+        return view('front.news_details',compact('new'));
     }
 
     /**
@@ -102,6 +103,7 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
+
         $new = News::where('id', $id)->first();
         return view('admin.news.EditNews', compact('new'));
     }

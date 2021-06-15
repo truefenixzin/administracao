@@ -306,7 +306,12 @@
 <script src="{{asset('assets/dist/summernote-0.8.18-dist/summernote-bs4.js')}}"></script>
 <script type="text/javascript">
     $(document).ready(function() {
-        $('.summernote').summernote();
+        $('.summernote').summernote({
+            height: 200,
+            minHeight: 200,
+            maxHeight: 200
+
+        });
     });
 </script>
 </body>

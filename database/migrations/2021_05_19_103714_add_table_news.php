@@ -15,7 +15,7 @@ class AddTableNews extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->unique();
+            $table->string('title');
             $table->dateTime('dtini');
             $table->dateTime('dtfim');
             $table->string('cover');

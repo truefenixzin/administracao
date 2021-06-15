@@ -33,7 +33,7 @@
 <header>
     <nav class="navbar navbar-expand fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="text-white navbar-brand" href="#">
+            <a class="text-white navbar-brand" href="{{route('front.home')}}">
                 <img src="{{asset('assets/brand/logo.png')}}" alt="" width="30" height="24"
                      class="d-inline-block align-text-top">
                 Pherfiltec
@@ -58,7 +58,7 @@
 {{--                        <a class="text-white nav-link" href="#">Arquivos</a>--}}
 {{--                    </li>--}}
                     <li class="navbar-brand">
-                        <a class="nav-link" href="{{route('admin.login')}}">
+                        <a class="nav-link" href="{{route('admin.login')}}" target="_blank">
                             <button class="btn btn-primary">Entrar</button>
                         </a>
                     </li>
@@ -76,7 +76,7 @@
 
 <!-- FOOTER -->
     <footer class="container">
-        <p class="float-end"><a href="#" class="btn btn-outline-secondary">Voltar ao início</a></p>
+        <p class="float-end"><a href="#" class="btn btn-outline-secondary">Voltar ao topo</a></p>
         <p>&copy; <strong> 2020 - {{date('Y')}} Pherfil | Pherfiltec - CNPJ: 03.079.700/0001-01</strong></p>
         <p>All Rights Reserved.</p>
     </footer>
