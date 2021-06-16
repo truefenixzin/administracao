@@ -41,7 +41,8 @@
                 <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
                 <span class="visually-hidden bg-dark">Anterior</span>
             </button>
-            <button class="carousel-control-next primary" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <button class="carousel-control-next primary" type="button" data-bs-target="#myCarousel"
+                    data-bs-slide="next">
                 <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
                 <span class="visually-hidden bg-dark">Proximo</span>
             </button>
@@ -54,7 +55,8 @@
             <!--Inicio dos destaques -->
             <div class="row">
                 <hr>
-                <h1 class="text-center">Destaques do mês</h1><hr>
+                <h1 class="text-center">Destaques do mês</h1>
+                <hr>
 
                 @foreach($workers as $worker)
                     <div class="col-lg-4">
@@ -76,16 +78,10 @@
             @foreach($news as $indexnews => $new)
                 @if($indexnews%2 === 0)
                     <div class="row featurette">
-                        <div class="col-md-5">
-                            <img src="{{\Illuminate\Support\Facades\Storage::url($new->cover)}}"
-                                 class="featurette-image img-fluid mx-auto"
-                                 data-src="holder.js/500x500/auto"
-                                 alt="Generic placeholder image">
-                        </div>
                         <div class="col-md-12">
                             <h2 class="featurette-heading  text-center">{{$new->title}}</h2><br/>
                             <p class="lead">{!! $new->description !!}</p>
-{{--                            <a href="{{route('front.shownew', $new->id)}}">Leia mais...</a>--}}
+                            {{--                            <a href="{{route('front.shownew', $new->id)}}">Leia mais...</a>--}}
                         </div>
                         <div class="col-md-5">
                             <img src="{{\Illuminate\Support\Facades\Storage::url($new->cover)}}"
@@ -101,7 +97,7 @@
                         <div class="col-md-7 order-md-2">
                             <h2 class="featurette-heading">{{$new->title}}</h2>
                             <p class="lead">{!! $new->description !!}</p>
-{{--                            <a href="{{route('front.shownew', $new->id)}}">Leia mais...</a>--}}
+                            {{--                            <a href="{{route('front.shownew', $new->id)}}">Leia mais...</a>--}}
                         </div>
                         <div class="col-md-5 order-md-1">
                             <img src="{{\Illuminate\Support\Facades\Storage::url($new->cover)}}"
