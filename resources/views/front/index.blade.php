@@ -77,13 +77,13 @@
             @foreach($news as $indexnews => $new)
                 @if($indexnews%2 === 0)
                     <div class="row featurette">
-                        <div class="col-md-5">
+                        <div class="col-md-5 d-flex align-items-center">
                             <img src="{{\Illuminate\Support\Facades\Storage::url($new->cover)}}"
                                  class="featurette-image img-fluid mx-auto"
                                  data-src="holder.js/500x500/auto"
                                  alt="Generic placeholder image">
                         </div>
-                        <div class="col-md-7 auto-">
+                        <div class="col-md-7">
                             <h2 class="featurette-heading  text-center">{{$new->title}}</h2><br/>
                             <p class="lead">{!! $new->description !!}</p>
                             {{--                            <a href="{{route('front.shownew', $new->id)}}">Leia mais...</a>--}}
@@ -92,7 +92,7 @@
                     <hr class="featurette-divider">
                 @endif
                 @if($indexnews%2 != 0)
-                    <div class="row featurette">
+                    <div class="row featurette ">
                         <div class="col-md-7 order-md-2">
                             <h2 class="featurette-heading">{{$new->title}}</h2>
                             <p class="lead">{!! $new->description !!}</p>
