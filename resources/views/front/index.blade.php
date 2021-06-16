@@ -74,20 +74,19 @@
 
             <h1 class="text-center">Noticias</h1>
             <hr>
-
             @foreach($news as $indexnews => $new)
                 @if($indexnews%2 === 0)
                     <div class="row featurette">
-                        <div class="col-md-12">
-                            <h2 class="featurette-heading  text-center">{{$new->title}}</h2><br/>
-                            <p class="lead">{!! $new->description !!}</p>
-                            {{--                            <a href="{{route('front.shownew', $new->id)}}">Leia mais...</a>--}}
-                        </div>
                         <div class="col-md-5">
                             <img src="{{\Illuminate\Support\Facades\Storage::url($new->cover)}}"
                                  class="featurette-image img-fluid mx-auto"
                                  data-src="holder.js/500x500/auto"
                                  alt="Generic placeholder image">
+                        </div>
+                        <div class="col-md-12">
+                            <h2 class="featurette-heading  text-center">{{$new->title}}</h2><br/>
+                            <p class="lead">{!! $new->description !!}</p>
+                            {{--                            <a href="{{route('front.shownew', $new->id)}}">Leia mais...</a>--}}
                         </div>
                     </div>
                     <hr class="featurette-divider">
