@@ -79,11 +79,11 @@
                     <div class="row featurette">
                         <div class="col-md-5">
                             <img src="{{\Illuminate\Support\Facades\Storage::url($new->cover)}}"
-                                 class="featurette-image img-fluid mx-auto"
+                                 class="featurette-image mx-auto"
                                  data-src="holder.js/500x500/auto"
                                  alt="Generic placeholder image">
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-7 auto-">
                             <h2 class="featurette-heading  text-center">{{$new->title}}</h2><br/>
                             <p class="lead">{!! $new->description !!}</p>
                             {{--                            <a href="{{route('front.shownew', $new->id)}}">Leia mais...</a>--}}
@@ -100,7 +100,7 @@
                         </div>
                         <div class="col-md-5 order-md-1">
                             <img src="{{\Illuminate\Support\Facades\Storage::url($new->cover)}}"
-                                 class="featurette-image img-fluid mx-auto"
+                                 class="featurette-image mx-auto"
                                  data-src="holder.js/500x500/auto"
                                  alt="Generic placeholder image">
                         </div>
