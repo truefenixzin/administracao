@@ -100,7 +100,7 @@
                         </div>
                         <div class="col-md-5 order-md-1">
                             <img src="{{\Illuminate\Support\Facades\Storage::url($new->cover)}}"
-                                 class="featurette-image rounded mx-auto d-block"
+                                 class="featurette-image img-fluid mx-auto rounded d-block"
                                  data-src="holder.js/500x500/auto"
                                  alt="Generic placeholder image">
                         </div>
