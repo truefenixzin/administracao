@@ -79,7 +79,7 @@
                     <div class="row featurette">
                         <div class="col-md-5">
                             <img src="{{\Illuminate\Support\Facades\Storage::url($new->cover)}}"
-                                 class="featurette-image mx-auto"
+                                 class="featurette-image img-fluid mx-auto"
                                  data-src="holder.js/500x500/auto"
                                  alt="Generic placeholder image">
                         </div>
@@ -100,7 +100,7 @@
                         </div>
                         <div class="col-md-5 order-md-1">
                             <img src="{{\Illuminate\Support\Facades\Storage::url($new->cover)}}"
-                                 class="featurette-image mx-auto"
+                                 class="featurette-image rounded mx-auto d-block"
                                  data-src="holder.js/500x500/auto"
                                  alt="Generic placeholder image">
                         </div>
