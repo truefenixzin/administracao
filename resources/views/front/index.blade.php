@@ -83,7 +83,7 @@
                                  data-src="holder.js/500x500/auto"
                                  alt="Generic placeholder image">
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-7 d-flex align-items-center">
                             <h2 class="featurette-heading  text-center">{{$new->title}}</h2><br/>
                             <p class="lead">{!! $new->description !!}</p>
                             {{--                            <a href="{{route('front.shownew', $new->id)}}">Leia mais...</a>--}}
