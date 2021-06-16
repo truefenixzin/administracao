@@ -284,7 +284,8 @@
         <div class="float-right d-none d-sm-block">
             Todos os direitos reservados.
         </div>
-        <strong> <a href="#">Santos R Systems</a> Copyright &copy; 2020</strong>
+        <strong> <a href="https://santosrsystems.com.br/" target="_blank">Santos R Systems</a> Copyright &copy; 2020
+            - {{date_format(now(),'Y')}}</strong>
     </footer>
 
     <!-- Control Sidebar -->
@@ -305,7 +306,7 @@
 <script src="{{asset('back/dist/js/demo.js')}}"></script>
 <script src="{{asset('assets/dist/summernote-0.8.18-dist/summernote-bs4.js')}}"></script>
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('.summernote').summernote({
             height: 200,
             minHeight: 200,
