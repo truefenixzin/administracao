@@ -105,8 +105,8 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <label>Mensagem:</label>
-                                        <textarea class="form-control" name="description"
-                                                  rows="6">{{$new->description}}</textarea>
+                                        <textarea class="form-control summernote"
+                                                  name="description" rows="6">{{$new->description}}</textarea>
                                     </div>
                                 </div>
                             </div>

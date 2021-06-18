@@ -84,12 +84,12 @@
                     @csrf
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-6">
                                 <label for="title">Título:</label>
                                 <input type="text" class="form-control" id="title" name="title"
                                        value="{{old('title')}}">
                             </div>
-                            <div class="col-12">
+                            <div class="col-6">
                                 <label>Imagem:</label>
                                 <div class="form-input">
                                     <input type="file" class="form-control" name="cover">
@@ -115,7 +115,7 @@
                             <div class="col-12">
                                 <label>Notícia:</label>
                                 <textarea class="form-control summernote"
-                                          name="comments" rows="6" style="resize: none">{{old('comments')}}</textarea>
+                                          name="comments" rows="6">{{old('comments')}}</textarea>
                             </div>
                         </div>
                     </div>

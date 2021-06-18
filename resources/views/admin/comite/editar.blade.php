@@ -25,7 +25,7 @@
 
                     <div class="col-lg-1">
                         <a href="{{route('admin.posts.index')}}">
-                            <button class="btn btn-sm btn-primary">Lista</button>
+                            <button class="btn btn-primary">Lista</button>
                         </a>
                     </div>
                 </div>

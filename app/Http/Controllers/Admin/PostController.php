@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Models\Answers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -82,7 +83,8 @@ class PostController extends Controller
         }
         $post = Post::where('id', $id)->first();
         $postauthor = $post->autor()->get()->first();
-        return view('admin.comite.vizualisar',compact(['post', 'postauthor']));
+        $answers = Answers::where('id_posts', $id)->get();
+        return view('admin.comite.vizualisar',compact(['post', 'postauthor','answers']));
     }
 
     /**

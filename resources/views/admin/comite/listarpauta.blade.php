@@ -29,8 +29,8 @@
                             <th style="width: 10px">#</th>
                             <th>Título</th>
                             <th>Data cadastro</th>
-                            <th>Ultima atualização</th>
                             <th>Autor</th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -39,8 +39,17 @@
                                 <td>{{$post->id}}</td>
                                 <td><a href="{{route('admin.posts.show', $post->id)}}">{{$post->title}}</a></td>
                                 <td>{{date_format($post->created_at,'d/m/Y H:m:s')}}</td>
-                                <td>{{date_format($post->updated_at,'d/m/Y H:m:s')}}</td>
                                 <td>{{$post->autor->name}}</td>
+                                <td>
+                                    @can('edit')
+                                        <a href="{{route('admin.answers.show',$post->id)}}">
+                                            <button class="btn btn btn-success ">Responder</button>
+                                        </a> |
+                                        <a href="{{route('admin.posts.edit', $post->id)}}">
+                                            <button class="btn btn btn-warning ">Editar</button>
+                                        </a>
+                                    @endcan
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
