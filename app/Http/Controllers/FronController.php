@@ -59,7 +59,7 @@ class FronController extends Controller
     public function showPayBox()
     {
 
-        $payboxes = DB::select('SELECT * FROM payboxes ORDER BY created_at DESC LIMIT 8');
+        $payboxes = DB::select('SELECT * FROM payboxes ORDER BY created_at DESC LIMIT 9');
 
         return view('front.pay_box', compact('payboxes'));
 

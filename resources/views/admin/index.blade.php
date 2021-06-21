@@ -28,7 +28,7 @@
 
                 <label>
                     <span class="field icon-envelope">E-mail:</span>
-                    <input type="email" name="email" placeholder="Informe seu e-mail" value="{{old('email')}}"/>
+                    <input type="email" name="email" placeholder="Informe seu e-mail" value="{{old('email')}}" autofocus/>
                 </label>
 
                 <label>
