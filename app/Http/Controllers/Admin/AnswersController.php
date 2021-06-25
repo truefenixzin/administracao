@@ -41,7 +41,7 @@ class AnswersController extends Controller
     public function store(Request $request)
     {
 //        dd($request->all());
-        if (!auth()->user()->hasPermissionTo('edit')) {
+        if (!auth()->user()->hasPermissionTo('cadastrar comite')) {
             abort(403);
         }
 
