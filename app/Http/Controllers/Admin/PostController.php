@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Models\Answers;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Psy\CodeCleaner\UseStatementPass;
 
 class PostController extends Controller
 {
@@ -20,7 +22,7 @@ class PostController extends Controller
     {
         $posts = Post::with('autor')->get();
 //        dd($posts);
-        return view('admin.comite.listarpauta', compact('posts' ));
+        return view('admin.comite.listarpauta', compact('posts'));
     }
 
     /**
@@ -81,10 +83,8 @@ class PostController extends Controller
         if (!auth()->user()->hasPermissionTo('listar comite')) {
             abort(403);
         }
-        $post = Post::where('id', $id)->first();
-        $postauthor = $post->autor()->get()->first();
-        $answers = Answers::where('id_posts', $id)->get();
-        return view('admin.comite.vizualisar',compact(['post', 'postauthor','answers']));
+        $post = Post::find($id)->with(['autor', 'answers','answers.autorcomentario'])->first();
+        return view('admin.comite.vizualisar', compact(['post']));
     }
 
     /**
@@ -99,7 +99,7 @@ class PostController extends Controller
             abort(403);
         }
         $post = Post::where('id', $id)->first();
-        return view('admin.comite.editar',compact('post'));
+        return view('admin.comite.editar', compact('post'));
 
     }
 

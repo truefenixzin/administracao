@@ -71,13 +71,26 @@
                     <h1>Retorno</h1>
                 </div>
                 <hr/>
+                <div class="row">
+                    <div class="col-12">
+                        @foreach($post->answers as $answer)
+                            <div class="form-group">
+                                <label for="description"><i>Respondido por:</i>{{$answer->autorcomentario->name}} </label><br/>
+                                <label for="description"><i>Respondido em:</i> {{date_format($answer->created_at,'d/m/Y H:m:s')}}</label><br/>
+
+                                <textarea style="resize: none" class="form-control" rows="5" id="sugestion"
+                                          name="sugestion" readonly>{{$answer->answer}}</textarea>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
                 <form action="{{route('admin.answers.store')}}" method="post" autocomplete="off">
                     @csrf
                     <div class="row">
 
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="answer">Retorno: </label>
+                                <label for="answer">Responder: </label>
                                 <textarea style="resize: none" class="form-control" rows="5" id="answer"
                                           name="answer"></textarea>
                             </div>

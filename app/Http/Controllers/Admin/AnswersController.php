@@ -51,9 +51,11 @@ class AnswersController extends Controller
         ]);
 
         try {
+            $user = Auth::user();
             $answer = new Answers();
             $answer->answer = $request->answer;
             $answer->id_posts = $request->postid;
+            $answer->author = $user->id;
             $result = $answer->save();
 
             return back()->withErrors(['success' => 'Cadastro realizado com sucesso']);
@@ -73,12 +75,11 @@ class AnswersController extends Controller
      */
     public function show($id)
     {
-        if (!auth()->user()->hasPermissionTo('edit')) {
+        if (!auth()->user()->hasPermissionTo('cadastrar comite')) {
             abort(403);
         }
-        $post = Post::where('id', $id)->first();
-        $postauthor = $post->autor()->get()->first();
-        return view('admin.comite.answers', compact(['post', 'postauthor']));
+        $post = Post::find($id)->with(['autor', 'answers','answers.autorcomentario'])->first();
+        return view('admin.comite.answers', compact(['post']));
     }
 
     /**

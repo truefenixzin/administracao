@@ -23,7 +23,7 @@
                         <h3 class="card-title">Vizualisar Pauta Comitê</h3>
                     </div>
                     <div class="col-3">
-                        <b>Criado por:</b> {{strtoupper($postauthor->name)}} <b>
+                        <b>Criado por:</b> {{strtoupper($post->autor->name)}} <b>
                     </div>
                     <div class="col-1">
                         <a href="{{route('admin.posts.index')}}">
@@ -60,14 +60,16 @@
 
                 <div class="row">
                     <div class="col-12">
-                        @foreach($answers as $answer)
+                        @foreach($post->answers as $answer)
                         <div class="form-group">
+                            <label for="description"><i>Respondido por:</i>{{$answer->autorcomentario->name}} </label><br/>
                             <label for="description"><i>Respondido em:</i> {{date_format($answer->created_at,'d/m/Y H:m:s')}}</label><br/>
 
                             <textarea style="resize: none" class="form-control" rows="5" id="sugestion"
                                       name="sugestion" readonly>{{$answer->answer}}</textarea>
                         </div>
                         @endforeach
+                        <a href="{{route('admin.answers.show',$post->id)}}">Responder</a>
                     </div>
                 </div>
 

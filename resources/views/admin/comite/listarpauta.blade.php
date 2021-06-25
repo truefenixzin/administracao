@@ -42,9 +42,9 @@
                                 <td>{{$post->autor->name}}</td>
                                 <td>
                                     @can('edit')
-                                        <a href="{{route('admin.answers.show',$post->id)}}">
-                                            <button class="btn btn btn-success ">Responder</button>
-                                        </a> |
+{{--                                        <a href="{{route('admin.answers.show',$post->id)}}">--}}
+{{--                                            <button class="btn btn btn-success ">Responder</button>--}}
+{{--                                        </a> |--}}
                                         <a href="{{route('admin.posts.edit', $post->id)}}">
                                             <button class="btn btn btn-warning ">Editar</button>
                                         </a>

@@ -49,7 +49,7 @@
                             <td class="align-middle"><b><a
                                         href="{{route('admin.news.edit', $new->id)}}">{{$new->title}}</a></b>
                             </td>
-                            <td class="align-middle">{{print $new->description}}</td>
+                            <td class="align-middle">{!! $new->description !!}</td>
                             <td class="align-middle">
                                 <b>{{\Carbon\Carbon::parse($new->dtini)->format('d/m/Y')}}</b></td>
                             <td class="align-middle">

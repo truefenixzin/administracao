@@ -82,7 +82,7 @@
 
                     @can('subir arquivos')
                         {{--                        menu slides--}}
-                        <li class="nav-item">
+                        <li class="{{(strpos (Route :: currentRouteName (), 'admin.paybox') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">
                             <a class="nav-link">
                                 <i class="nav-icon fas fa-file-invoice-dollar"></i>
                                 <p>Caixa </p>
@@ -104,7 +104,8 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item">
+
+                        <li class="{{(strpos (Route :: currentRouteName (), 'admin.slides') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">
                             <a class="nav-link">
                                 <i class="nav-icon fas fa-photo-video"></i>
                                 <p>Slides </p>
@@ -127,7 +128,7 @@
                             </ul>
                         </li>
                         {{--                        menu destaques--}}
-                        <li class="nav-item">
+                        <li class="{{(strpos (Route :: currentRouteName (), 'admin.workers') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">
                             <a class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>Melhor do mês </p>
@@ -150,7 +151,7 @@
                             </ul>
                         </li>
                         {{--                    Menu Features--}}
-                        <li class="nav-item">
+                        <li class="{{(strpos (Route :: currentRouteName (), 'admin.news') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">
                             <a class="nav-link">
                                 <i class="nav-icon fas fa-newspaper"></i>
                                 <p>Noticias </p>
@@ -172,34 +173,9 @@
                                 </li>
                             </ul>
                         </li>
-                        {{--                        menu arquivos--}}
-                        {{--                                <li class="nav-item">--}}
-                        {{--                                    <a class="nav-link">--}}
-                        {{--                                        <i class="nav-icon fas fa-folder-open"></i>--}}
-                        {{--                                        <p>Arquivos </p>--}}
-                        {{--                                        <i class="fas fa-angle-left right"></i>--}}
-                        {{--        --}}
-                        {{--                                    </a>--}}
-                        {{--                                    <ul class="nav nav-treeview">--}}
-                        {{--                                        <li class="nav-item">--}}
-                        {{--                                            <a href="{{route('admin.workers.create')}}" class="nav-link">--}}
-                        {{--                                                <i class="far fa fa-file-upload nav-icon"></i>--}}
-                        {{--                                                <p>Cadastrar arquivos</p>--}}
-                        {{--                                            </a>--}}
-                        {{--                                        </li>--}}
-                        {{--                                        <li class="nav-item">--}}
-                        {{--                                            <a href="{{route('admin.workers.index')}}" class="nav-link">--}}
-                        {{--                                                <i class="far fa fa-file-alt nav-icon"></i>--}}
-                        {{--                                                <p>Listar arquivos</p>--}}
-                        {{--                                            </a>--}}
-                        {{--                                        </li>--}}
-                        {{--                                    </ul>--}}
-                        {{--                                </li>--}}
-
-
                     @endcan
 
-                    <li class="nav-item">
+                    <li class="{{(strpos (Route :: currentRouteName (), 'admin.posts') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">
                         <a class="nav-link">
                             <i class="nav-icon fas fa-comment"></i>
                             <p>
@@ -227,7 +203,7 @@
                         </ul>
                     </li>
                     @can('cadastrar usuario')
-                        <li class="nav-item">
+                        <li class="{{(strpos (Route :: currentRouteName (), 'admin.users') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">
                             <a class="nav-link">
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>
@@ -254,16 +230,6 @@
                                 @endcan
                             </ul>
                         </li>
-
-                        {{--                    <li class="nav-item">--}}
-                        {{--                        <a href="" class="nav-link">--}}
-                        {{--                            <i class="nav-icon fa fa-cogs"></i>--}}
-                        {{--                            <p>--}}
-                        {{--                                Configurações--}}
-                        {{--                            </p>--}}
-                        {{--                        </a>--}}
-                        {{--                    </li>--}}
-
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
