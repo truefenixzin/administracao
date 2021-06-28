@@ -80,10 +80,15 @@ class PostController extends Controller
      */
     public function show($id)
     {
+
+
         if (!auth()->user()->hasPermissionTo('listar comite')) {
             abort(403);
         }
-        $post = Post::find($id)->with(['autor', 'answers','answers.autorcomentario'])->first();
+
+        $post = Post::where('id',$id)->with(['autor', 'answers', 'answers.autorcomentario'])->first();
+
+//        dd($post);
         return view('admin.comite.vizualisar', compact(['post']));
     }
 
@@ -112,7 +117,7 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $post = Post::where('id', $id)->first();
+        $post = Post::where('id', $id);
         $post->update($request->all());
         return redirect()
             ->route('admin.posts.edit', $post->id)

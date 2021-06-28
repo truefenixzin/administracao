@@ -78,7 +78,7 @@ class AnswersController extends Controller
         if (!auth()->user()->hasPermissionTo('cadastrar comite')) {
             abort(403);
         }
-        $post = Post::find($id)->with(['autor', 'answers','answers.autorcomentario'])->first();
+        $post = Post::where('id', $id)->with(['autor', 'answers', 'answers.autorcomentario'])->first();
         return view('admin.comite.answers', compact(['post']));
     }
 

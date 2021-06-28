@@ -16,4 +16,8 @@ class answers extends Model
     {
         return $this->belongsTo(User::class,'author','id');
     }
+    public function post()
+    {
+        return $this->belongsToMany(Post::class, 'id_posts', 'id');
+    }
 }
