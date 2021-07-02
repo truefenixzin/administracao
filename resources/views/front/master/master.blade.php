@@ -54,6 +54,9 @@
                     <li class="navbar-brand">
                         <a class="text-white nav-link" href="{{route('front.paybox')}}">Caixa</a>
                     </li>
+                    <li class="navbar-brand">
+                        <a class="text-white nav-link" href="{{route('front.campaigns')}}">Campanhas</a>
+                    </li>
 {{--                    <li class="navbar-brand">--}}
 {{--                        <a class="text-white nav-link" href="#">Arquivos</a>--}}
 {{--                    </li>--}}

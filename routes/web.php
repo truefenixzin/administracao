@@ -12,11 +12,15 @@ use App\Http\Controllers\Admin\WorkersHighlightController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\PayBoxController;
 use App\Http\Controllers\Admin\AnswersController;
+use App\Http\Controllers\Admin\CampaignsController;
+use App\Http\Controllers\Admin\CommissionController;
+
 
 
 //rotas publicas
 Route::get('/', [FronController::class, 'showHome'])->name('front.home');
 Route::get('/caixa', [FronController::class, 'showPayBox'])->name('front.paybox');
+Route::get('/campanhas', [FronController::class, 'showCampaigns'])->name('front.campaigns');
 Route::get('/new/{id}', [FronController::class, 'shownew'])->name('front.shownew');
 
 //rotas de login
@@ -42,6 +46,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::resource('news', NewsController::class);
         Route::resource('paybox', PayBoxController::class);
         Route::resource('answers', AnswersController::class);
+            Route::resource('campaigns', CampaignsController::class);
+            Route::resource('commission', CommissionController::class);
 
     });
 

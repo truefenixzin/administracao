@@ -202,6 +202,45 @@
                             @endcan
                         </ul>
                     </li>
+
+                    @can('subir arquivos')
+                        <li class="
+                            {{(strpos (Route :: currentRouteName (), 'admin.campaigns') === 0)
+                            ? 'nav-item menu-is-opening menu-open'
+                            : 'nav-item'}}">
+                            <a class="nav-link">
+                                <i class="nav-icon fas fa-gifts"></i>
+                                <p>
+                                    Campanhas / Comissão
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a href="{{route('admin.campaigns.create')}}" class="nav-link">
+                                        <i class="far fa fa-comment-medical nav-icon"></i>
+                                        <p>Cadastrar campanhas</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="{{route('admin.campaigns.index')}}" class="nav-link">
+                                        <i class="far fa fa-list-ul nav-icon"></i>
+                                        <p>Listar campanhas</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="{{route('admin.commission.create')}}" class="nav-link">
+                                        <i class="far fa fa-table nav-icon"></i>
+                                        <p>Tabela de comissão</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    @endcan
+
                     @can('cadastrar usuario')
                         <li class="{{(strpos (Route :: currentRouteName (), 'admin.users') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">
                             <a class="nav-link">

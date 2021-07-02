@@ -68,8 +68,24 @@ class FronController extends Controller
     public function shownew($id)
     {
 
-        $new =  News::where('id', $id)->first();
-        return view('front.news_details',compact('new'));
+        $new = News::where('id', $id)->first();
+        return view('front.news_details', compact('new'));
+    }
+
+    public function showCampaigns()
+    {
+
+        $commission = DB::table('commissions')
+            ->orderByDesc('created_at')
+            ->limit(1)
+            ->get();
+
+        $campaigns = DB::table('campaigns')
+            ->whereDate('dtini', '<=', now())
+            ->whereDate('dtfim', '>=', now())
+            ->orderByDesc('created_at')
+            ->get();
+        return view('front.campaigns', compact('commission', 'campaigns'));
     }
 
 
