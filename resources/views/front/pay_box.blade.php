@@ -3,12 +3,8 @@
     <div class="container marketing">
         <div class="row featurette">
             <div class="col-md-12 order-md-2">
-                <h2 class="featurette-heading">Recurso quentinho saindo do forno!</h2><br/>
-                <p class="lead"> Com as constantes mudanças que estamos tendo, agora o caixa é disponibilizado de
-                    maneira digital!<br/>
-                    Uma mudança simples que irá nos trazer redução de custo, agilidade na comunicação e ainda iremos
-                    ajudar o meio ambiente, reduzindo o consumo de papel.
-                </p>
+                <h2 class="featurette-heading">Aproviete e sempre consulte o seu caixa aqui.</h2><br/>
+                
             </div>
         </div>
 
