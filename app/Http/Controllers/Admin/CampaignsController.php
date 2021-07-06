@@ -47,7 +47,6 @@ class CampaignsController extends Controller
             'title' => 'required',
             'dtini' => 'required',
             'dtfim' => 'required|after_or_equal:dtini',
-            'comments' => 'required',
             'category' => 'required',
             'cover' => 'required',
 
