@@ -98,9 +98,10 @@ class CampaignsController extends Controller
      * @param \App\Models\Campaigns $campaigns
      * @return \Illuminate\Http\Response
      */
-    public function edit(Campaigns $campaigns)
+    public function edit($id)
     {
-        //
+        $campaign = Campaigns::where('id', $id)->first();
+        return view('admin.campaigns.EditCampaigns', compact('campaign'));
     }
 
     /**
@@ -110,9 +111,40 @@ class CampaignsController extends Controller
      * @param \App\Models\Campaigns $campaigns
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Campaigns $campaigns)
+    public function update(Request $request, $id)
     {
-        //
+        if (!auth()->user()->hasPermissionTo('subir arquivos')) {
+            abort(403);
+        }
+
+        $validatedData = $request->validate([
+            'title' => 'required|',
+            'dtini' => 'required',
+            'dtfim' => 'required|after_or_equal:dtini',
+
+        ]);
+
+
+        try {
+
+
+
+            $campaign = Campaigns::where('id', $id)->first();
+            $campaign->title = $request->title;
+            $campaign->dtini = $request->dtini;
+            $campaign->dtfim = $request->dtfim;
+            $campaign->description = $request->description;
+            $result = $campaign->save();
+
+
+            if ($result) {
+                return view('admin.campaigns.EditCampaigns', compact('campaign'))->withErrors(['success' => 'Cadastro realizado com sucesso']);
+
+            }
+
+        } catch (\Exception $exception) {
+            return view('admin.campaigns.EditCampaigns', compact('campaign'))->withInput()->withErrors(['error' => 'aconteceu um exceção']);
+        }
     }
 
     /**
@@ -121,8 +153,9 @@ class CampaignsController extends Controller
      * @param \App\Models\Campaigns $campaigns
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Campaigns $campaigns)
+    public function destroy($id)
     {
-        //
+        Campaigns::find($id)->delete();
+        return redirect()->route('admin.campaigns.index');
     }
 }

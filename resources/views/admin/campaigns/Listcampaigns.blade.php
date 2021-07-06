@@ -47,7 +47,7 @@
 
                         <tr>
                             <td class="align-middle"><b>{{$new->id}}</b></td>
-                            <td class="align-middle"><b>{{$new->title}}</b>
+                            <td class="align-middle"><a href="{{route('admin.campaigns.edit', $new->id)}}"><b>{{$new->title}}</b></a>
                             </td>
                             <td class="align-middle">{!! $new->description !!}</td>
                             <td class="align-middle">

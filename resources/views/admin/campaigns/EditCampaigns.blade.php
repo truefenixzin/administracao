@@ -18,7 +18,7 @@
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Atualizar as noticias.</h3>
+                <h3 class="card-title">Atualizar as campanhas.</h3>
             </div>
 
             <div class="card-body">
@@ -80,7 +80,7 @@
 
 
                 <div class="form-group">
-                    <form action="{{route('admin.news.update', $new->id)}}" method="post" autocomplete="off"
+                    <form action="{{route('admin.campaigns.update', $campaign->id)}}" method="post" autocomplete="off"
                           enctype="multipart/form-data">
                         @method('put')
                         @csrf
@@ -88,32 +88,32 @@
                             <div class="col-6">
                                 <label for="title">título:</label>
                                 <input type="text" class="form-control" id="title" name="title"
-                                       value="{{$new->title}}">
+                                       value="{{$campaign->title}}">
 
                                 <div class="row">
                                     <div class="col-6">
                                         <label for="dtini">Data Início:</label>
                                         <input type="date" class="form-control" name="dtini"
-                                               value="{{\Carbon\Carbon::parse($new->dtini)->format('Y-m-d')}}">
+                                               value="{{\Carbon\Carbon::parse($campaign->dtini)->format('Y-m-d')}}">
                                     </div>
                                     <div class="col-6">
                                         <label for="dtfim">Data Fim:</label>
                                         <input type="date" class="form-control" name="dtfim"
-                                               value="{{\Carbon\Carbon::parse($new->dtfim)->format('Y-m-d')}}">
+                                               value="{{\Carbon\Carbon::parse($campaign->dtfim)->format('Y-m-d')}}">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
                                         <label>Mensagem:</label>
                                         <textarea class="form-control summernote"
-                                                  name="description" rows="6">{{$new->description}}</textarea>
+                                                  name="description" rows="6">{{$campaign->description}}</textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <label>Imagem:</label>
                                 <div class="form-input">
-                                    <img src="{{\Illuminate\Support\Facades\Storage::url($new->cover)}}"
+                                    <img src="{{\Illuminate\Support\Facades\Storage::url($campaign->cover)}}"
                                          class="img-fluid img-thumbnail">
                                 </div>
                             </div>
@@ -124,7 +124,7 @@
                             </div>
                     </form>
                     <div class="col-3 text-center">
-                        <form action="{{route('admin.news.destroy', $new->id)}}" method="post">
+                        <form action="{{route('admin.campaigns.destroy', $campaign->id)}}" method="post">
                             @csrf
                             @method('DELETE')
 
