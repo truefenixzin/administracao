@@ -18,7 +18,7 @@ class CampaignsController extends Controller
     public function index()
     {
         $news = Campaigns::all();
-        return view('admin.campaigns.ListCampaigns', compact('news'));
+        return view('admin.campaigns.Listcampaigns', compact('news'));
     }
 
     /**
