@@ -49,10 +49,20 @@ class FronController extends Controller
             ]);
         }
 
+        $campaigns = DB::table('campaigns')
+        ->whereDate('dtini', '<=', now())
+        ->whereDate('dtfim', '>=', now())
+        ->orderByDesc('created_at')
+        ->get();
+
+        $payboxes = DB::select('SELECT * FROM payboxes ORDER BY created_at DESC LIMIT 9');
+
         return view('front.index', [
             'slides' => $slides,
             'workers' => $workers,
-            'news' => $news
+            'news' => $news,
+            'campaigns' =>  $campaigns,
+            'payboxes' => $payboxes
         ]);
     }
 

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Slide;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class SlidesController extends Controller
 {
@@ -17,7 +18,11 @@ class SlidesController extends Controller
      */
     public function index()
     {
-        $slides = Slide::all();
+        $slides = DB::table('slides')
+        ->whereDate('dtini', '<=', now())
+        ->whereDate('dtfim', '>=', now())
+        ->orderByDesc('dtfim')
+        ->get();
         return view('admin.slides.ListarSlides', compact('slides'));
     }
 
