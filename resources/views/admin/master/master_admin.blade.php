@@ -104,11 +104,48 @@
                                 </li>
                             </ul>
                         </li>
+                       
+                        <li class="
+                            {{(strpos (Route :: currentRouteName (), 'admin.campaigns') === 0)
+                            ? 'nav-item menu-is-opening menu-open'
+                            : 'nav-item'}}">
+                            <a class="nav-link">
+                                <i class="nav-icon fas fa-gifts"></i>
+                                <p>
+                                    Campanhas
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                                <li class="nav-item">
+                                    <a href="{{route('admin.campaigns.create')}}" class="nav-link">
+                                        <i class="far fa fa-comment-medical nav-icon"></i>
+                                        <p>Cadastrar campanhas</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="{{route('admin.campaigns.index')}}" class="nav-link">
+                                        <i class="far fa fa-list-ul nav-icon"></i>
+                                        <p>Listar campanhas</p>
+                                    </a>
+                                </li>
+
+                                {{-- <li class="nav-item">
+                                    <a href="{{route('admin.commission.create')}}" class="nav-link">
+                                        <i class="far fa fa-table nav-icon"></i>
+                                        <p>Tabela de comissão</p>
+                                    </a>
+                                </li> --}}
+                            </ul>
+                        </li>
+                    
 
                         <li class="{{(strpos (Route :: currentRouteName (), 'admin.slides') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">
                             <a class="nav-link">
                                 <i class="nav-icon fas fa-photo-video"></i>
-                                <p>Slides </p>
+                                <p>Recados </p>
                                 <i class="fas fa-angle-left right"></i>
 
                             </a>
@@ -116,13 +153,13 @@
                                 <li class="nav-item">
                                     <a href="{{route('admin.slides.create')}}" class="nav-link">
                                         <i class="far fa fa-images nav-icon"></i>
-                                        <p>Cadastrar Slide</p>
+                                        <p>Cadastrar Recados</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{route('admin.slides.index')}}" class="nav-link">
                                         <i class="far fa fa-list-ul nav-icon"></i>
-                                        <p>Listar Slides</p>
+                                        <p>Listar Recados</p>
                                     </a>
                                 </li>
                             </ul>
@@ -131,7 +168,7 @@
                         <li class="{{(strpos (Route :: currentRouteName (), 'admin.workers') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">
                             <a class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
-                                <p>Melhor do mês </p>
+                                <p>Destaques </p>
                                 <i class="fas fa-angle-left right"></i>
 
                             </a>
@@ -151,7 +188,7 @@
                             </ul>
                         </li>
                         {{--                    Menu Features--}}
-                        <li class="{{(strpos (Route :: currentRouteName (), 'admin.news') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">
+                       {{--  <li class="{{(strpos (Route :: currentRouteName (), 'admin.news') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">
                             <a class="nav-link">
                                 <i class="nav-icon fas fa-newspaper"></i>
                                 <p>Noticias </p>
@@ -172,7 +209,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                     @endcan
 
                     <li class="{{(strpos (Route :: currentRouteName (), 'admin.posts') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">
@@ -203,44 +240,7 @@
                         </ul>
                     </li>
 
-                    @can('subir arquivos')
-                        <li class="
-                            {{(strpos (Route :: currentRouteName (), 'admin.campaigns') === 0)
-                            ? 'nav-item menu-is-opening menu-open'
-                            : 'nav-item'}}">
-                            <a class="nav-link">
-                                <i class="nav-icon fas fa-gifts"></i>
-                                <p>
-                                    Campanhas / Comissão
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-
-                                <li class="nav-item">
-                                    <a href="{{route('admin.campaigns.create')}}" class="nav-link">
-                                        <i class="far fa fa-comment-medical nav-icon"></i>
-                                        <p>Cadastrar campanhas</p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="{{route('admin.campaigns.index')}}" class="nav-link">
-                                        <i class="far fa fa-list-ul nav-icon"></i>
-                                        <p>Listar campanhas</p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a href="{{route('admin.commission.create')}}" class="nav-link">
-                                        <i class="far fa fa-table nav-icon"></i>
-                                        <p>Tabela de comissão</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    @endcan
-
+                    
                     @can('cadastrar usuario')
                         <li class="{{(strpos (Route :: currentRouteName (), 'admin.users') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">
                             <a class="nav-link">
