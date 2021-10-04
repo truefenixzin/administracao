@@ -654,11 +654,19 @@
                 <li><i class="bi bi-chevron-right"></i> <a href="http://192.168.0.29/hesk/admin/" target="_blank">Hesk (Chamados)</a></li>
                 <li><i class="bi bi-chevron-right"></i> <a href="https://centraldofuncionario.com.br/29713" target="_blank">Ponto</a></li>
                 <li><i class="bi bi-chevron-right"></i> <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank">Busca CEP (Correios)</a></li>
+                <li><i class="bi bi-chevron-right"></i> <a href="https://www.parceleja.cappta.com.br/Identity/Account/Login" target="_blank">PARCELE JÁ</a></li>
+                
               </ul>
             </div>
   
             <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-             
+              <h4>Login / Senhas (Parcele Já)</h4>
+              <ul>
+                <li>AVON - Login: AVONPHERFIL (Maiúsculo) Senha: 1Avonpherfil@ (A maiúsculo)</li>
+                <li>JBCRED - Usuário: JBCREDPHERFIL (Maiúsculo) Senha: 1Jbcredpherfil@ (J maiúsculo) /</li>
+                <li>FINAMAX - Acessos: FINAMAX Login: FINAMAXPHERFIL (Maiúsculo) Senha: 1Finamaxpherfil@ (F maiúsculo)</li>
+                <li>MULTI - USUARIO: PHERFILCOBRANCAS (multi) SENHA: 1Pherfilcobrancas@</li>
+              </ul>
             </div>
   
           </div>
