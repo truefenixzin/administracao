@@ -100,7 +100,7 @@
 
                                 <div class="row">
                                     <div class="col-12">
-                                        <label for="dtfim">Vencimento</label>
+                                        <label for="dtfim">Quantidade:</label>
                                         <input type="number" class="form-control" name="qtdselos"
                                                value="{{$quality->qtd_selos}}">
                                     </div>
