@@ -165,7 +165,7 @@
                             </ul>
                         </li>
                         {{--                        menu destaques--}}
-                        <li class="{{(strpos (Route :: currentRouteName (), 'admin.workers') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">
+                        <li class="{{(strpos (Route :: currentRouteName (), 'admin.workers') === 0) || (strpos (Route :: currentRouteName (), 'admin.qualitys') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">
                             <a class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
                                 <p>Destaques </p>
@@ -183,6 +183,19 @@
                                     <a href="{{route('admin.workers.index')}}" class="nav-link">
                                         <i class="far fa fa-user-edit nav-icon"></i>
                                         <p>Listar Destaques</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('admin.qualitys.create')}}" class="nav-link">
+                                        <i class="far fa fa-vote-yea nav-icon"></i>
+                                        <p>Cadastrar Selos</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('admin.qualitys.index')}}" class="nav-link">
+                                        <i class="far fa fa-edit nav-icon"></i>
+                                        <p>Listar Selos</p>
+                                        
                                     </a>
                                 </li>
                             </ul>

@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\PayBoxController;
 use App\Http\Controllers\Admin\AnswersController;
 use App\Http\Controllers\Admin\CampaignsController;
 use App\Http\Controllers\Admin\CommissionController;
+use App\Http\Controllers\Admin\QualitysController;
 
 
 
@@ -43,6 +44,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::resource('posts', PostController::class);
         Route::resource('slides', SlidesController::class);
         Route::resource('workers', WorkersHighlightController::class);
+        Route::resource('qualitys', QualitysController::class);
         Route::resource('news', NewsController::class);
         Route::resource('paybox', PayBoxController::class);
         Route::resource('answers', AnswersController::class);
