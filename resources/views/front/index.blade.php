@@ -54,6 +54,7 @@
             <li><a class="nav-link scrollto" href="#portfolio">Campanhas</a></li>
             <li><a class="nav-link scrollto" href="#team">Destaques</a></li>
             <li><a class="nav-link scrollto" href="#financeiro">Caixa</a></li>
+            <li><a class="nav-link scrollto" href="#qualidade">Qualidade</a></li>
             <li><a class="getstarted scrollto"href="{{route('admin.login')}}" target="_blank">Entrar</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
@@ -134,6 +135,7 @@
 
 
       <!-- Inicio recados -->
+     
       <section id="recado" class="portfolio">
   
         <div class="container" data-aos="fade-up">
@@ -177,6 +179,7 @@
         </div>
   
       </section><!-- End Portfolio Section -->
+      
   
 
 
@@ -523,7 +526,7 @@
       </section><!-- End Portfolio Section -->
   
       
-  
+      
       <!-- ======= Team Section ======= -->
       <section id="team" class="team">
   
@@ -554,8 +557,9 @@
         </div>
   
       </section><!-- End Team Section -->
+      
 
-
+      
       <!-- ======= Team Section ======= -->
       <section id="financeiro" class="team">
   
@@ -596,7 +600,49 @@
         </div>
   
       </section><!-- End Team Section -->
+      
+
+    
+      <section id="qualidade" class="team">
   
+        <div class="container" data-aos="fade-up">
+  
+          <header class="section-header">
+            <h2>Qualidade</h2>
+            <p>Selos de contato perfeito</p>
+          </header>
+  
+          <div class="row gy-4">
+
+            <table class="table table-bordered text-center">
+              <thead>
+              <tr>
+                <th>Foto</th>
+                <th>Nome</th>
+                <th>Selos</th>
+                </h2>
+              </tr>
+              </thead>
+              <tbody>
+              @foreach($qualitys as $quality)
+                  <tr>
+                    <td class="align-middle "><img src="{{\Illuminate\Support\Facades\Storage::url($quality->avatar)}}"
+                                            class="rounded-circle" width="140" height="140"></td>
+                            <td class="align-middle"><b>{{$quality->nome}}</b>
+                            </td>
+                            <td class="align-middle">
+                                <b><h2>{{$quality->qtd_selos}}</h2></b></td>                            
+                  </tr>
+              @endforeach
+              </tbody>
+          </table> 
+           
+          </div>
+  
+        </div>
+        
+      </section><!-- End qualitys Section -->
+      
       <!-- ======= Clients Section ======= -->
       <section id="clients" class="clients">
   
@@ -621,6 +667,8 @@
             <div class="swiper-pagination"></div>
           </div>
         </div>
+
+        
   
       </section><!-- End Clients Section -->
         

@@ -7,6 +7,7 @@ use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class NewsController extends Controller
 {
@@ -17,7 +18,10 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $news = News::all();
+        $news = DB::table('news')
+        ->whereDate('dtini', '<=', now())
+        ->whereDate('dtfim', '>=', now())
+        ->get();
         return view('admin.news.ListNews', compact('news'));
     }
 

@@ -7,6 +7,9 @@ use App\Models\workershighlight;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
+use http\QueryString;
+use Illuminate\Support\Carbon;
 
 class WorkersHighlightController extends Controller
 {
@@ -17,7 +20,11 @@ class WorkersHighlightController extends Controller
      */
     public function index()
     {
-        $workers = workershighlight::all();
+        $workers = DB::table('workershighlights')
+        ->whereDate('dtini', '<=', now())
+        ->whereDate('dtfim', '>=', now())
+        ->orderByDesc('meta')
+        ->get();
         return view('admin.workers.ListarWorkers', compact('workers'));
     }
 

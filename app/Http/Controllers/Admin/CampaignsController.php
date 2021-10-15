@@ -7,6 +7,7 @@ use App\Models\Campaigns;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class CampaignsController extends Controller
 {
@@ -17,7 +18,12 @@ class CampaignsController extends Controller
      */
     public function index()
     {
-        $news = Campaigns::all();
+        $news =  DB::table('campaigns')
+        ->whereDate('dtini', '<=', now())
+        ->whereDate('dtfim', '>=', now())
+        ->orderByDesc('created_at')
+        ->get();
+
         return view('admin.campaigns.Listcampaigns', compact('news'));
     }
 

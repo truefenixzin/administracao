@@ -57,13 +57,21 @@ class FronController extends Controller
 
         $payboxes = DB::select('SELECT * FROM payboxes ORDER BY created_at DESC LIMIT 9');
 
+        $qualitys = DB::table('qualitys')
+        ->whereDate('vencimento', '>=', now())
+        ->orderByDesc('qtd_selos')
+        ->get();
+
         return view('front.index', [
             'slides' => $slides,
             'workers' => $workers,
             'news' => $news,
             'campaigns' =>  $campaigns,
-            'payboxes' => $payboxes
+            'payboxes' => $payboxes,
+            'qualitys' => $qualitys
         ]);
+
+        
     }
 
     public function showPayBox()
