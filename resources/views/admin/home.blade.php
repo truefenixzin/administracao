@@ -25,7 +25,7 @@
                 <h2>Esse é o nosso calendário, não se esqueçam dos nossos encontros, sua participação é de suma
                     importância.</h2>
                 <div class="text-center">
-                    <img src="{{asset('site/img/calendario_comite.jpg')}}" class="img-fluid " alt="Responsive image"
+                    <img src="{{asset('site/img/calendario_comite.jpg')}}" class="img-fluid " alt="Responsive image">
                 </div>
             </div>
 

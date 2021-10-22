@@ -49,6 +49,9 @@
                 </ul>
                 <ul class="navbar-nav me-4 mb-2 mb-md-0">
                     <li class="navbar-brand">
+                        <a class="text-white nav-link active" aria-current="page" href="{{asset('site/archives/voce_sabia_intranet.pdf')}}">VOCÊ SABIA?</a>
+                    </li>                    
+                    <li class="navbar-brand">
                         <a class="text-white nav-link active" aria-current="page" href="{{route('front.home')}}">Home</a>
                     </li>
                     <li class="navbar-brand">

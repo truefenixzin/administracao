@@ -51,8 +51,8 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                {{-- <li><a class="nav-link scrollto active" href="#values">Home</a></li> --}}
-                <li><a class="nav-link scrollto active" href="#recado">Recados</a></li>
+                <li><a class="nav-link scrollto active " href="{{asset('site/archives/voce_sabia_intranet.pdf')}}" target="_blank">VOCÊ SABIA?</a></li>                
+                <li><a class="nav-link scrollto active " href="#recado">Recados</a></li>
                 <li><a class="nav-link scrollto" href="#portfolio">Campanhas</a></li>
                 <li><a class="nav-link scrollto" href="#team">Destaques</a></li>
                 <li><a class="nav-link scrollto" href="#financeiro">Caixa</a></li>
