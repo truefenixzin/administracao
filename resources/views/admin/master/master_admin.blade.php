@@ -104,7 +104,7 @@
                                 </li>
                             </ul>
                         </li>
-                       
+
                         <li class="
                             {{(strpos (Route :: currentRouteName (), 'admin.campaigns') === 0)
                             ? 'nav-item menu-is-opening menu-open'
@@ -140,7 +140,7 @@
                                 </li> --}}
                             </ul>
                         </li>
-                    
+
 
                         <li class="{{(strpos (Route :: currentRouteName (), 'admin.slides') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">
                             <a class="nav-link">
@@ -195,7 +195,7 @@
                                     <a href="{{route('admin.qualitys.index')}}" class="nav-link">
                                         <i class="far fa fa-edit nav-icon"></i>
                                         <p>Listar Selos</p>
-                                        
+
                                     </a>
                                 </li>
                             </ul>
@@ -225,6 +225,7 @@
                         </li> --}}
                     @endcan
 
+
                     <li class="{{(strpos (Route :: currentRouteName (), 'admin.posts') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">
                         <a class="nav-link">
                             <i class="nav-icon fas fa-comment"></i>
@@ -253,8 +254,40 @@
                         </ul>
                     </li>
 
-                    
-                    @can('cadastrar usuario')
+{{--                    <li class="{{(strpos (Route :: currentRouteName (), 'admin.posts') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">--}}
+{{--                        <a class="nav-link">--}}
+{{--                            <i class="nav-icon fas fa-bell"></i>--}}
+{{--                            <p>--}}
+{{--                                BLOG--}}
+{{--                                <i class="fas fa-angle-left right"></i>--}}
+{{--                            </p>--}}
+{{--                        </a>--}}
+{{--                        <ul class="nav nav-treeview">--}}
+{{--                            @can('cadastrar comite')--}}
+{{--                                <li class="nav-item">--}}
+{{--                                    <a href="{{route('admin.posts.create')}}" class="nav-link">--}}
+{{--                                        <i class="far fa fa-comment-medical nav-icon"></i>--}}
+{{--                                        <p>Cadastrar</p>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                            @endcan--}}
+{{--                            @can('listar comite')--}}
+{{--                                <li class="nav-item">--}}
+{{--                                    <a href="{{route('admin.posts.index')}}" class="nav-link">--}}
+{{--                                        <i class="far fa fa-list-ul nav-icon"></i>--}}
+{{--                                        <p>Listar tudo</p>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                            @endcan--}}
+{{--                        </ul>--}}
+{{--                    </li>--}}
+
+
+
+
+
+
+                @can('cadastrar usuario')
                         <li class="{{(strpos (Route :: currentRouteName (), 'admin.users') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">
                             <a class="nav-link">
                                 <i class="nav-icon fas fa-user"></i>

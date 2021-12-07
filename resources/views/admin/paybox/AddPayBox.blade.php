@@ -69,6 +69,8 @@
                                     <option value="riachuelo - ouro">Riachuelo - Ouro</option>
                                     <option value="riachuelo - prata">Riachuelo - Prata</option>
                                     <option value="riachuelo - bronze">Riachuelo - Bronze</option>
+                                    <option value="riachuelo - Diamante">Riachuelo - Diamante</option>
+                                    <option value="riachuelo - Platina">Riachuelo - Platina</option>
                                     <option value="preventiva">Preventiva</option>
                                 </select>
                             </div>
