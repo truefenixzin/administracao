@@ -56,7 +56,7 @@
                 <li><a class="nav-link scrollto" href="#portfolio">Campanhas</a></li>
                 <li><a class="nav-link scrollto" href="#team">Destaques</a></li>
                 <li><a class="nav-link scrollto" href="#financeiro">Caixa</a></li>
-                <li><a class="nav-link scrollto" href="#qualidade">Qualidade</a></li>
+{{--                <li><a class="nav-link scrollto" href="#qualidade">Qualidade</a></li>--}}
                 <li><a class="getstarted scrollto" href="{{route('admin.login')}}" target="_blank">Entrar</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
