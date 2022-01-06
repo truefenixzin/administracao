@@ -51,12 +51,13 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto active " href="{{asset('site/archives/voce_sabia_intranet.pdf')}}" target="_blank">VOCÊ SABIA?</a></li>
+                <li><a class="nav-link scrollto active " href="{{asset('site/archives/voce_sabia_intranet.pdf')}}"
+                       target="_blank">VOCÊ SABIA?</a></li>
                 <li><a class="nav-link scrollto active " href="#recado">Recados</a></li>
                 <li><a class="nav-link scrollto" href="#portfolio">Campanhas</a></li>
                 <li><a class="nav-link scrollto" href="#team">Destaques</a></li>
                 <li><a class="nav-link scrollto" href="#financeiro">Caixa</a></li>
-{{--                <li><a class="nav-link scrollto" href="#qualidade">Qualidade</a></li>--}}
+                {{--                <li><a class="nav-link scrollto" href="#qualidade">Qualidade</a></li>--}}
                 <li><a class="getstarted scrollto" href="{{route('admin.login')}}" target="_blank">Entrar</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
@@ -69,140 +70,142 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="values">
 
-{{--    <div class="container">--}}
-{{--        <div class="row">--}}
-{{--            <div class="col-lg-6 d-flex flex-column justify-content-center">--}}
-{{--                <h1 data-aos="fade-up">We offer modern solutions for growing your business</h1>--}}
-{{--                <h2 data-aos="fade-up" data-aos-delay="400">We are team of talented designers making websites with--}}
-{{--                    Bootstrap</h2>--}}
-{{--                <div data-aos="fade-up" data-aos-delay="600">--}}
-{{--                    <div class="text-center text-lg-start">--}}
-{{--                        <a href="#about"--}}
-{{--                           class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">--}}
-{{--                            <span>Get Started</span>--}}
-{{--                            <i class="bi bi-arrow-right"></i>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">--}}
-{{--                <img src="{{asset('new_front/assets/img/hero-img.png')}}" class="img-fluid" alt="">--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
+    {{--    <div class="container">--}}
+    {{--        <div class="row">--}}
+    {{--            <div class="col-lg-6 d-flex flex-column justify-content-center">--}}
+    {{--                <h1 data-aos="fade-up">We offer modern solutions for growing your business</h1>--}}
+    {{--                <h2 data-aos="fade-up" data-aos-delay="400">We are team of talented designers making websites with--}}
+    {{--                    Bootstrap</h2>--}}
+    {{--                <div data-aos="fade-up" data-aos-delay="600">--}}
+    {{--                    <div class="text-center text-lg-start">--}}
+    {{--                        <a href="#about"--}}
+    {{--                           class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">--}}
+    {{--                            <span>Get Started</span>--}}
+    {{--                            <i class="bi bi-arrow-right"></i>--}}
+    {{--                        </a>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
+    {{--            </div>--}}
+    {{--            <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">--}}
+    {{--                <img src="{{asset('new_front/assets/img/hero-img.png')}}" class="img-fluid" alt="">--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    {{--    </div>--}}
 
 </section><!-- End Hero -->
 
 <main id="main">
-          <!-- ======= About Section ======= -->
+    <!-- ======= About Section ======= -->
 
-          <!-- ======= Values Section ======= -->
-           <section id="values" class="values">
+    <!-- ======= Values Section ======= -->
+    <section id="values" class="values">
 
-            <div class="container" data-aos="fade-up">
+        <div class="container" data-aos="fade-up">
 
-              <header class="section-header">
+            <header class="section-header">
                 <p>Missão, Visão e Valores</p>
-              </header>
+            </header>
 
-              <div class="row">
+            <div class="row">
 
                 <div class="col-lg-4">
-                  <div class="box" data-aos="fade-up" data-aos-delay="200">
-                    <img src="{{asset('new_front/assets/img/values-1.png')}}" class="img-fluid" alt="">
-                    <h3>Missão</h3>
-                    <p>Oferecer a melhor solução em estratégias
-                        inteligentes de cobrança aos nossos clientes e
-                        parceiros, agregando alta qualidade e os
-                        melhores resultados.</p>
-                  </div>
+                    <div class="box" data-aos="fade-up" data-aos-delay="200">
+                        <img src="{{asset('new_front/assets/img/values-1.png')}}" class="img-fluid" alt="">
+                        <h3>Missão</h3>
+                        <p>Oferecer a melhor solução em estratégias
+                            inteligentes de cobrança aos nossos clientes e
+                            parceiros, agregando alta qualidade e os
+                            melhores resultados.</p>
+                    </div>
                 </div>
 
                 <div class="col-lg-4 mt-4 mt-lg-0">
-                  <div class="box" data-aos="fade-up" data-aos-delay="400">
-                    <img src="{{asset('new_front/assets/img/values-2.png')}}" class="img-fluid" alt="">
-                    <h3>Visão</h3>
-                    <p>Ser reconhecida como referência em recuperação
-                        de crédito e desenvolvimento
-                        humano por nossos clientes e colaboradores.</p>
-                  </div>
+                    <div class="box" data-aos="fade-up" data-aos-delay="400">
+                        <img src="{{asset('new_front/assets/img/values-2.png')}}" class="img-fluid" alt="">
+                        <h3>Visão</h3>
+                        <p>Ser reconhecida como referência em recuperação
+                            de crédito e desenvolvimento
+                            humano por nossos clientes e colaboradores.</p>
+                    </div>
                 </div>
 
                 <div class="col-lg-4 mt-4 mt-lg-0">
-                  <div class="box" data-aos="fade-up" data-aos-delay="600">
-                    <img src="{{asset('new_front/assets/img/values-3.png')}}" class="img-fluid" alt="">
-                    <h3>Valores</h3>
-                    <p align="left">
-                        <b>P</b>erseverança; (diariamente buscamos ser perseverantes, não desistindo de atingir o resultado proposto)<br/>
-                        <b>H</b>onestidade; (seja com os clientes ou colegas de trabalho)<br/>
-                        <b>E</b>mpatia; (entendendo a situação dos clientes ou colegas e buscando a melhor solução)<br/>
-                        <b>R</b>espeito; (independente da hierarquia ou situação do cliente)<br/>
-                        <b>F</b>oco no cliente; (para atingimento do resultado)<br/>
-                        <b>I</b>niciativa; (todos os dias vivemos algo diferente, é necessário para enfrentar os desafios)<br/>
-                        <b>L</b>ealdade; (fidelidade aos compromissos assumidos)<br/>
-                    </p>
-                  </div>
+                    <div class="box" data-aos="fade-up" data-aos-delay="600">
+                        <img src="{{asset('new_front/assets/img/values-3.png')}}" class="img-fluid" alt="">
+                        <h3>Valores</h3>
+                        <p align="left">
+                            <b>P</b>erseverança; (diariamente buscamos ser perseverantes, não desistindo de atingir o
+                            resultado proposto)<br/>
+                            <b>H</b>onestidade; (seja com os clientes ou colegas de trabalho)<br/>
+                            <b>E</b>mpatia; (entendendo a situação dos clientes ou colegas e buscando a melhor
+                            solução)<br/>
+                            <b>R</b>espeito; (independente da hierarquia ou situação do cliente)<br/>
+                            <b>F</b>oco no cliente; (para atingimento do resultado)<br/>
+                            <b>I</b>niciativa; (todos os dias vivemos algo diferente, é necessário para enfrentar os
+                            desafios)<br/>
+                            <b>L</b>ealdade; (fidelidade aos compromissos assumidos)<br/>
+                        </p>
+                    </div>
                 </div>
-
-              </div>
 
             </div>
 
-          </section><!-- End Values Section -->
+        </div>
+
+    </section><!-- End Values Section -->
 
 
-          <!-- Inicio recados -->
+    <!-- Inicio recados -->
 
-          <section id="recado" class="portfolio">
+    <section id="recado" class="portfolio">
 
-            <div class="container" data-aos="fade-up">
+        <div class="container" data-aos="fade-up">
 
-              <header class="section-header">
+            <header class="section-header">
                 <h2>Recados</h2>
                 <p>Nossos recados</p>
-              </header>
+            </header>
 
-              <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-12 d-flex justify-content-center">
-{{--                   <ul id="portfolio-flters">--}}
-{{--                    <li data-filter="*" class="filter-active">Tudo</li>--}}
-{{--                    <li data-filter=".filter-app">App</li>--}}
-{{--                    <li data-filter=".filter-card">Card</li>--}}
-{{--                    <li data-filter=".filter-web">Web</li>--}}
-{{--                  </ul>--}}
+                    {{--                   <ul id="portfolio-flters">--}}
+                    {{--                    <li data-filter="*" class="filter-active">Tudo</li>--}}
+                    {{--                    <li data-filter=".filter-app">App</li>--}}
+                    {{--                    <li data-filter=".filter-card">Card</li>--}}
+                    {{--                    <li data-filter=".filter-web">Web</li>--}}
+                    {{--                  </ul>--}}
                 </div>
-              </div>
+            </div>
 
-              <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-
-
-            @foreach($slides as $slide)
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                  <div class="portfolio-wrap">
-                    <img src="{{\Illuminate\Support\Facades\Storage::url($slide->cover)}}" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                      <h4>{{$slide->title}}</h4>
-                      <div class="portfolio-links">
-                        <a href="{{\Illuminate\Support\Facades\Storage::url($slide->cover)}}" data-gallery="portfolioGallery" class="portfokio-lightbox" title="{{$slide->title}}"><i class="bi bi-plus"></i></a>
-                      </div>
+                @foreach($slides as $slide)
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <img src="{{\Illuminate\Support\Facades\Storage::url($slide->cover)}}" class="img-fluid"
+                                 alt="">
+                            <div class="portfolio-info">
+                                <h4>{{$slide->title}}</h4>
+                                <div class="portfolio-links">
+                                    <a href="{{\Illuminate\Support\Facades\Storage::url($slide->cover)}}"
+                                       data-gallery="portfolioGallery" class="portfokio-lightbox"
+                                       title="{{$slide->message}}"><i class="bi bi-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-            @endforeach
-
-              </div>
+                @endforeach
 
             </div>
 
-          </section><!-- End Portfolio Section -->
+        </div>
+
+    </section><!-- End Portfolio Section -->
 
 
+    <!-- Fim dos recados -->
 
-
-          <!-- Fim dos recados -->
-
-           <!-- ======= Testimonials Section ======= -->
+    <!-- ======= Testimonials Section ======= -->
 {{--          <section id="testimonials" class="testimonials">--}}
 
 {{--            <div class="container" data-aos="fade-up">--}}
@@ -496,128 +499,127 @@
 
 {{--          </section><!-- End Features Section -->--}}
 
-          <!-- ======= Portfolio Section ======= -->
-          <section id="portfolio" class="portfolio">
+<!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
 
-            <div class="container" data-aos="fade-up">
+        <div class="container" data-aos="fade-up">
 
-              <header class="section-header">
+            <header class="section-header">
                 <h2>Campanhas</h2>
                 <p>Nossas campanhas</p>
-              </header>
+            </header>
 
-              <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-12 d-flex justify-content-center">
-{{--                   <ul id="portfolio-flters">--}}
-{{--                    <li data-filter="*" class="filter-active">Tudo</li>--}}
-{{--                    <li data-filter=".filter-app">App</li>--}}
-{{--                    <li data-filter=".filter-card">Card</li>--}}
-{{--                    <li data-filter=".filter-web">Web</li>--}}
-{{--                  </ul>--}}
+                    {{--                   <ul id="portfolio-flters">--}}
+                    {{--                    <li data-filter="*" class="filter-active">Tudo</li>--}}
+                    {{--                    <li data-filter=".filter-app">App</li>--}}
+                    {{--                    <li data-filter=".filter-card">Card</li>--}}
+                    {{--                    <li data-filter=".filter-web">Web</li>--}}
+                    {{--                  </ul>--}}
                 </div>
-              </div>
+            </div>
 
-              <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
 
-
-            @foreach($campaigns as $campaign)
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                  <div class="portfolio-wrap">
-                    <img src="{{\Illuminate\Support\Facades\Storage::url($campaign->cover)}}" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                      <h4>{{$campaign->title}}</h4>
-                      <p>{!!$campaign->description!!}</p>
-                      <div class="portfolio-links">
-                        <a href="{{\Illuminate\Support\Facades\Storage::url($campaign->cover)}}" data-gallery="portfolioGallery" class="portfokio-lightbox" title="{{$campaign->title}}"><i class="bi bi-plus"></i></a>
-                      </div>
+                @foreach($campaigns as $campaign)
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <img src="{{\Illuminate\Support\Facades\Storage::url($campaign->cover)}}" class="img-fluid"
+                                 alt="">
+                            <div class="portfolio-info">
+                                <h4>{{$campaign->title}}</h4>
+                                <div class="portfolio-links">
+                                    <a href="{{\Illuminate\Support\Facades\Storage::url($campaign->cover)}}"
+                                       data-gallery="portfolioGallery" class="portfokio-lightbox"
+                                       title="{{$campaign->description}}"><i class="bi bi-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-            @endforeach
-
-              </div>
+                @endforeach
 
             </div>
 
-          </section><!-- End Portfolio Section -->
+        </div>
+
+    </section><!-- End Portfolio Section -->
 
 
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
 
-          <!-- ======= Team Section ======= -->
-          <section id="team" class="team">
+        <div class="container" data-aos="fade-up">
 
-            <div class="container" data-aos="fade-up">
-
-              <header class="section-header">
+            <header class="section-header">
                 <h2>Equipe</h2>
                 <p>Os destaques</p>
-              </header>
+            </header>
 
-              <div class="row gy-4">
+            <div class="row gy-4">
 
                 @foreach($workers as $worker)
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                  <div class="member">
-                    <div class="member-img">
-                      <img src="{{\Illuminate\Support\Facades\Storage::url($worker->cover)}}" class="img-fluid" alt="">
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="{{\Illuminate\Support\Facades\Storage::url($worker->cover)}}"
+                                     class="img-fluid" alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4>{{$worker->name}}</h4>
+                                {!!$worker->comments!!}
+                            </div>
+                        </div>
                     </div>
-                    <div class="member-info">
-                      <h4>{{$worker->name}}</h4>
-                      {!!$worker->comments!!}
-                    </div>
-                  </div>
-                </div>
                 @endforeach
-              </div>
-
             </div>
 
-          </section><!-- End Team Section -->
+        </div>
+
+    </section><!-- End Team Section -->
 
 
+    <!-- ======= Team Section ======= -->
+    <section id="financeiro" class="team">
 
-          <!-- ======= Team Section ======= -->
-          <section id="financeiro" class="team">
+        <div class="container" data-aos="fade-up">
 
-            <div class="container" data-aos="fade-up">
-
-              <header class="section-header">
+            <header class="section-header">
                 <h2>Financeiro</h2>
                 <p>Nosso caixa</p>
-              </header>
+            </header>
 
-              <div class="row gy-4">
+            <div class="row gy-4">
 
                 <table class="table table-bordered text-center">
-                  <thead>
-                  <tr>
-                      <th>Data Cadastro</th>
-                      <th>Categoria</th>
-                      <th>Arquivo</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  @foreach($payboxes as $paybox)
-                      <tr>
+                    <thead>
+                    <tr>
+                        <th>Data Cadastro</th>
+                        <th>Categoria</th>
+                        <th>Arquivo</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($payboxes as $paybox)
+                        <tr>
 
-                          <td class="align-middle">
-                              <b>{{\Carbon\Carbon::parse($paybox->created_at)->format('d/m/Y H:i')}}</b></td>
-                          <td class="align-middle"><span>{{strtoupper($paybox->categories)}}</span></td>
-                          <td class="align-middle "><a target="_blank"
-                                                       href="{{\Illuminate\Support\Facades\Storage::url($paybox->cover)}}">Clique
-                                  aqui para abrir o caixa</a></td>
-                      </tr>
-                  @endforeach
-                  </tbody>
-              </table>
-
-              </div>
+                            <td class="align-middle">
+                                <b>{{\Carbon\Carbon::parse($paybox->created_at)->format('d/m/Y H:i')}}</b></td>
+                            <td class="align-middle"><span>{{strtoupper($paybox->categories)}}</span></td>
+                            <td class="align-middle "><a target="_blank"
+                                                         href="{{\Illuminate\Support\Facades\Storage::url($paybox->cover)}}">Clique
+                                    aqui para abrir o caixa</a></td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
 
             </div>
 
-          </section><!-- End Team Section -->
+        </div>
 
+    </section><!-- End Team Section -->
 
 
 {{--          <section id="qualidade" class="team">--}}
@@ -660,7 +662,7 @@
 
 {{--          </section><!-- End qualitys Section -->--}}
 
-          <!-- ======= Clients Section ======= -->
+<!-- ======= Clients Section ======= -->
     <section id="clients" class="clients">
 
         <div class="container" data-aos="fade-up">
@@ -760,22 +762,23 @@
             &copy; Copyright <strong><span><a href="https://santosrsystems.com.br/" target="_blank">Santos R Systems</a></span></strong>.
             All Rights Reserved
         </div>
-      </div>
-    </footer><!-- End Footer -->
+    </div>
+</footer><!-- End Footer -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Vendor JS Files -->
-    <script src="{{asset('new_front/assets/vendor/bootstrap/js/bootstrap.bundle.js')}}"></script>
-    <script src="{{asset('new_front/assets/vendor/aos/aos.js')}}"></script>
-    <script src="{{asset('new_front/assets/vendor/php-email-form/validate.js')}}"></script>
-    <script src="{{asset('new_front/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
-    <script src="{{asset('new_front/assets/vendor/purecounter/purecounter.js')}}"></script>
-    <script src="{{asset('new_front/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
-    <script src="{{asset('new_front/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+<!-- Vendor JS Files -->
+<script src="{{asset('new_front/assets/vendor/bootstrap/js/bootstrap.bundle.js')}}"></script>
+<script src="{{asset('new_front/assets/vendor/aos/aos.js')}}"></script>
+<script src="{{asset('new_front/assets/vendor/php-email-form/validate.js')}}"></script>
+<script src="{{asset('new_front/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+<script src="{{asset('new_front/assets/vendor/purecounter/purecounter.js')}}"></script>
+<script src="{{asset('new_front/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+<script src="{{asset('new_front/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
 
-    <!-- Template Main JS File -->
-    <script src="{{asset('new_front/assets/js/main.js')}}"></script>
+<!-- Template Main JS File -->
+<script src="{{asset('new_front/assets/js/main.js')}}"></script>
 
-  </body>
+</body>
 </html>
