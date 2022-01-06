@@ -53,7 +53,6 @@ class SlidesController extends Controller
             'title' => 'required|unique:posts',
             'dtini' => 'required',
             'dtfim' => 'required|after_or_equal:dtini',
-            'message' => 'required',
             'cover' => 'required|mimes:jpg,bmp,png',
 
         ]);
@@ -128,7 +127,6 @@ class SlidesController extends Controller
             'title' => 'required|unique:posts',
             'dtini' => 'required',
             'dtfim' => 'required|after_or_equal:dtini',
-            'message' => 'required',
 
         ]);
 
