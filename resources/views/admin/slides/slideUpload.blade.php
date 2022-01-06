@@ -21,7 +21,7 @@
                 <h3 class="card-title">Subida de arquivos para os Slides</h3>
             </div>
 
-            <div class="card-body">
+            <div class="card-body mx-auto">
                 @error('success')
                 <div class="alert alert-success alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -99,19 +99,24 @@
 
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-6">
                                 <label for="nome">Data Início:</label>
                                 <input type="date" class="form-control" name="dtini"
                                        value="{{old('dtini')}}">
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-lg-6">
                                 <label for="nome">Data Fim:</label>
                                 <input type="date" class="form-control" name="dtfim"
                                        value="{{old('dtfim')}}">
                             </div>
-                            <div class="col-6">
+
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
                                 <label>Mensagem:</label>
-                                <input type="text" class="form-control" name="message" value="{{old('message')}}">
+                                <textarea class="form-control summernote"
+                                          name="message" rows="6">{{old('message')}}</textarea>
+
                             </div>
                         </div>
                     </div>

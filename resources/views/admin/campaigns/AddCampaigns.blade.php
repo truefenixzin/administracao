@@ -120,7 +120,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <label>Notícia:</label>
+                                <label>Descrição:</label>
                                 <textarea class="form-control summernote"
                                           name="comments" rows="6">{{old('comments')}}</textarea>
                             </div>

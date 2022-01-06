@@ -21,7 +21,7 @@
                 <h3 class="card-title">Atualizar as campanhas.</h3>
             </div>
 
-            <div class="card-body">
+            <div class="card-body mx-auto">
                 @error('success')
                 <div class="alert alert-success alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
