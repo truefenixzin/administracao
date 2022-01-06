@@ -51,7 +51,7 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto active " href="{{asset('site/archives/voce_sabia_intranet.pdf')}}" target="_blank">VOCÊ SABIA?</a></li>                
+                <li><a class="nav-link scrollto active " href="{{asset('site/archives/voce_sabia_intranet.pdf')}}" target="_blank">VOCÊ SABIA?</a></li>
                 <li><a class="nav-link scrollto active " href="#recado">Recados</a></li>
                 <li><a class="nav-link scrollto" href="#portfolio">Campanhas</a></li>
                 <li><a class="nav-link scrollto" href="#team">Destaques</a></li>
@@ -620,45 +620,45 @@
 
 
 
-          <section id="qualidade" class="team">
+{{--          <section id="qualidade" class="team">--}}
 
-            <div class="container" data-aos="fade-up">
+{{--            <div class="container" data-aos="fade-up">--}}
 
-              <header class="section-header">
-                <h2>Qualidade</h2>
-                <p>Selos de contato perfeito</p>
-              </header>
+{{--              <header class="section-header">--}}
+{{--                <h2>Qualidade</h2>--}}
+{{--                <p>Selos de contato perfeito</p>--}}
+{{--              </header>--}}
 
-              <div class="row gy-4">
+{{--              <div class="row gy-4">--}}
 
-                <table class="table table-bordered text-center">
-                  <thead>
-                  <tr>
-                    <th>Foto</th>
-                    <th>Nome</th>
-                    <th>Selos</th>
-                    </h2>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  @foreach($qualitys as $quality)
-                      <tr>
-                        <td class="align-middle "><img src="{{\Illuminate\Support\Facades\Storage::url($quality->avatar)}}"
-                                                class="rounded-circle" width="140" height="140"></td>
-                                <td class="align-middle"><b>{{$quality->nome}}</b>
-                                </td>
-                                <td class="align-middle">
-                                    <b><h2>{{$quality->qtd_selos}}</h2></b></td>
-                      </tr>
-                  @endforeach
-                  </tbody>
-              </table>
+{{--                <table class="table table-bordered text-center">--}}
+{{--                  <thead>--}}
+{{--                  <tr>--}}
+{{--                    <th>Foto</th>--}}
+{{--                    <th>Nome</th>--}}
+{{--                    <th>Selos</th>--}}
+{{--                    </h2>--}}
+{{--                  </tr>--}}
+{{--                  </thead>--}}
+{{--                  <tbody>--}}
+{{--                  @foreach($qualitys as $quality)--}}
+{{--                      <tr>--}}
+{{--                        <td class="align-middle "><img src="{{\Illuminate\Support\Facades\Storage::url($quality->avatar)}}"--}}
+{{--                                                class="rounded-circle" width="140" height="140"></td>--}}
+{{--                                <td class="align-middle"><b>{{$quality->nome}}</b>--}}
+{{--                                </td>--}}
+{{--                                <td class="align-middle">--}}
+{{--                                    <b><h2>{{$quality->qtd_selos}}</h2></b></td>--}}
+{{--                      </tr>--}}
+{{--                  @endforeach--}}
+{{--                  </tbody>--}}
+{{--              </table>--}}
 
-              </div>
+{{--              </div>--}}
 
-            </div>
+{{--            </div>--}}
 
-          </section><!-- End qualitys Section -->
+{{--          </section><!-- End qualitys Section -->--}}
 
           <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients">
@@ -747,6 +747,7 @@
                             maiúsculo)
                         </li>
                         <li>MULTI - USUARIO: PHERFILCOBRANCAS (multi) SENHA: 1Pherfilcobrancas@</li>
+                        <li>RIACHUELO - USUARIO: MIDWAYPHERFIL SENHA: 1Midwaypherfil@</li>
                     </ul>
                 </div>
 
