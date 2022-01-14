@@ -562,7 +562,7 @@
                 @foreach($workers as $worker)
                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         <div class="member">
-                            <div class="member-img">
+                            <div class="member-info">
                                 <img src="{{\Illuminate\Support\Facades\Storage::url($worker->cover)}}"
                                      class="img-fluid" alt="">
                             </div>
