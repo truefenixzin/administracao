@@ -82,28 +82,28 @@
 
                     @can('subir arquivos')
                         {{--                        menu slides--}}
-                        <li class="{{(strpos (Route :: currentRouteName (), 'admin.paybox') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">
-                            <a class="nav-link">
-                                <i class="nav-icon fas fa-file-invoice-dollar"></i>
-                                <p>Caixa </p>
-                                <i class="fas fa-angle-left right"></i>
+{{--                        <li class="{{(strpos (Route :: currentRouteName (), 'admin.paybox') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">--}}
+{{--                            <a class="nav-link">--}}
+{{--                                <i class="nav-icon fas fa-file-invoice-dollar"></i>--}}
+{{--                                <p>Caixa </p>--}}
+{{--                                <i class="fas fa-angle-left right"></i>--}}
 
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{route('admin.paybox.create')}}" class="nav-link">
-                                        <i class="far fa fa-edit nav-icon"></i>
-                                        <p>Atualizar</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{route('admin.paybox.index')}}" class="nav-link">
-                                        <i class="far fa fa-money-check nav-icon"></i>
-                                        <p>Gerenciar</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+{{--                            </a>--}}
+{{--                            <ul class="nav nav-treeview">--}}
+{{--                                <li class="nav-item">--}}
+{{--                                    <a href="{{route('admin.paybox.create')}}" class="nav-link">--}}
+{{--                                        <i class="far fa fa-edit nav-icon"></i>--}}
+{{--                                        <p>Atualizar</p>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                                <li class="nav-item">--}}
+{{--                                    <a href="{{route('admin.paybox.index')}}" class="nav-link">--}}
+{{--                                        <i class="far fa fa-money-check nav-icon"></i>--}}
+{{--                                        <p>Gerenciar</p>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </li>--}}
 
                         <li class="
                             {{(strpos (Route :: currentRouteName (), 'admin.campaigns') === 0)
@@ -226,33 +226,33 @@
                     @endcan
 
 
-                    <li class="{{(strpos (Route :: currentRouteName (), 'admin.posts') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">
-                        <a class="nav-link">
-                            <i class="nav-icon fas fa-comment"></i>
-                            <p>
-                                Comitê
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            @can('cadastrar comite')
-                                <li class="nav-item">
-                                    <a href="{{route('admin.posts.create')}}" class="nav-link">
-                                        <i class="far fa fa-comment-medical nav-icon"></i>
-                                        <p>Cadastrar</p>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('listar comite')
-                                <li class="nav-item">
-                                    <a href="{{route('admin.posts.index')}}" class="nav-link">
-                                        <i class="far fa fa-list-ul nav-icon"></i>
-                                        <p>Listar tudo</p>
-                                    </a>
-                                </li>
-                            @endcan
-                        </ul>
-                    </li>
+{{--                    <li class="{{(strpos (Route :: currentRouteName (), 'admin.posts') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">--}}
+{{--                        <a class="nav-link">--}}
+{{--                            <i class="nav-icon fas fa-comment"></i>--}}
+{{--                            <p>--}}
+{{--                                Comitê--}}
+{{--                                <i class="fas fa-angle-left right"></i>--}}
+{{--                            </p>--}}
+{{--                        </a>--}}
+{{--                        <ul class="nav nav-treeview">--}}
+{{--                            @can('cadastrar comite')--}}
+{{--                                <li class="nav-item">--}}
+{{--                                    <a href="{{route('admin.posts.create')}}" class="nav-link">--}}
+{{--                                        <i class="far fa fa-comment-medical nav-icon"></i>--}}
+{{--                                        <p>Cadastrar</p>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                            @endcan--}}
+{{--                            @can('listar comite')--}}
+{{--                                <li class="nav-item">--}}
+{{--                                    <a href="{{route('admin.posts.index')}}" class="nav-link">--}}
+{{--                                        <i class="far fa fa-list-ul nav-icon"></i>--}}
+{{--                                        <p>Listar tudo</p>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+{{--                            @endcan--}}
+{{--                        </ul>--}}
+{{--                    </li>--}}
 
 {{--                    <li class="{{(strpos (Route :: currentRouteName (), 'admin.posts') === 0)? 'nav-item menu-is-opening menu-open': 'nav-item'}}">--}}
 {{--                        <a class="nav-link">--}}

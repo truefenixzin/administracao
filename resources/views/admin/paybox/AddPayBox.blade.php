@@ -62,7 +62,8 @@
                                 <label for="categories">Tipo:</label>
                                 <select name="categories" id="categories" class="form-control">
                                     <option value="avon">Avon</option>
-                                    <option value="digital">Digital</option>
+                                    <option value="digital multi">Digital - Multicarteiras </option>
+                                    <option value="digital riachuelo">Digital - Riachuelo </option>
                                     <option value="financeiras">Financeiras</option>
                                     <option value="multicarteiras">Multicarteiras</option>
                                     <option value="riachuelo - esmeralda">Riachuelo - Esmeralda</option>

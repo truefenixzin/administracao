@@ -56,7 +56,7 @@
                 <li><a class="nav-link scrollto active " href="#recado">Recados</a></li>
                 <li><a class="nav-link scrollto" href="#portfolio">Campanhas</a></li>
                 <li><a class="nav-link scrollto" href="#team">Destaques</a></li>
-                <li><a class="nav-link scrollto" href="#financeiro">Caixa</a></li>
+{{--                <li><a class="nav-link scrollto" href="#financeiro">Caixa</a></li>--}}
                 {{--                <li><a class="nav-link scrollto" href="#qualidade">Qualidade</a></li>--}}
                 <li><a class="getstarted scrollto" href="{{route('admin.login')}}" target="_blank">Entrar</a></li>
             </ul>
@@ -581,45 +581,45 @@
 
 
     <!-- ======= Team Section ======= -->
-    <section id="financeiro" class="team">
+{{--    <section id="financeiro" class="team">--}}
 
-        <div class="container" data-aos="fade-up">
+{{--        <div class="container" data-aos="fade-up">--}}
 
-            <header class="section-header">
-                <h2>Financeiro</h2>
-                <p>Nosso caixa</p>
-            </header>
+{{--            <header class="section-header">--}}
+{{--                <h2>Financeiro</h2>--}}
+{{--                <p>Nosso caixa</p>--}}
+{{--            </header>--}}
 
-            <div class="row gy-4">
+{{--            <div class="row gy-4">--}}
 
-                <table class="table table-bordered text-center">
-                    <thead>
-                    <tr>
-                        <th>Data Cadastro</th>
-                        <th>Categoria</th>
-                        <th>Arquivo</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($payboxes as $paybox)
-                        <tr>
+{{--                <table class="table table-bordered text-center">--}}
+{{--                    <thead>--}}
+{{--                    <tr>--}}
+{{--                        <th>Data Cadastro</th>--}}
+{{--                        <th>Categoria</th>--}}
+{{--                        <th>Arquivo</th>--}}
+{{--                    </tr>--}}
+{{--                    </thead>--}}
+{{--                    <tbody>--}}
+{{--                    @foreach($payboxes as $paybox)--}}
+{{--                        <tr>--}}
 
-                            <td class="align-middle">
-                                <b>{{\Carbon\Carbon::parse($paybox->created_at)->format('d/m/Y H:i')}}</b></td>
-                            <td class="align-middle"><span>{{strtoupper($paybox->categories)}}</span></td>
-                            <td class="align-middle "><a target="_blank"
-                                                         href="{{\Illuminate\Support\Facades\Storage::url($paybox->cover)}}">Clique
-                                    aqui para abrir o caixa</a></td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
+{{--                            <td class="align-middle">--}}
+{{--                                <b>{{\Carbon\Carbon::parse($paybox->created_at)->format('d/m/Y H:i')}}</b></td>--}}
+{{--                            <td class="align-middle"><span>{{strtoupper($paybox->categories)}}</span></td>--}}
+{{--                            <td class="align-middle "><a target="_blank"--}}
+{{--                                                         href="{{\Illuminate\Support\Facades\Storage::url($paybox->cover)}}">Clique--}}
+{{--                                    aqui para abrir o caixa</a></td>--}}
+{{--                        </tr>--}}
+{{--                    @endforeach--}}
+{{--                    </tbody>--}}
+{{--                </table>--}}
 
-            </div>
+{{--            </div>--}}
 
-        </div>
+{{--        </div>--}}
 
-    </section><!-- End Team Section -->
+{{--    </section><!-- End Team Section -->--}}
 
 
 {{--          <section id="qualidade" class="team">--}}
