@@ -50,25 +50,35 @@ class FronController extends Controller
         }
 
         $campaigns = DB::table('campaigns')
-        ->whereDate('dtini', '<=', now())
-        ->whereDate('dtfim', '>=', now())
-        ->orderByDesc('created_at')
-        ->get();
+            ->whereDate('dtini', '<=', now())
+            ->whereDate('dtfim', '>=', now())
+            ->orderByDesc('created_at')
+            ->get();
 
         $payboxes = DB::select('SELECT * FROM payboxes ORDER BY created_at DESC LIMIT 11');
 
-        $qualitys = DB::table('qualitys')
-        ->whereDate('vencimento', '>=', now())
-        ->orderByDesc('qtd_selos')
-        ->get();
+        $qualitys_op = DB::table('qualitys')
+            ->whereDate('vencimento', '>=', now())
+            ->where('qtd_selos', '=', 0)
+            ->orderByDesc('created_at')
+            ->get();
+
+        $qualitys_boss = DB::table('qualitys')
+            ->whereDate('vencimento', '>=', now())
+            ->where('qtd_selos', '=', 1)
+            ->orderByDesc('created_at')
+            ->limit(1)
+            ->get();
 
         return view('front.index', [
             'slides' => $slides,
             'workers' => $workers,
             'news' => $news,
-            'campaigns' =>  $campaigns,
+            'campaigns' => $campaigns,
             'payboxes' => $payboxes,
-            'qualitys' => $qualitys
+            'qualitys_op' => $qualitys_op,
+            'qualitys_boss' => $qualitys_boss,
+
         ]);
 
 

@@ -185,19 +185,19 @@
                                         <p>Listar Destaques</p>
                                     </a>
                                 </li>
-{{--                                <li class="nav-item">--}}
-{{--                                    <a href="{{route('admin.qualitys.create')}}" class="nav-link">--}}
-{{--                                        <i class="far fa fa-vote-yea nav-icon"></i>--}}
-{{--                                        <p>Cadastrar Selos</p>--}}
-{{--                                    </a>--}}
-{{--                                </li>--}}
-{{--                                <li class="nav-item">--}}
-{{--                                    <a href="{{route('admin.qualitys.index')}}" class="nav-link">--}}
-{{--                                        <i class="far fa fa-edit nav-icon"></i>--}}
-{{--                                        <p>Listar Selos</p>--}}
+                                <li class="nav-item">
+                                    <a href="{{route('admin.qualitys.create')}}" class="nav-link">
+                                        <i class="far fa fa-vote-yea nav-icon"></i>
+                                        <p>Cadastrar Selos</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('admin.qualitys.index')}}" class="nav-link">
+                                        <i class="far fa fa-edit nav-icon"></i>
+                                        <p>Listar Selos</p>
 
-{{--                                    </a>--}}
-{{--                                </li>--}}
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         {{--                    Menu Features--}}

@@ -99,7 +99,11 @@
                             </div>
                             <div class="col-6">
                                 <label>Quantidade:</label>
-                                <input type="number" class="form-control" name="qtdselos" value="{{old('qtdselos')}}">
+                                <select name="qtdselos" id="qtdselos" class="form-control">
+                                    <option value="0">Operador</option>
+                                    <option value="1">Líder</option>
+                                </select>
+
                             </div>
                             <div class="col-6">
                                 <label>Vencimento:</label>

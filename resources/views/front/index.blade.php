@@ -56,7 +56,7 @@
                 <li><a class="nav-link scrollto active " href="#recado">Recados</a></li>
                 <li><a class="nav-link scrollto" href="#portfolio">Campanhas</a></li>
                 <li><a class="nav-link scrollto" href="#team">Destaques</a></li>
-{{--                <li><a class="nav-link scrollto" href="#financeiro">Caixa</a></li>--}}
+                                <li><a class="nav-link scrollto" href="#qualidade">Monitoria</a></li>
                 {{--                <li><a class="nav-link scrollto" href="#qualidade">Qualidade</a></li>--}}
                 <li><a class="getstarted scrollto" href="{{route('admin.login')}}" target="_blank">Entrar</a></li>
             </ul>
@@ -581,88 +581,130 @@
 
 
     <!-- ======= Team Section ======= -->
-{{--    <section id="financeiro" class="team">--}}
+    {{--    <section id="financeiro" class="team">--}}
 
-{{--        <div class="container" data-aos="fade-up">--}}
+    {{--        <div class="container" data-aos="fade-up">--}}
 
-{{--            <header class="section-header">--}}
-{{--                <h2>Financeiro</h2>--}}
-{{--                <p>Nosso caixa</p>--}}
-{{--            </header>--}}
+    {{--            <header class="section-header">--}}
+    {{--                <h2>Financeiro</h2>--}}
+    {{--                <p>Nosso caixa</p>--}}
+    {{--            </header>--}}
 
-{{--            <div class="row gy-4">--}}
+    {{--            <div class="row gy-4">--}}
 
-{{--                <table class="table table-bordered text-center">--}}
-{{--                    <thead>--}}
-{{--                    <tr>--}}
-{{--                        <th>Data Cadastro</th>--}}
-{{--                        <th>Categoria</th>--}}
-{{--                        <th>Arquivo</th>--}}
-{{--                    </tr>--}}
-{{--                    </thead>--}}
-{{--                    <tbody>--}}
-{{--                    @foreach($payboxes as $paybox)--}}
-{{--                        <tr>--}}
+    {{--                <table class="table table-bordered text-center">--}}
+    {{--                    <thead>--}}
+    {{--                    <tr>--}}
+    {{--                        <th>Data Cadastro</th>--}}
+    {{--                        <th>Categoria</th>--}}
+    {{--                        <th>Arquivo</th>--}}
+    {{--                    </tr>--}}
+    {{--                    </thead>--}}
+    {{--                    <tbody>--}}
+    {{--                    @foreach($payboxes as $paybox)--}}
+    {{--                        <tr>--}}
 
-{{--                            <td class="align-middle">--}}
-{{--                                <b>{{\Carbon\Carbon::parse($paybox->created_at)->format('d/m/Y H:i')}}</b></td>--}}
-{{--                            <td class="align-middle"><span>{{strtoupper($paybox->categories)}}</span></td>--}}
-{{--                            <td class="align-middle "><a target="_blank"--}}
-{{--                                                         href="{{\Illuminate\Support\Facades\Storage::url($paybox->cover)}}">Clique--}}
-{{--                                    aqui para abrir o caixa</a></td>--}}
-{{--                        </tr>--}}
-{{--                    @endforeach--}}
-{{--                    </tbody>--}}
-{{--                </table>--}}
+    {{--                            <td class="align-middle">--}}
+    {{--                                <b>{{\Carbon\Carbon::parse($paybox->created_at)->format('d/m/Y H:i')}}</b></td>--}}
+    {{--                            <td class="align-middle"><span>{{strtoupper($paybox->categories)}}</span></td>--}}
+    {{--                            <td class="align-middle "><a target="_blank"--}}
+    {{--                                                         href="{{\Illuminate\Support\Facades\Storage::url($paybox->cover)}}">Clique--}}
+    {{--                                    aqui para abrir o caixa</a></td>--}}
+    {{--                        </tr>--}}
+    {{--                    @endforeach--}}
+    {{--                    </tbody>--}}
+    {{--                </table>--}}
 
-{{--            </div>--}}
+    {{--            </div>--}}
 
-{{--        </div>--}}
+    {{--        </div>--}}
 
-{{--    </section><!-- End Team Section -->--}}
+    {{--    </section><!-- End Team Section -->--}}
 
 
-{{--          <section id="qualidade" class="team">--}}
+    {{--          <section id="qualidade" class="team">--}}
 
-{{--            <div class="container" data-aos="fade-up">--}}
+    {{--            <div class="container" data-aos="fade-up">--}}
 
-{{--              <header class="section-header">--}}
-{{--                <h2>Qualidade</h2>--}}
-{{--                <p>Selos de contato perfeito</p>--}}
-{{--              </header>--}}
+    {{--              <header class="section-header">--}}
+    {{--                <h2>Qualidade</h2>--}}
+    {{--                <p>Selos de contato perfeito</p>--}}
+    {{--              </header>--}}
 
-{{--              <div class="row gy-4">--}}
+    {{--              <div class="row gy-4">--}}
 
-{{--                <table class="table table-bordered text-center">--}}
-{{--                  <thead>--}}
-{{--                  <tr>--}}
-{{--                    <th>Foto</th>--}}
-{{--                    <th>Nome</th>--}}
-{{--                    <th>Selos</th>--}}
-{{--                    </h2>--}}
-{{--                  </tr>--}}
-{{--                  </thead>--}}
-{{--                  <tbody>--}}
-{{--                  @foreach($qualitys as $quality)--}}
-{{--                      <tr>--}}
-{{--                        <td class="align-middle "><img src="{{\Illuminate\Support\Facades\Storage::url($quality->avatar)}}"--}}
-{{--                                                class="rounded-circle" width="140" height="140"></td>--}}
-{{--                                <td class="align-middle"><b>{{$quality->nome}}</b>--}}
-{{--                                </td>--}}
-{{--                                <td class="align-middle">--}}
-{{--                                    <b><h2>{{$quality->qtd_selos}}</h2></b></td>--}}
-{{--                      </tr>--}}
-{{--                  @endforeach--}}
-{{--                  </tbody>--}}
-{{--              </table>--}}
+    {{--                <table class="table table-bordered text-center">--}}
+    {{--                  <thead>--}}
+    {{--                  <tr>--}}
+    {{--                    <th>Foto</th>--}}
+    {{--                    <th>Nome</th>--}}
+    {{--                    <th>Selos</th>--}}
+    {{--                    </h2>--}}
+    {{--                  </tr>--}}
+    {{--                  </thead>--}}
+    {{--                  <tbody>--}}
+    {{--                  @foreach($qualitys as $quality)--}}
+    {{--                      <tr>--}}
+    {{--                        <td class="align-middle "><img src="{{\Illuminate\Support\Facades\Storage::url($quality->avatar)}}"--}}
+    {{--                                                class="rounded-circle" width="140" height="140"></td>--}}
+    {{--                                <td class="align-middle"><b>{{$quality->nome}}</b>--}}
+    {{--                                </td>--}}
+    {{--                                <td class="align-middle">--}}
+    {{--                                    <b><h2>{{$quality->qtd_selos}}</h2></b></td>--}}
+    {{--                      </tr>--}}
+    {{--                  @endforeach--}}
+    {{--                  </tbody>--}}
+    {{--              </table>--}}
 
-{{--              </div>--}}
+    {{--              </div>--}}
 
-{{--            </div>--}}
+    {{--            </div>--}}
 
-{{--          </section><!-- End qualitys Section -->--}}
+    {{--          </section><!-- End qualitys Section -->--}}
 
-<!-- ======= Clients Section ======= -->
+
+    <section id="qualidade" class="portfolio">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <p>Monitoria</p>
+            </header>
+
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+                @foreach($qualitys_boss as $boss)
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap ">
+                            <img src="{{\Illuminate\Support\Facades\Storage::url($boss->avatar)}}" class="img-fluid"
+                                 alt="">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    </div>
+                @endforeach
+            </div>
+
+            <div class="row mt-3" data-aos="fade-up" data-aos-delay="100">
+                @foreach($qualitys_op as $op)
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <img src="{{\Illuminate\Support\Facades\Storage::url($op->avatar)}}" class="img-fluid"
+                                 alt="">
+
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients">
 
         <div class="container" data-aos="fade-up">
@@ -780,5 +822,7 @@
 <!-- Template Main JS File -->
 <script src="{{asset('new_front/assets/js/main.js')}}"></script>
 
+
+{{dd($qualitys_op)}}
 </body>
 </html>
