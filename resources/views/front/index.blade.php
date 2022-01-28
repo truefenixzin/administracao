@@ -53,6 +53,8 @@
             <ul>
                 <li><a class="nav-link scrollto active " href="{{asset('site/archives/voce_sabia_intranet.pdf')}}"
                        target="_blank">VOCÊ SABIA?</a></li>
+                <li><a class="nav-link scrollto active " href="{{asset('site/archives/apostila_parcele_ja.pdf')}}"
+                       target="_blank">Apoio operacinal</a></li>
                 <li><a class="nav-link scrollto active " href="#recado">Recados</a></li>
                 <li><a class="nav-link scrollto" href="#portfolio">Campanhas</a></li>
                 <li><a class="nav-link scrollto" href="#team">Destaques</a></li>
@@ -821,8 +823,5 @@
 
 <!-- Template Main JS File -->
 <script src="{{asset('new_front/assets/js/main.js')}}"></script>
-
-
-{{dd($qualitys_op)}}
 </body>
 </html>
