@@ -109,7 +109,7 @@
                                     </div>
                                     <div class="col-12">
                                         <label>Quantidade:</label>
-                                        <input type="number" class="form-control" name="qtdselos" id="qtdselos" value="{{$quality->qtdselos)}}">
+                                        <input type="number" class="form-control" name="qtdselos" id="qtdselos" value="{{$quality->qtdselos}}">
                                     </div>
                                     <div class="col-12">
                                         <label for="vencimento">Vencimento</label>
