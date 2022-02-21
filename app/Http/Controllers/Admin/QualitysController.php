@@ -49,6 +49,7 @@ class QualitysController extends Controller
             'cover' => 'required',
             'qtdselos' => 'required',
             'vencimento' => 'required',
+            'classificacao' =>'required',
         ]);
 
         try {
@@ -63,6 +64,7 @@ class QualitysController extends Controller
             $quality->nome = $request->nome;
             $quality->avatar = $request->cover;
             $quality->qtd_selos = $request->qtdselos;
+            $quality->classificacao = $request->classificacao;
             $quality->vencimento = $request->vencimento;
 
             if (!empty($request->file('cover'))) {
@@ -125,6 +127,7 @@ class QualitysController extends Controller
             'vencimento' => 'required',
             'nome' => 'required',
             'qtdselos' => 'required',
+            'classificacao' =>'required',
 
         ]);
 
@@ -137,6 +140,7 @@ class QualitysController extends Controller
             $quality->nome = $request->nome;
             $quality->vencimento = $request->vencimento;
             $quality->qtd_selos = $request->qtdselos;
+            $quality->classificacao = $request->classificacao;
             $result = $quality->save();
 
 

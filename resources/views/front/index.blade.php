@@ -688,6 +688,21 @@
                     </div>
                 @endforeach
             </div>
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+                @foreach($qualitys_op_boss as $op_boss)
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap ">
+                            <img src="{{\Illuminate\Support\Facades\Storage::url($op_boss->avatar)}}" class="img-fluid"
+                                 alt="">
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    </div>
+                @endforeach
+            </div>
 
             <div class="row mt-3" data-aos="fade-up" data-aos-delay="100">
                 @foreach($qualitys_op as $op)

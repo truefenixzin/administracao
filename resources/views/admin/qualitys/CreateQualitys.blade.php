@@ -97,18 +97,24 @@
 
                                 </div>
                             </div>
-                            <div class="col-6">
-                                <label>Quantidade:</label>
-                                <select name="qtdselos" id="qtdselos" class="form-control">
+                            <div class="col-4">
+                                <label>Status:</label>
+                                <select name="classificacao" id="classificacao" class="form-control">
                                     <option value="0">Operador</option>
                                     <option value="1">Líder</option>
-                                </select>
+                                    <option value="2">Operador - Destaque</option>
 
+                                </select>
                             </div>
-                            <div class="col-6">
+                            <div class="col-4">
+                                <label>Quantidade:</label>
+                                <input type="number" class="form-control" name="qtdselos" id="qtdselos" value="{{old('qtdselos')}}">
+                            </div>
+                            <div class="col-4">
                                 <label>Vencimento:</label>
                                 <input type="date" class="form-control" name="vencimento" value="{{old('vencimento')}}">
                             </div>
+
                         </div>
                     </div>
 

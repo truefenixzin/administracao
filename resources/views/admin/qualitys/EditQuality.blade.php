@@ -101,10 +101,15 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <label for="dtfim">Cargo:</label>
-                                        <select name="qtdselos" id="qtdselos" class="form-control">
+                                        <select name="classificacao" id="classificacao" class="form-control">
                                             <option value="0">Operador</option>
                                             <option value="1">Líder</option>
+                                            <option value="2">Operador - Destaque</option>
                                         </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label>Quantidade:</label>
+                                        <input type="number" class="form-control" name="qtdselos" id="qtdselos" value="{{$quality->qtdselos)}}">
                                     </div>
                                     <div class="col-12">
                                         <label for="vencimento">Vencimento</label>

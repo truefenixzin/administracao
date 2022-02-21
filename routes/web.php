@@ -31,7 +31,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
 
     /**rotas protegidas por necessidade de login**/
-    Route::group(['middleware' => ['auth']], function () {
+//    Route::group(['middleware' => ['auth']], function () {
 
         Route::get('/inicio', [AuthController::class, 'home'])->name('home');
         Route::get('/slides', [AuthController::class, 'showUploadForm'])->name('formupload');
@@ -51,7 +51,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
             Route::resource('campaigns', CampaignsController::class);
             Route::resource('commission', CommissionController::class);
 
-    });
+//    });
 
 
     /**Rotas logout**/
