@@ -58,7 +58,7 @@
                 <li><a class="nav-link scrollto active " href="#recado">Recados</a></li>
                 <li><a class="nav-link scrollto" href="#portfolio">Campanhas</a></li>
                 <li><a class="nav-link scrollto" href="#team">Destaques</a></li>
-                                <li><a class="nav-link scrollto" href="#qualidade">Monitoria</a></li>
+                <li><a class="nav-link scrollto" href="#qualidade">Monitoria</a></li>
                 {{--                <li><a class="nav-link scrollto" href="#qualidade">Qualidade</a></li>--}}
                 <li><a class="getstarted scrollto" href="{{route('admin.login')}}" target="_blank">Entrar</a></li>
             </ul>
@@ -674,6 +674,34 @@
             </header>
 
             <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="col-lg-6 col-md-6 portfolio-item filter-app">
+                    <div class="portfolio-wrap ">
+                        <img src="{{asset('storage/commission/lider.png')}}" class="img-fluid"
+                             alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 portfolio-item filter-app">
+                    <div class="portfolio-wrap ">
+                        <img src="{{asset('storage/commission/operadores.png')}}" class="img-fluid"
+                             alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="qualidade" class="portfolio">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <p>Contato perfeito</p>
+            </header>
+
+            <div class="row mt-7" data-aos="fade-up" data-aos-delay="100">
                 @foreach($qualitys_boss as $boss)
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                     </div>
