@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Slide;
 use App\Models\News;
 use Illuminate\Support\Facades\DB;
+use phpDocumentor\Reflection\Utils;
 
 
 class FronController extends Controller
@@ -124,6 +125,7 @@ class FronController extends Controller
             ->get();
         return view('front.campaigns', compact('commission', 'campaigns'));
     }
+
 
 
 }
